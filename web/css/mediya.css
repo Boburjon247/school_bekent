@@ -1,0 +1,531 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+        .section4_maktab_f {
+                grid-template-columns: 1fr 1fr;
+        }
+
+        .section7 .section7_content .section7_text_wrap {
+                grid-template-columns: 1fr 1fr 1.5fr;
+        }
+
+        .img_tabs .tab1_img {
+                height: 50vh;
+        }
+
+        .new_section1 .new_section1_content ul li .text p:nth-child(1) {
+                font-size: 18px !important;
+        }
+
+        .new_section1 .new_section1_content ul li .img {
+                height: 160px !important;
+        }
+
+        .new_section1 .new_section1_content ul li .text p:nth-child(1) {
+                width: 100%;
+        }
+
+        .aloqa_content .content_wrap .left .input1 {
+                grid-column: 1/ 4;
+        }
+
+        .aloqa_content .content_wrap .left .input2 {
+                grid-column: 1/ 4;
+        }
+
+        .sTk_section .boshqaruv_oynasi p {
+                font-size: 18px;
+        }
+
+        .sTk_section .boshqaruv_oynasi ul li {
+                font-size: 14px;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .input_wrap {
+                flex-direction: column;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .input_wrap .left_title {
+                width: 100%;
+                justify-content: flex-end !important;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .input_wrap .left_title p {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+        }
+
+        .headerTop .container ul span {
+                font-size: 16px !important;
+        }
+
+        .xolqaro-tanlovlar .row {
+                grid-template-columns:  1fr 1fr;
+        }
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+        .hamburget_btn {
+                display: block !important;
+        }
+
+        .drop-down {
+                display: none;
+        }
+
+        .head__menu nav {
+                display: none;
+        }
+
+        .head__menu-join .but {
+                margin-left: 0 !important;
+                border: 2px solid #fff;
+                width: 37px;
+                height: 37px;
+        }
+
+        .owl-carousel .item .item_content {
+                width: 100% !important;
+        }
+
+        .section3_content_wrap ol {
+                grid-template-columns: 1fr 1fr;
+        }
+
+        .section5_content_wrap {
+                display: grid;
+                grid-template-columns: 1fr;
+        }
+
+        .eyes_card {
+                right: 15px;
+                top: 10px;
+        }
+
+        /* footer */
+        .section7 .section7_content .section7_text_wrap .li4 {
+                grid-template-columns: 1fr 7fr;
+        }
+
+        .section7 .section7_content .section7_text_wrap {
+                grid-template-columns: 1fr 1fr;
+        }
+
+        .section7 .section7_content .section7_text_wrap li:nth-child(3) {
+                grid-column: 1 / 4;
+        }
+
+        .section7 .waves {
+                display: none;
+        }
+
+        .section7 .section7_content .section7_text_wrap .li4 {
+                display: none;
+        }
+
+        .section7 .section7_content .section7_text_wrap .karta_map {
+                height: 250px;
+        }
+
+
+        .new_section1 .new_section1_content ul li .img {
+                height: 260px !important;
+        }
+
+        .new_section1 .new_section1_content ul li {
+                grid-template-columns: 1fr !important;
+        }
+
+        .aloqa_content .content_wrap {
+                grid-template-columns: 1fr;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .input_wrap .left_title {
+                width: 100%;
+                justify-content: flex-end;
+        }
+
+        .jurnal_content .content_wrap .input_wrap {
+                flex-direction: column;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .input_wrap .right_title {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .input_wrap .right_title select {
+                width: 100%;
+        }
+
+        .sTk_section {
+                grid-template-columns: 1fr;
+        }
+
+        .sTk_section .boshqaruv_oynasi {
+                width: 320px;
+                height: 100vh;
+                position: absolute;
+                left: -320px;
+                display: block;
+                top: 80px;
+                transition: .2s;
+        }
+
+        .sTk_section .boshqaruv_oynasi.active {
+                left: 0;
+        }
+
+        .boshqaruv_oynasi .btn_button {
+                display: block;
+        }
+
+
+        .swiper-button-next,
+        .swiper-button-prev {
+                display: none;
+        }
+
+        .headerTop .container ul {
+                display: none !important;
+        }
+
+        .hamburgerBtn {
+                display: flex;
+        }
+
+        .aloqa_container {
+                grid-template-columns: 1fr !important;
+        }
+
+        .aloqa_container .right {
+                display: none;
+        }
+
+        /* news */
+        .card-content {
+                grid-template-columns: 1fr 1fr !important;
+                padding-left: 10px;
+                padding-right: 10px;
+        }
+
+        /* leadershipContainer */
+        .leadershipContainer .row:nth-child(1) .leaderCard .img {
+                width: 280px;
+                height: 280px;
+        }
+
+        .leaderCard .userName1 {
+                font-size: 20px !important;
+        }
+
+        .leaderCard .lavozimText {
+                font-size: 16px !important;
+        }
+
+        .leadershipContainer .text p span:nth-child(2) {
+                font-size: 16px;
+        }
+
+        .leadershipContainer .text p span:nth-child(3) {
+                font-size: 15px;
+        }
+
+        .leadershipContainer .text i {
+                font-size: 15px;
+                width: 20px;
+                height: 20px;
+        }
+
+        .btnTarjimai {
+                border: 1px solid #46688C;
+                color: #46688C;
+                padding: 5px 15px;
+                font-size: 15px;
+                border-radius: 5px;
+                transition: all .2s ease;
+                margin-left: 5px;
+                margin-top: 10px;
+        }
+
+
+
+        /* Small Devices, Tablets */
+        @media only screen and (max-width : 768px) {
+                .owl-carousel .item {
+                        margin-left: 0 !important;
+                }
+
+                .owl-nav {
+                        left: 15px !important;
+                }
+
+                .section3_content_wrap ol {
+                        grid-template-columns: 1fr;
+                }
+
+                .section3_text p,
+                .section4_text p,
+                .section5_text p,
+                .section6_text p {
+                        font-size: 25px !important;
+                }
+
+                .section4_maktab_f {
+                        grid-template-columns: 1fr;
+                }
+
+                .waves {
+                        height: 40px;
+                        min-height: 40px;
+                }
+
+                .content {
+                        height: 30vh;
+                }
+
+                h1 {
+                        font-size: 24px;
+                }
+
+                .section7 .section7_content .section7_text_wrap .li4 .img_a .img {
+                        display: none;
+                }
+
+                .section7 .section7_content .section7_text_wrap .li4 {
+                        grid-template-columns: 1fr;
+                }
+
+                .new_section1 .new_section1_content ul {
+                        grid-template-columns: 1fr;
+                }
+
+                .new_section1 .new_section1_content ul li .img {
+                        height: 160px !important;
+                }
+
+                .new_section1 .new_section1_content ul li {
+                        grid-template-columns: 2fr 3fr !important;
+                }
+
+                .new_section1 .new_section1_content ul li .text {
+                        padding: 0 10px;
+                }
+
+                .tich_kiritish .blok1 {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr !important;
+                }
+
+                .tich_kiritish .blok1 .text1 {
+                        grid-column: 1 / 3;
+                }
+
+                .tich_kiritish .blok2 {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr !important;
+                }
+
+                .tich_kiritish .blok2 p {
+                        grid-column: 1 / 3;
+                }
+
+                /* leadershipContainer */
+
+                .leadershipContainer .row .leaderCard {
+                        grid-template-columns: 1fr;
+                }
+
+                .leadershipContainer .row:nth-child(1) .leaderCard .img {
+                        width: 100%;
+                        height: 380px;
+                }
+
+
+
+        }
+
+        @media only screen and (max-width : 580px) {
+                .leadershipContainer .row .leaderCard {
+                        grid-template-columns: 1fr;
+                }
+
+                .owl-carousel .item {
+                        padding: 15px;
+                }
+
+                .section7 .section7_content .section7_text_wrap {
+                        grid-template-columns: 1fr !important;
+                }
+
+                .section7 .section7_content .section7_text_wrap li:nth-child(2) {
+                        grid-column: 1 / 2;
+                }
+
+                .img_tabs .tab1_img {
+                        height: 40vh;
+                }
+
+                .section5_content_wrap {
+                        display: grid;
+                        grid-template-columns: 1fr !important;
+                }
+
+                .aloqa_content .content_wrap {
+                        width: 100% !important;
+                }
+
+                .aloqa_content .content_wrap .left {
+                        width: 100% !important;
+                }
+
+                .section3_cart_img_show .img_X {
+                        width: 97%;
+                }
+
+                .section3_cart_img_show .img_X video {
+                        height: auto !important;
+                }
+
+                .card-content {
+                        grid-template-columns: 1fr !important;
+                }
+                .xolqaro-tanlovlar .row {
+                        padding: 10px !important;
+                }     
+
+
+
+
+        }
+
+        /* Extra Small Devices, Phones */
+        @media only screen and (max-width : 480px) {
+
+                .titleHover {
+                        top: 10px;
+                }
+
+
+
+                .registration_title {
+                        margin: 0 !important;
+                        width: 100%;
+                        height: 100%;
+                }
+
+                .new_section1 .new_section1_content ul li .img {
+                        height: 240px !important;
+                }
+
+                .new_section1 .new_section1_content ul li {
+                        grid-template-columns: 1fr !important;
+                }
+
+                .section_jurnal .jurnal_content .content_wrap .input_wrap .left_title {
+                        width: 100%;
+                        justify-content: flex-end;
+                }
+
+                .jurnal_content .content_wrap .input_wrap {
+                        flex-direction: column;
+                }
+
+                .section_jurnal .jurnal_content .content_wrap .input_wrap .right_title {
+                        width: 100%;
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        gap: 15px;
+                }
+
+                .section_jurnal .jurnal_content .content_wrap .input_wrap .right_title select {
+                        width: 100%;
+                }
+
+                .section_jurnal .jurnal_content .content_wrap .natija_wrap tr .o_name {
+                        font-size: 14px;
+                }
+
+                .section_jurnal .jurnal_content .content_wrap .natija_wrap tr th input {
+                        font-size: 14px;
+                        margin: 0;
+                        height: 50px;
+                }
+
+                .section3_content .section3_content_wrap #tabs ul li {
+                        font-size: 15px;
+                }
+                .xolqaro-tanlovlar .row {
+                        grid-template-columns:  1fr;
+                        padding: 10px !important;
+                }       
+
+
+
+        }
+
+        @media only screen and (max-width : 400px) {
+                .hamburger_title {
+                        width: 100%;
+                }
+
+                .section2_content .section2_text p {
+                        font-size: 25px !important;
+                }
+
+                .tich_kiritish .blok1 {
+                        display: grid;
+                        grid-template-columns: 1fr !important;
+                }
+
+                .tich_kiritish .blok1 .text1 {
+                        grid-column: 1 / 2;
+                }
+
+                .tich_kiritish .blok2 {
+                        display: grid;
+                        grid-template-columns: 1fr !important;
+                }
+
+                .tich_kiritish .blok2 p {
+                        grid-column: 1 / 2;
+                }
+
+                .hamburger_title {
+                        width: 100% !important;
+                }
+
+                .hamburger_exit {
+                        left: 90% !important;
+                        border: 2px solid #fff;
+                        border-radius: 50%;
+                        cursor: pointer;
+                }
+
+                .aloqa_container .left form {
+                        grid-template-columns: 1fr !important;
+                }
+
+                .aloqa_container .left form input {
+                        grid-column: 1/2 !important;
+                }
+
+                .aloqa_container .left form .canvas .canvas_chake {
+                        align-items: start;
+                        flex-direction: column;
+                        row-gap: 10px;
+                }
+        }
+
+        /* Custom, iPhone Retina */
+        @media only screen and (max-width : 320px) {
+                .section3_content .section3_content_wrap #tabs ul {
+                        flex-direction: column;
+                }
+        }
