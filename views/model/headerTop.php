@@ -1,6 +1,6 @@
-<?php global  $view, $config;?>
-    <?php if($view=='index') :?>
-        <header class="headerTop   container-fluid" id="section1_1a">
+<?php global  $view, $config; ?>
+<?php if ($view == 'index') : ?>
+    <header class="headerTop   container-fluid" id="section1_1a">
         <div class="container">
             <div class="hamburgerBtn">
                 <i class="fa-solid fa-bars"></i>
@@ -9,9 +9,9 @@
                 <li>
                     <div class="navbar_item">
                         <a href="?view=index">
-                                <span>
-                                    Bosh sahifa
-                                </span>
+                            <span>
+                                Bosh sahifa
+                            </span>
                         </a>
                     </div>
                 </li>
@@ -83,8 +83,8 @@
             </div>
         </div>
     </header>
-    <?php else:?>
-        <header class="headerTop dark  container-fluid" id="section1_1a">
+<?php else : ?>
+    <header class="headerTop dark  container-fluid" id="section1_1a">
         <div class="container">
             <div class="hamburgerBtn">
                 <i class="fa-solid fa-bars"></i>
@@ -93,9 +93,9 @@
                 <li>
                     <div class="navbar_item">
                         <a href="?view=index">
-                                <span>
-                                    Bosh sahifa
-                                </span>
+                            <span>
+                                Bosh sahifa
+                            </span>
                         </a>
                     </div>
                 </li>
@@ -167,4 +167,4 @@
             </div>
         </div>
     </header>
-    <?php endif;?>
+<?php endif; ?>

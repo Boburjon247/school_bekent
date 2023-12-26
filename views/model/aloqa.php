@@ -1,4 +1,4 @@
-<?php global $config;?>
+<?php global $config; ?>
 
 <!-- header-banner -->
 <section class="header-banner container-fluid">
@@ -19,20 +19,20 @@
             <div class="left">
                 <form action="#" method="post">
                     <p>murojaat</p>
-                    <input type="text" name="fish" id="inputA" placeholder="f.i.sh">
-                    <input type="text" name="email" id="inputA" placeholder="email">
-                    <input type="text" name="tel" id="inputA" placeholder="Telefon raqamingiz">
-                    <input type="text" name="manzil" id="inputA" placeholder="yashash manzili">
-                    <input type="text" name="sarlavha" id="inputA" placeholder="sarlavha">
-                    <textarea name="" id="inputA" placeholder="murojat mazmuni"></textarea>
+                    <input type="text" required name="fish" id="inputA" placeholder="f.i.sh">
+                    <input type="text" required name="email" id="inputA" placeholder="email: xxxx123@gmail.xx">
+                    <input type="text" required name="tel" id="inputA" placeholder="Tel: xx xxx xx xx">
+                    <input type="text" required name="manzil" id="inputA" placeholder="yashash manzili">
+                    <input type="text" required name="sarlavha" id="inputA" placeholder="sarlavha">
+                    <textarea name="title" required id="inputA" placeholder="murojat mazmuni"></textarea>
                     <div class="canvas">
                         <label for=""> kodni kiriting:</label>
                         <div class="canvas_chake">
                             <canvas id="canvas"></canvas>
-                            <input type="text" name="canvas" class="canvasItemCheck" id="inputA">
+                            <input type="text" required name="canvas" class="canvasItemCheck" id="inputA">
                         </div>
                     </div>
-                    <input type="text" readonly name="murojatYuborish"  id="murojatAdd" value="yuborish">
+                    <input type="submit" readonly name="murojatYuborish" id="murojatAdd" value="yuborish">
                 </form>
             </div>
             <div class="right">
@@ -41,4 +41,58 @@
         </div>
     </section>
 </main>
-<script src="<?= $config['base']['url'].'web/'?>js/aloqa.js"></script>
+<script src="<?= $config['base']['url'] . 'web/' ?>js/aloqa.js"></script>
+
+<?php if (isset($_POST['murojatYuborish'])) : ?>
+
+    <?php
+    $fullName = trim(strip_tags($_POST['fish'])) ?? null;
+    $email =    trim(strip_tags($_POST['email'])) ?? null;
+    $tel =      trim(strip_tags($_POST['tel']))  ?? null;
+    $manzil =   trim(strip_tags($_POST['manzil']))  ?? null;
+    $sarlavha = trim(strip_tags($_POST['sarlavha']))  ?? null;
+    $title =    trim(strip_tags($_POST['title']))  ?? null;
+
+    function tekshirInput($namuna, $input)
+    {
+        if (preg_match($namuna, $input)) {
+
+        } else {
+            echo '<p>false</p>';
+        }
+    }
+    //fulnameni tekshirish;
+    //example : : : Boburjon Abdunazarov Bahromjon o'g'li && Boburjon Abdunazarov Bahromjonvich;
+    tekshirInput("/^([a-z']{3,15})\s([a-z']{3,20})\s([a-z']{3,20})\s?([a-z']{0,10})$/i",$fullName);
+
+    //emailni tekshirish;
+    //example : : :abdunazarov247@gmail.com
+    tekshirInput('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/',$email);
+
+    //telfon nomer
+    //example : : : 97 666 59 79;
+    tekshirInput('/^[0-9]{2}\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}$/',$tel);
+
+    //manzil
+    tekshirInput("/^([a-z'0-9\s]{4,100})$/i", $manzil);
+
+    //sarlavha
+    tekshirInput("/^[a-z'0-9\s]{4,80}$/i", $sarlavha);
+
+    //title
+    tekshirInput("/^[a-z'0-9\s]{4,300}$/i", $title);
+    
+    
+    
+    
+    // echo '<pre>';
+    // print_r($_POST['manzil']);
+    // echo '</pre>';
+    
+    ?>
+
+
+<?php else : ?>
+    <?php echo 'hatolik'; ?>
+
+<?php endif; ?>

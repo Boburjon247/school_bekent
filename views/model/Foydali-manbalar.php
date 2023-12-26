@@ -1,15 +1,15 @@
 <?php
-    global $view,$config;
-    include $config['base']['path'].'views/model/header-banner.php';
+global $view, $config;
+include $config['base']['path'] . 'views/model/header-banner.php';
 ?>
-<?php if(isset($_GET['id']) && $_GET['id'] == 1) :?>
+<?php if (isset($_GET['id']) && $_GET['id'] == 1) : ?>
     <?php headerBanner('Xolqaro Tanlovlar'); ?>
     <main>
         <section class="container-fluid">
             <div class="container xolqaro-tanlovlar">
                 <div class="row">
                     <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'].'web/'?>img/PIIM4.jpg);"></div>
+                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
                         <div class="card_title">
                             <p>title</p>
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'].'web/'?>img/PIIM4.jpg);"></div>
+                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
                         <div class="card_title">
                             <p>title</p>
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'].'web/'?>img/PIIM4.jpg);"></div>
+                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
                         <div class="card_title">
                             <p>title</p>
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'].'web/'?>img/PIIM4.jpg);"></div>
+                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
                         <div class="card_title">
                             <p>title</p>
                             <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
@@ -56,11 +56,11 @@
             </div>
         </section>
     </main>
-    <script src="<?= $config['base']['url'].'web/'?>js/pagination.js"></script>
+    <script src="<?= $config['base']['url'] . 'web/' ?>js/pagination.js"></script>
 
-<?php elseif(isset($_GET['id']) && $_GET['id'] == 2) :?>
+<?php elseif (isset($_GET['id']) && $_GET['id'] == 2) : ?>
     <h1>togaraklar</h1>
-<?php elseif(isset($_GET['id']) && $_GET['id'] == 3) :?>
+<?php elseif (isset($_GET['id']) && $_GET['id'] == 3) : ?>
     <?php headerBanner("O'quv qo'llanmalar"); ?>
     <main>
         <section class="container-fluid">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'].'web/'?>img/PIIM4.jpg);"></div>
+                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
                         <div class="card_title">
                             <p>title</p>
                         </div>
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'].'web/'?>img/PIIM4.jpg);"></div>
+                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
                         <div class="card_title">
                             <p>title</p>
                         </div>
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'].'web/'?>img/PIIM4.jpg);"></div>
+                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
                         <div class="card_title">
                             <p>title</p>
                         </div>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'].'web/'?>img/PIIM4.jpg);"></div>
+                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
                         <div class="card_title">
                             <p>title</p>
                         </div>
@@ -116,5 +116,4 @@
             </div>
         </section>
     </main>
-<?php endif;?>
-
+<?php endif; ?>

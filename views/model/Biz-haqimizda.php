@@ -1,40 +1,40 @@
 <?php
-    global $config;
-    include $config['base']['path'].'views/model/header-banner.php'
+global $config;
+include $config['base']['path'] . 'views/model/header-banner.php'
 ?>
-<?php if(isset($_GET['id']) && $_GET['id'] == 1 ): ?>
+<?php if (isset($_GET['id']) && $_GET['id'] == 1) : ?>
     <!-- header-banner -->
-    <?php headerBanner('Biz haqimizda');?>
+    <?php headerBanner('Biz haqimizda'); ?>
     <!-- main -->
     <main>
         <section class="container-fluid about">
             <div class="container aboutContainer">
                 <h2>Farg'ona shaxar Prezident maktabi</h2>
                 <span>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolores asperiores, beatae voluptate nemo mollitia qui quo ipsam hic ut, nisi sapiente pariatur eaque dolorem voluptatum veritatis assumenda eius maiores.
-               Vero, aliquid corrupti reiciendis illum saepe, molestiae, nobis pariatur esse dignissimos nam veniam natus nostrum obcaecati consequuntur fugiat! Quod voluptate non repellat at fugit quisquam minima fuga cumque ut
-            </span>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolores asperiores, beatae voluptate nemo mollitia qui quo ipsam hic ut, nisi sapiente pariatur eaque dolorem voluptatum veritatis assumenda eius maiores.
+                    Vero, aliquid corrupti reiciendis illum saepe, molestiae, nobis pariatur esse dignissimos nam veniam natus nostrum obcaecati consequuntur fugiat! Quod voluptate non repellat at fugit quisquam minima fuga cumque ut
+                </span>
                 <span>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nam distinctio maxime labore odit provident dolorum quam laboriosam tenetur consequatur quia quis nulla neque, veritatis officiis a possimus voluptatibus autem.
-               Nihil at quaerat fugiat error odit distinctio quisquam doloremque ipsum corrupti molestiae harum nostrum ipsa illo modi, necessitatibus qui temporibus, pariatur accusamus? Illo sed possimus repudiandae deserunt quae commodi enim.
-               Possimus suscipit consequuntur tenetur dicta magni sequi deleniti harum temporibus facilis accusamus nisi pariatur vel reprehenderit, corrupti assumenda expedita id a debitis, placeat obcaecati. Explicabo, odit? Velit architecto accusantium quidem!
-               Rem voluptates maiores numquam corporis nemo perspiciatis optio dicta, animi minus earum modi laudantium dolorum temporibus molestias cumque doloribus ut consequatur. Non quidem necessitatibus quos dignissimos numquam aliquam ut fugiat!
-               Reprehenderit tenetur corporis nulla numquam officiis ad quisquam assumenda eum consectetur sequi, nemo pariatur magni provident cumque excepturi minima nesciunt veritatis, sapiente deserunt perspiciatis expedita temporibus iste laborum? Necessitatibus, quisquam?
-            </span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nam distinctio maxime labore odit provident dolorum quam laboriosam tenetur consequatur quia quis nulla neque, veritatis officiis a possimus voluptatibus autem.
+                    Nihil at quaerat fugiat error odit distinctio quisquam doloremque ipsum corrupti molestiae harum nostrum ipsa illo modi, necessitatibus qui temporibus, pariatur accusamus? Illo sed possimus repudiandae deserunt quae commodi enim.
+                    Possimus suscipit consequuntur tenetur dicta magni sequi deleniti harum temporibus facilis accusamus nisi pariatur vel reprehenderit, corrupti assumenda expedita id a debitis, placeat obcaecati. Explicabo, odit? Velit architecto accusantium quidem!
+                    Rem voluptates maiores numquam corporis nemo perspiciatis optio dicta, animi minus earum modi laudantium dolorum temporibus molestias cumque doloribus ut consequatur. Non quidem necessitatibus quos dignissimos numquam aliquam ut fugiat!
+                    Reprehenderit tenetur corporis nulla numquam officiis ad quisquam assumenda eum consectetur sequi, nemo pariatur magni provident cumque excepturi minima nesciunt veritatis, sapiente deserunt perspiciatis expedita temporibus iste laborum? Necessitatibus, quisquam?
+                </span>
                 <span>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae deserunt totam id maiores quos aperiam quas ad culpa corrupti possimus odit ipsum fuga ipsa saepe rerum consequatur reiciendis, architecto laboriosam.
-               Expedita fugiat voluptatum quo quas exercitationem praesentium tempore ab accusantium ipsum temporibus illo autem hic, tempora, quibusdam sequi. Excepturi accusantium sunt ut quo saepe obcaecati possimus id autem, quam nostrum.
-               Pariatur doloremque iure obcaecati quaerat modi debitis nesciunt expedita aperiam, et enim tempore qui! Ullam, illo. Saepe ducimus qui deleniti dolores voluptatibus? Ad rerum aliquam, sint quidem sapiente nam nobis?
-               Commodi blanditiis quos at molestias architecto rerum quia error soluta qui aspernatur nesciunt autem adipisci aut, nihil veritatis dolor unde tempora. Ipsa placeat delectus vero sed et fugit error iusto.
-               Facere veritatis amet quod possimus corrupti, rem recusandae! Esse similique minima aut, aperiam reiciendis, iusto quidem architecto assumenda, fugit itaque eaque vitae? Temporibus dicta possimus laudantium aliquam praesentium, culpa ipsam.
-               Nisi soluta quis iure, praesentium qui neque possimus aliquid illo, fuga suscipit explicabo minima voluptatem rem ducimus asperiores unde facere officiis, totam sunt quas quam adipisci! Quod itaque explicabo asperiores!
-            </span>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae deserunt totam id maiores quos aperiam quas ad culpa corrupti possimus odit ipsum fuga ipsa saepe rerum consequatur reiciendis, architecto laboriosam.
+                    Expedita fugiat voluptatum quo quas exercitationem praesentium tempore ab accusantium ipsum temporibus illo autem hic, tempora, quibusdam sequi. Excepturi accusantium sunt ut quo saepe obcaecati possimus id autem, quam nostrum.
+                    Pariatur doloremque iure obcaecati quaerat modi debitis nesciunt expedita aperiam, et enim tempore qui! Ullam, illo. Saepe ducimus qui deleniti dolores voluptatibus? Ad rerum aliquam, sint quidem sapiente nam nobis?
+                    Commodi blanditiis quos at molestias architecto rerum quia error soluta qui aspernatur nesciunt autem adipisci aut, nihil veritatis dolor unde tempora. Ipsa placeat delectus vero sed et fugit error iusto.
+                    Facere veritatis amet quod possimus corrupti, rem recusandae! Esse similique minima aut, aperiam reiciendis, iusto quidem architecto assumenda, fugit itaque eaque vitae? Temporibus dicta possimus laudantium aliquam praesentium, culpa ipsam.
+                    Nisi soluta quis iure, praesentium qui neque possimus aliquid illo, fuga suscipit explicabo minima voluptatem rem ducimus asperiores unde facere officiis, totam sunt quas quam adipisci! Quod itaque explicabo asperiores!
+                </span>
             </div>
         </section>
     </main>
-<?php elseif(isset($_GET['id']) && $_GET['id'] == 2 ): ?>
+<?php elseif (isset($_GET['id']) && $_GET['id'] == 2) : ?>
     <!-- header-banner -->
-    <?php headerBanner('Prezident maktablari');?>
+    <?php headerBanner('Prezident maktablari'); ?>
     <!-- main -->
     <main>
         <section class="container-fluid schools">
@@ -42,8 +42,7 @@
         </section>
     </main>
     <script>
-        let cardArray = [
-            {
+        let cardArray = [{
                 icon: 'logo1.png',
                 title: 'Navoiy shahridagi Prezident maktabi',
                 link: 'https://portal.piima.uz/schools/presidental-schools/29'
@@ -121,7 +120,7 @@
                 'afterbegin',
                 `<div class="schoolsCard">
                   <div class="icon">
-                     <img src="<?=$config['base']['url'].'web/'?>img/${cardArray[index].icon}" alt="">
+                     <img src="<?= $config['base']['url'] . 'web/' ?>img/${cardArray[index].icon}" alt="">
                   </div>
                   <div class="title">
                      <p>${cardArray[index].title}</p>
@@ -130,12 +129,10 @@
                </div>`
             )
         }
-
-
     </script>
-<?php elseif(isset($_GET['id']) && $_GET['id'] == 3 ): ?>
+<?php elseif (isset($_GET['id']) && $_GET['id'] == 3) : ?>
     <!-- header-banner -->
-    <?php headerBanner('Rahbariyat');?>
+    <?php headerBanner('Rahbariyat'); ?>
     <!-- main -->
     <main>
         <section class="container-fluid leadership">
@@ -143,7 +140,7 @@
                 <div class="row">
                     <!-- item -->
                     <div class="leaderCard">
-                        <div class="img" style="background-image: url(<?=$config['base']['url'].'web/'?>img/user.jpg);"></div>
+                        <div class="img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/user.jpg);"></div>
                         <div class="text">
                             <h3 class="userName1">Abdunazarov Boburjon</h3>
                             <p class="lavozimText">Direktor</p>
@@ -176,7 +173,7 @@
                     </div>
 
                     <div class="leaderCard">
-                        <div class="img" style="background-image: url(<?=$config['base']['url'].'web/'?>img/user.jpg);"></div>
+                        <div class="img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/user.jpg);"></div>
                         <div class="text">
                             <h3 class="userName1">Ikromov</h3>
                             <p class="lavozimText">Direktor</p>
@@ -216,16 +213,16 @@
         </section>
     </main>
     <!--script-->
-    <script src="<?= $config['base']['url'].'web/'?>js/leadership.js"></script>
-<?php elseif(isset($_GET['id']) && $_GET['id'] == 4 ): ?>
+    <script src="<?= $config['base']['url'] . 'web/' ?>js/leadership.js"></script>
+<?php elseif (isset($_GET['id']) && $_GET['id'] == 4) : ?>
     <!-- header-banner -->
-    <?php headerBanner('Xodimlar');?>
+    <?php headerBanner('Xodimlar'); ?>
     <!-- main -->
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">
                 <div class="card">
-                    <div class="card-img card_img_employees" style="background-image: url(<?=$config['base']['url'].'web/'?>img/Dinner.jpg);">
+                    <div class="card-img card_img_employees" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/Dinner.jpg);">
                         <div class="card-hide">
                             <div class="card-hide-content">
                                 <div class="tel pb-2">
@@ -262,7 +259,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img card_img_employees" style="background-image: url(<?=$config['base']['url'].'web/'?>img/imgNot.jpg);">
+                    <div class="card-img card_img_employees" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/imgNot.jpg);">
                         <div class="card-hide">
                             <div class="card-hide-content">
                                 <div class="tel pb-2">
@@ -299,7 +296,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img card_img_employees" style="background-image: url(<?=$config['base']['url'].'web/'?>img/imgNot.jpg);">
+                    <div class="card-img card_img_employees" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/imgNot.jpg);">
                         <div class="card-hide">
                             <div class="card-hide-content">
                                 <div class="tel pb-2">
@@ -336,7 +333,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img card_img_employees" style="background-image: url(<?=$config['base']['url'].'web/'?>img/imgNot.jpg);">
+                    <div class="card-img card_img_employees" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/imgNot.jpg);">
                         <div class="card-hide">
                             <div class="card-hide-content">
                                 <div class="tel pb-2">
@@ -373,7 +370,7 @@
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-img card_img_employees" style="background-image: url(<?=$config['base']['url'].'web/'?>img/imgNot.jpg);">
+                    <div class="card-img card_img_employees" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/imgNot.jpg);">
                         <div class="card-hide">
                             <div class="card-hide-content">
                                 <div class="tel pb-2">
@@ -413,7 +410,8 @@
 
             </div>
             <div class="pagination container">
-                <li class="page-item previous-page "><a href="#"><</a>
+                <li class="page-item previous-page "><a href="#">
+                        << /a>
                 </li>
                 <li class="page-item current-page"><a href="#">1</a></li>
                 <li class="page-item current-page"><a href="#">2</a></li>
@@ -426,5 +424,5 @@
             </div>
         </section>
     </main>
-    <script src="<?= $config['base']['url'].'web/'?>js/pagination.js"></script>
-<?php endif;?>
+    <script src="<?= $config['base']['url'] . 'web/' ?>js/pagination.js"></script>
+<?php endif; ?>
