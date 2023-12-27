@@ -98,6 +98,24 @@ li {
   padding: 25px 0 0 0;
   position: relative;
   z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between !important;
+}
+.top_title_header button{
+  background-color: #051B57;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 2px 3px #2754d1;
+}
+.top_title_header button:active{
+  box-shadow: inset 2px 2px 3px #002998;
+}
+.top_title_header button:active i{
+  font-size: 14px;
 }
 
 .top_title_header span {

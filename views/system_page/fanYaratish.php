@@ -10,21 +10,21 @@
    </div>
    <div class="body_year_show">
       <div class="year_items">
-         <p>Matematika</p>
+         <p class="year_items_text">Matematika</p>
          <div>
             <button class="delet-edit-icon"><i class="fa-solid fa-pencil" style="color: #005eff;"></i></button>
             <button class="delet-edit-icon"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
          </div>
       </div>
       <div class="year_items">
-         <p>Algebra</p>
+         <p class="year_items_text">Algebra</p>
          <div>
             <button class="delet-edit-icon"><i class="fa-solid fa-pencil" style="color: #005eff;"></i></button>
             <button class="delet-edit-icon"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
          </div>
       </div>
       <div class="year_items">
-         <p>Geometrya</p>
+         <p class="year_items_text">Geometrya</p>
          <div>
             <button class="delet-edit-icon"><i class="fa-solid fa-pencil" style="color: #005eff;"></i></button>
             <button class="delet-edit-icon"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>

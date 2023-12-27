@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^([a-zA-Z]+)$ ?view=$1
+RewriteRule ^([a-zA-Z]+)/([0-9]+)$ ?view=$1&id=$2

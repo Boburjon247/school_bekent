@@ -8,7 +8,7 @@
             <ul>
                 <li>
                     <div class="navbar_item">
-                        <a href="?view=index">
+                        <a href="<?= $config['base']['url']?>index">
                             <span>
                                 Bosh sahifa
                             </span>
@@ -21,10 +21,10 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a href="?view=Biz-haqimizda&id=1">Maktab haqida</a>
-                                <a href="?view=Biz-haqimizda&id=2">Prezident maktablari</a>
-                                <a href="?view=Biz-haqimizda&id=3">Rahbariyat</a>
-                                <a href="?view=Biz-haqimizda&id=4">Xodimlar</a>
+                                <a href="<?= $config['base']['url']?>BizHaqimizda/1">Maktab haqida</a>
+                                <a href="<?= $config['base']['url']?>BizHaqimizda/2">Prezident maktablari</a>
+                                <a href="<?= $config['base']['url']?>BizHaqimizda/3">Rahbariyat</a>
+                                <a href="<?= $config['base']['url']?>BizHaqimizda/4">Xodimlar</a>
                             </div>
                         </div>
                     </div>
@@ -35,11 +35,11 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a id="newBtnClick" href="?view=Matbuot-xizmati&id=1">Yangiliklar</a>
-                                <a id="newBtnClick" href="?view=Matbuot-xizmati&id=2">Tadbirlar</a>
-                                <a id="newBtnClick" href="?view=Matbuot-xizmati&id=3">E'lonlar</a>
-                                <a id="newBtnClick" href="?view=Matbuot-xizmati&id=4">Fotolavhalar</a>
-                                <a id="newBtnClick" href="?view=Matbuot-xizmati&id=5">Videolavhalar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url']?>MatbuotXizmati/1">Yangiliklar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url']?>MatbuotXizmati/2">Tadbirlar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url']?>MatbuotXizmati/3">E'lonlar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url']?>MatbuotXizmati/4">Fotolavhalar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url']?>MatbuotXizmati/5">Videolavhalar</a>
                             </div>
                         </div>
                     </div>
@@ -50,16 +50,16 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a href="?view=Foydali-manbalar&id=1">Xalqaro tanlovlar</a>
-                                <a href="?view=Foydali-manbalar&id=2">To'garaklar</a>
-                                <a href="?view=Foydali-manbalar&id=3">O'quv qo'llanmalar</a>
+                                <a href="<?= $config['base']['url']?>FoydaliManbalar/1">Xalqaro tanlovlar</a>
+                                <a href="<?= $config['base']['url']?>FoydaliManbalar/2">To'garaklar</a>
+                                <a href="<?= $config['base']['url']?>FoydaliManbalar/3">O'quv qo'llanmalar</a>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="navbar_item">
-                        <a href="?view=aloqa">
+                        <a href="<?= $config['base']['url']?>aloqa">
                             <span>Aloqa</span>
                         </a>
                     </div>
@@ -92,7 +92,7 @@
             <ul>
                 <li>
                     <div class="navbar_item">
-                        <a href="?view=index">
+                        <a href="<?= $config['base']['url']?>index">
                             <span>
                                 Bosh sahifa
                             </span>
@@ -105,10 +105,10 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a href="?view=Biz-haqimizda&id=1">Maktab haqida</a>
-                                <a href="?view=Biz-haqimizda&id=2">Prezident maktablari</a>
-                                <a href="?view=Biz-haqimizda&id=3">Rahbariyat</a>
-                                <a href="?view=Biz-haqimizda&id=4">Xodimlar</a>
+                                <a href="<?= $config['base']['url']?>BizHaqimizda/1">Maktab haqida</a>
+                                <a href="<?= $config['base']['url']?>BizHaqimizda/2">Prezident maktablari</a>
+                                <a href="<?= $config['base']['url']?>BizHaqimizda/3">Rahbariyat</a>
+                                <a href="<?= $config['base']['url']?>BizHaqimizda/4">Xodimlar</a>
                             </div>
                         </div>
                     </div>
@@ -119,11 +119,11 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a id="newBtnClick" href="?view=Matbuot-xizmati&id=1">Yangiliklar</a>
-                                <a id="newBtnClick" href="?view=Matbuot-xizmati&id=2">Tadbirlar</a>
-                                <a id="newBtnClick" href="?view=Matbuot-xizmati&id=3">E'lonlar</a>
-                                <a id="newBtnClick" href="?view=Matbuot-xizmati&id=4">Fotolavhalar</a>
-                                <a id="newBtnClick" href="?view=Matbuot-xizmati&id=5">Videolavhalar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url']?>MatbuotXizmati/1">Yangiliklar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url']?>MatbuotXizmati/2">Tadbirlar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url']?>MatbuotXizmati/3">E'lonlar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url']?>MatbuotXizmati/4">Fotolavhalar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url']?>MatbuotXizmati/5">Videolavhalar</a>
                             </div>
                         </div>
                     </div>
@@ -134,16 +134,16 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a href="?view=Foydali-manbalar&id=1">Xalqaro tanlovlar</a>
-                                <a href="?view=Foydali-manbalar&id=2">To'garaklar</a>
-                                <a href="?view=Foydali-manbalar&id=3">O'quv qo'llanmalar</a>
+                                <a href="<?= $config['base']['url']?>FoydaliManbalar/1">Xalqaro tanlovlar</a>
+                                <a href="<?= $config['base']['url']?>FoydaliManbalar/2">To'garaklar</a>
+                                <a href="<?= $config['base']['url']?>FoydaliManbalar/3">O'quv qo'llanmalar</a>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="navbar_item">
-                        <a href="?view=aloqa">
+                        <a href="<?= $config['base']['url']?>aloqa">
                             <span>Aloqa</span>
                         </a>
                     </div>

@@ -1,5 +1,3 @@
-document.querySelector('DOMContentLoaded', function () {
-   alert('ok')
    // search qidirish oynasi
    const search = document.querySelector('#search_f');
    const list = document.querySelector('.body_year_show').querySelectorAll('.year_items p')
@@ -21,6 +19,6 @@ document.querySelector('DOMContentLoaded', function () {
          })
       })
    }
-   search.addEventListener('input', () => { filter_list(search, list, list_pre) })
-
-})
+   search.addEventListener('input', () => { 
+      filter_list(search, list, list_pre) 
+   })

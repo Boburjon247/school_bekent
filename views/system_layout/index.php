@@ -49,7 +49,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="<?=url_system?>?view=hodimlar" class="firstA">
+                            <a href="<?=url_system?>hodimlar" class="firstA">
                                 <span><i class="fa-solid fa-users"></i></span>
                                 <span>Hodimlar</span>
                             </a>
@@ -62,8 +62,8 @@
                                     <span class="iconDown active"><i class="fa-solid fa-chevron-down"></i></span>
                                 </h3>
                                 <div>
-                                    <a href="<?=url_system?>?view=o'quv-yili">O’quv yili yaratish</a>
-                                    <a href="<?=url_system?>?view=yildan-yilga-kochirish">Yildan yilga ko’chirish</a>
+                                    <a href="<?=url_system?>oquvYili">O’quv yili yaratish</a>
+                                    <a href="<?=url_system?>yildanYilgaKochirish">Yildan yilga ko’chirish</a>
                                 </div>
                                 <h3>
                                     <span class="accordionIcon"><i class="fa-solid fa-book"></i></span>
@@ -71,8 +71,8 @@
                                     <span class="iconDown"><i class="fa-solid fa-chevron-down"></i></span>
                                 </h3>
                                 <div>
-                                    <a href="<?=url_system?>?view=fan-yaratish">Fanlarni yaratish</a>
-                                    <a href="<?=url_system?>?view=fan-briktrish">Fanlarni biriktirish</a>
+                                    <a href="<?=url_system?>fanYaratish">Fanlarni yaratish</a>
+                                    <a href="<?=url_system?>fanBriktrish">Fanlarni biriktirish</a>
                                 </div>
                                 <h3>
                                     <span class="accordionIcon"><i class=" fa-solid fa-child-reaching"></i></span>
@@ -80,8 +80,8 @@
                                     <span class="iconDown"><i class="fa-solid fa-chevron-down"></i></span>
                                 </h3>
                                 <div>
-                                    <a href="<?=url_system?>?view=o'quvchilar">O'quvchilar</a>
-                                    <a href="<?=url_system?>?view=sinifga-birlashtrish">Sinfga biriktirish</a>
+                                    <a href="<?=url_system?>oquvchilar">O'quvchilar</a>
+                                    <a href="<?=url_system?>sinifgaBirlashtrish">Sinfga biriktirish</a>
                                 </div>
                                 <h3>
                                     <span class="accordionIcon"><i class="fa-solid fa-chart-line"></i></span>
@@ -90,8 +90,8 @@
                                 </h3>
                                 <div>
                                     <a href="?view=barcha-sinflar">Barcha Sinflar</a>
-                                    <a href="<?=url_system?>?view=Barcha-o'quvchilar">Barcha o’quvchilar</a>
-                                    <a href="<?=url_system?>?view=Barcha-hodimlar">Barcha hodimlar</a>
+                                    <a href="<?=url_system?>barchaOquvchilar">Barcha o’quvchilar</a>
+                                    <a href="<?=url_system?>barchaHodimlar">Barcha hodimlar</a>
                                 </div>
                                 <h3>
                                     <span class="accordionIcon"><i class="fa-solid fa-gear"></i></span>
@@ -99,7 +99,7 @@
                                     <span class="iconDown"><i class="fa-solid fa-chevron-down"></i></span>
                                 </h3>
                                 <div>
-                                    <a href="<?=url_system?>?view=profil">profil</a>
+                                    <a href="<?=url_system?>profil">profil</a>
                                 </div>
                             </div>
                         </li>
@@ -114,13 +114,17 @@
                             <i class="fa-solid fa-bars-staggered"></i>
                         </div>
                         <div class="item">
-                            <i class="fa-regular fa-message"></i>
+                            <a href="xabarlar.php" style="color: #212529; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-regular fa-message"></i>
+                            </a>
                         </div>
                         <div class="item">
-                            <i class="fa-solid fa-gear"></i>
+                            <a href="?view=profil" style="color: #212529; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-gear"></i>
+                            </a>
                         </div>
                         <div class="item">
-                            <a href="<?= url?>" style="color: #212529;"><i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i></a>
+                            <a href="<?= url?>" style="color: #212529; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i></a>
                         </div>
                     </div>
                     <div class=" headerRight">

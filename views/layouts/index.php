@@ -47,7 +47,7 @@ global $view, $config;
                     <span><img src="<?= $config['base']['url'] . 'web/' ?>img/6182235a66337.svg" alt=""></span>
                     <span>FARG'ONA SHAHRIDAGI PREZIDENT MAKTAB</span>
                 </div>
-                <form action="?view=Create_system" method="post" class="login_1 Tab_C">
+                <form action="<?= $config['base']['url'].'createSystem'?>" method="post" class="login_1 Tab_C">
                     <div class="form-group">
                         <input type="text" name="userNmae" class="username" required="required">
                         <span for="username" class="text_uesr"">Username</span>
