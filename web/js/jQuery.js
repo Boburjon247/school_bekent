@@ -48,7 +48,7 @@ $(document).ready(function () {
     //     $('.titleHover').text("Fargʻona");
     //     $('.fargona').addClass('active');
     // })
-    
+
     // register
     $('.user').on('click', () => {
         $('.registration_wrap').toggle('slow');

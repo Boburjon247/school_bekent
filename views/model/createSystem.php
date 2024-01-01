@@ -1,4 +1,4 @@
 <script>
   window.location=' ?view=index&id=system';
-  // window.location=' ?view=index&id=teacher';
+  window.location=' ?view=index&id=teacher';
 </script>

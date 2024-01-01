@@ -1,0 +1,95 @@
+<?php if (
+    isset($_POST['murojatYuborish']) &&
+    (isset($_POST['fish']) && !empty($_POST['fish'])) &&
+    (isset($_POST['email']) && !empty($_POST['email'])) &&
+    (isset($_POST['tel']) && !empty($_POST['tel'])) &&
+    (isset($_POST['manzil']) && !empty($_POST['manzil'])) &&
+    (isset($_POST['sarlavha']) && !empty($_POST['sarlavha'])) &&
+    (isset($_POST['title']) && !empty($_POST['title']))
+) : ?>
+    <?php
+    $fullName = strip_tags(addslashes($_POST['fish'])) ?? null;
+    $email =    strip_tags(addslashes($_POST['email'])) ?? null;
+    $tel =      strip_tags(addslashes($_POST['tel']))  ?? null;
+    $manzil =   strip_tags(addslashes($_POST['manzil']))  ?? null;
+    $sarlavha = strip_tags(addslashes($_POST['sarlavha']))  ?? null;
+    $title =    strip_tags(addslashes($_POST['title']))  ?? null;
+
+    //example : : :abdunazarov247@gmail.com
+    $email_rg = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
+    //example : : : 976665979, +998;
+    $tel_rg = "/^\\+?[1-9][0-9]{7,14}$/";
+
+    if (preg_match($email_rg, $email)) $email_error = true;
+    else $email_error = false;
+    if (preg_match($tel_rg, $tel)) $tel_error = true;
+    else $tel_error = false;
+
+    echo '<pre>';
+        print_r($_POST);
+    echo '</pre>';
+
+    if ($tel_error == true && $email_error == true) {
+        if (getInsert('chat', ['fish', 'email', 'tel', 'manzil', 'sarlavha', 'title'], [$fullName, $email, $tel, $manzil, $sarlavha, $title])) {
+    ?>
+            <script type="module">
+                window.location = '<?= $config['base']['url'].'/aloqa'?>'; 
+                import {
+                    ntoastJS_F
+                } from '<?= $config['base']['url'] . 'web/' ?>js/NToastJS.js';
+                ntoastJS_F(true, "<?= 'Arizaingiz qabul qilindi javob elektron pochtagizga yuboriladi' ?>");
+            </script>
+        <?php
+        } else {
+        ?>
+            <script type="module">
+                import {
+                    ntoastJS_F
+                } from '<?= $config['base']['url'] . 'web/' ?>js/NToastJS.js';
+                ntoastJS_F(false, "<?= 'Malumot xato' ?>");
+            </script>
+        <?php
+
+        }
+    } else {
+        if ($tel_error == false && $email_error == false) {
+        ?>
+            <script type="module">
+                import {
+                    ntoastJS_F
+                } from '<?= $config['base']['url'] . 'web/' ?>js/NToastJS.js';
+                ntoastJS_F(false, "<?= $tel . ' va ' . $email . ' malumotlar xato kiritildi.' ?>");
+            </script>
+        <?php
+        } else if ($tel_error == false) {
+        ?>
+            <script type="module">
+                import {
+                    ntoastJS_F
+                } from '<?= $config['base']['url'] . 'web/' ?>js/NToastJS.js';
+                ntoastJS_F(false, "<?= $tel . ' malumotlar xato kiritildi.' ?>");
+            </script>
+        <?php
+        } else if ($email_error == false) {
+        ?>
+            <script type="module">
+                import {
+                    ntoastJS_F
+                } from '<?= $config['base']['url'] . 'web/' ?>js/NToastJS.js';
+                ntoastJS_F(false, "<?= $email . ' malumotlar xato kiritildi.' ?>");
+            </script>
+    <?php
+        }
+    }
+    ?>
+<?php else : ?>
+
+<?php endif; ?>
+
+
+
+
+
+
+
+

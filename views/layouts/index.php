@@ -47,7 +47,7 @@ global $view, $config;
                     <span><img src="<?= $config['base']['url'] . 'web/' ?>img/6182235a66337.svg" alt=""></span>
                     <span>FARG'ONA SHAHRIDAGI PREZIDENT MAKTAB</span>
                 </div>
-                <form action="<?= $config['base']['url'].'createSystem'?>" method="post" class="login_1 Tab_C">
+                <form action="<?= $config['base']['url'] . 'createSystem' ?>" method="post" class="login_1 Tab_C">
                     <div class="form-group">
                         <input type="text" name="userNmae" class="username" required="required">
                         <span for="username" class="text_uesr"">Username</span>
@@ -244,15 +244,14 @@ global $view, $config;
             </div>
         </div>
     </div>
-
     <script src="<?= $config['base']['url'] . 'web/' ?>js/Jquery/jquery-3.6.4.min.js"></script>
     <script src="<?= $config['base']['url'] . 'web/' ?>js/Jquery/owlCarusel/owl.carousel.min.js"></script>
+
     <script src="<?= $config['base']['url'] . 'web/' ?>js/Jquery/jquery-ui.min.js"></script>
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="<?= $config['base']['url'] . 'web/' ?>js/jQuery.js"></script>
-
+    <script type="module" src="<?= $config['base']['url'] . 'web/' ?>js/jQuery.js"></script>
 </body>
 
 </html>

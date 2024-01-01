@@ -89,7 +89,7 @@
                                     <span class="iconDown"><i class="fa-solid fa-chevron-down"></i></span>
                                 </h3>
                                 <div>
-                                    <a href="?view=barcha-sinflar">Barcha Sinflar</a>
+                                    <a href="<?=url_system?>barchaSinflar">Barcha Sinflar</a>
                                     <a href="<?=url_system?>barchaOquvchilar">Barcha o’quvchilar</a>
                                     <a href="<?=url_system?>barchaHodimlar">Barcha hodimlar</a>
                                 </div>

@@ -1,4 +1,6 @@
-<?php global $config; ?>
+<?php
+global $config;
+?>
 
 <!-- header-banner -->
 <section class="header-banner container-fluid">
@@ -17,22 +19,91 @@
     <section class="container-fluid">
         <div class="container aloqa_container">
             <div class="left">
-                <form action="#" method="post">
+                <form action="" id="aloqaforma" method="get">
                     <p>murojaat</p>
-                    <input type="text" required name="fish" id="inputA" placeholder="f.i.sh">
-                    <input type="text" required name="email" id="inputA" placeholder="email: xxxx123@gmail.xx">
-                    <input type="text" required name="tel" id="inputA" placeholder="Tel: xx xxx xx xx">
-                    <input type="text" required name="manzil" id="inputA" placeholder="yashash manzili">
-                    <input type="text" required name="sarlavha" id="inputA" placeholder="sarlavha">
-                    <textarea name="title" required id="inputA" placeholder="murojat mazmuni"></textarea>
+                    <input type="text" class="input_fish" required name="fish" id="inputA" placeholder="f.i.sh">
+                    <input type="text" class="input_email" required name="email" id="inputA" placeholder="email: xxxx123@gmail.xx">
+                    <input type="text" class="input_tel" required name="tel" id="inputA" placeholder="Tel">
+                    <input type="text" class="input_manzil" required name="manzil" id="inputA" placeholder="yashash manzili">
+                    <input type="text" class="input_sarlavha" required name="sarlavha" id="inputA" placeholder="sarlavha">
+                    <textarea name="title" required id="inputA" class="input_title" placeholder="murojat mazmuni"></textarea>
                     <div class="canvas">
                         <label for=""> kodni kiriting:</label>
                         <div class="canvas_chake">
                             <canvas id="canvas"></canvas>
                             <input type="text" required name="canvas" class="canvasItemCheck" id="inputA">
                         </div>
+                        <div class="loading aloqaLOAD ">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: #F8F9FA; display: block;" width="150px" height="150px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                                <g transform="translate(80,50)">
+                                    <g transform="rotate(0)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="1">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.875s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.875s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(71.21320343559643,71.21320343559643)">
+                                    <g transform="rotate(45)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.875">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.75s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.75s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(50,80)">
+                                    <g transform="rotate(90)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.75">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.625s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.625s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(28.786796564403577,71.21320343559643)">
+                                    <g transform="rotate(135)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.625">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.5s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.5s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(20,50.00000000000001)">
+                                    <g transform="rotate(180)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.5">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.375s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.375s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(28.78679656440357,28.786796564403577)">
+                                    <g transform="rotate(225)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.375">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.25s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.25s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(49.99999999999999,20)">
+                                    <g transform="rotate(270)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.25">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.125s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.125s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(71.21320343559643,28.78679656440357)">
+                                    <g transform="rotate(315)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.125">
+                                            <animateTransform attributeName="transform" type="scale" begin="0s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="0s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
                     </div>
-                    <input type="submit" readonly name="murojatYuborish" id="murojatAdd" value="yuborish">
+                    <input type="submit" name="murojatYuborish" id="murojatAdd" value="yuborish">
+
                 </form>
             </div>
             <div class="right">
@@ -41,58 +112,52 @@
         </div>
     </section>
 </main>
-<script src="<?= $config['base']['url'] . 'web/' ?>js/aloqa.js"></script>
+<div class="NToastJS ">
+<!-- successToast -->
+    <div class="NToastJS_content errorTrue successToast">
+        <i class="fa fa-xmark exit errorTrue"></i>
+        <div class="icon">
+            <i class="fa fa-check"></i>
+        </div>
+        <div class="text">
+            <p id='successMsg'></p>
+        </div>
+        <div class="time">
+            <p></p>
+        </div>
+    </div>
+    <!-- errorToast -->
+    <div class="NToastJS_content errorFalse errorToast">
+        <i class="fa fa-xmark exit errorFalse"></i>
+        <div class="icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div class="text">
+            <p id='errorMsg'></p>
+        </div>
+        <div class="time">
+            <p></p>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="<?= $config['base']['url'] . 'web/' ?>js/aloqa.js"></script>
+<?php
+// $fullName = strip_tags(addslashes($_POST['fish'])) ?? null;
+// $email =    strip_tags(addslashes($_POST['email'])) ?? null;
+// $tel =      strip_tags(addslashes($_POST['tel']))  ?? null;
+// $manzil =   strip_tags(addslashes($_POST['manzil']))  ?? null;
+// $sarlavha = strip_tags(addslashes($_POST['sarlavha']))  ?? null;
+// $title =    strip_tags(addslashes($_POST['title']))  ?? null;
 
-<?php if (isset($_POST['murojatYuborish'])) : ?>
+// //example : : :abdunazarov247@gmail.com
+// $email_rg = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
+// //example : : : 976665979, +998;
+// $tel_rg = "/^\\+?[1-9][0-9]{7,14}$/";
 
-    <?php
-    $fullName = trim(strip_tags($_POST['fish'])) ?? null;
-    $email =    trim(strip_tags($_POST['email'])) ?? null;
-    $tel =      trim(strip_tags($_POST['tel']))  ?? null;
-    $manzil =   trim(strip_tags($_POST['manzil']))  ?? null;
-    $sarlavha = trim(strip_tags($_POST['sarlavha']))  ?? null;
-    $title =    trim(strip_tags($_POST['title']))  ?? null;
-
-    function tekshirInput($namuna, $input)
-    {
-        if (preg_match($namuna, $input)) {
-
-        } else {
-            echo '<p>false</p>';
-        }
-    }
-    //fulnameni tekshirish;
-    //example : : : Boburjon Abdunazarov Bahromjon o'g'li && Boburjon Abdunazarov Bahromjonvich;
-    tekshirInput("/^([a-z']{3,15})\s([a-z']{3,20})\s([a-z']{3,20})\s?([a-z']{0,10})$/i",$fullName);
-
-    //emailni tekshirish;
-    //example : : :abdunazarov247@gmail.com
-    tekshirInput('/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/',$email);
-
-    //telfon nomer
-    //example : : : 97 666 59 79;
-    tekshirInput('/^[0-9]{2}\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}$/',$tel);
-
-    //manzil
-    tekshirInput("/^([a-z'0-9\s]{4,100})$/i", $manzil);
-
-    //sarlavha
-    tekshirInput("/^[a-z'0-9\s]{4,80}$/i", $sarlavha);
-
-    //title
-    tekshirInput("/^[a-z'0-9\s]{4,300}$/i", $title);
-    
-    
-    
-    
-    // echo '<pre>';
-    // print_r($_POST['manzil']);
-    // echo '</pre>';
-    
-    ?>
+// if (preg_match($email_rg, $email)) $email_error = true;
+// else $email_error = false;
+// if (preg_match($tel_rg, $tel)) $tel_error = true;
+// else $tel_error = false;
 
 
-<?php else : ?>
-    <?php echo 'hatolik'; ?>
-
-<?php endif; ?>
+?>

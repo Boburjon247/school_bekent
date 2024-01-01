@@ -1673,3 +1673,12 @@ header-top i:active {
 .year_items .controlBox button i{
     font-size: 15px;
 }
+/* NToastJs */
+.NToastJs-progress {
+    margin-top: 21.5px !important;
+
+}
+.NToastJs-close{
+    margin-top: -31px;
+    color: #ff0000;
+}
