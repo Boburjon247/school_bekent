@@ -141,23 +141,3 @@ global $config;
     </div>
 </div>
 <script type="text/javascript" src="<?= $config['base']['url'] . 'web/' ?>js/aloqa.js"></script>
-<?php
-// $fullName = strip_tags(addslashes($_POST['fish'])) ?? null;
-// $email =    strip_tags(addslashes($_POST['email'])) ?? null;
-// $tel =      strip_tags(addslashes($_POST['tel']))  ?? null;
-// $manzil =   strip_tags(addslashes($_POST['manzil']))  ?? null;
-// $sarlavha = strip_tags(addslashes($_POST['sarlavha']))  ?? null;
-// $title =    strip_tags(addslashes($_POST['title']))  ?? null;
-
-// //example : : :abdunazarov247@gmail.com
-// $email_rg = '/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/';
-// //example : : : 976665979, +998;
-// $tel_rg = "/^\\+?[1-9][0-9]{7,14}$/";
-
-// if (preg_match($email_rg, $email)) $email_error = true;
-// else $email_error = false;
-// if (preg_match($tel_rg, $tel)) $tel_error = true;
-// else $tel_error = false;
-
-
-?>

@@ -1,5 +1,5 @@
 <?php
-//db connection
+//db connection// databasr bilan aloqa
 function connection()
 {
    global $config;
@@ -13,13 +13,13 @@ function connection()
    return $db;
 }
 
-// test_input
+// test_input malumot keladi sleshdan, hatml codlardan ortiqcha probeldan tozalab yana massiv qaytaradi.
 function test_input($data)
 {
    $newArray = [];
    if (is_array($data)) {
       for ($i = 0; $i < count($data); $i++) {
-         $data[$i] = addslashes($data[$i]);
+         // $data[$i] = addslashes($data[$i]);
          $data[$i] = strip_tags($data[$i]);
          $data[$i] = trim($data[$i]);
          array_push($newArray, $data[$i]);
@@ -28,7 +28,24 @@ function test_input($data)
    }
 }
 
-//getInsert// ma'lumot yozish
+// text filter agar malumot kop bolsa ... qoyadi
+function textFilter($text, $number)
+{
+   $textArray = str_split($text);
+   $array = [];
+   if (count($textArray) > $number) {
+      for ($i = 0; $i <= $number; $i++) {
+         array_push($array, $textArray[$i]);
+      }
+      array_push($array, '...');
+      $text_Array = join("", $array);
+      return $text_Array;
+   } else {
+      return $text;
+   }
+}
+
+//getInsert// ma'lumot yozish sql sorov unversal
 function getInsert($tableName, $array1, $array2)
 {
    if (is_array($array1) && is_array($array2)) {
@@ -55,5 +72,53 @@ function getInsert($tableName, $array1, $array2)
       }
    } else {
       return 'malumotni massiv korinishida kiriting';
+   }
+}
+
+//malumotni o'qib olish databasedan
+function getarray($sql)
+{
+   $array =  [];
+   $i = 0;
+   while ($r = $sql->fetch_array()) {
+      $array[$i] = $r;
+      $i++;
+   }
+   return $array;
+}
+
+// malumotni o'qib olish// massiv
+function GetAll($tableName, $id, $val)
+{
+   $db = connection();
+   if ($id == "false") {
+      if ($val == "asc") {
+         $sql = $db->query("SELECT * FROM $tableName ORDER BY id asc");
+         return getarray($sql);
+      }
+      elseif ($val == "desc") {
+         $sql = $db->query("SELECT * FROM $tableName ORDER BY id desc");
+         return getarray($sql);
+      }
+   } else {
+      $sql = $db->query("SELECT * FROM $tableName WHERE  `id` = $id");
+      return getarray($sql);
+   }
+}
+
+//malumotlarni o'chirib tashlash.
+function getItemsDelet($tableName, $column, $array){
+   $db = connection();
+   if(is_array($array)){
+      $count = count($array);
+      $query = "DELETE FROM $tableName WHERE ";
+      for ($i=0; $i < $count; $i++) { 
+         $query .= $column." ="."'".$array[$i]."' OR";
+      }
+      $query = rtrim($query, "OR ");
+      $sql = $db -> query($query);
+      if($sql)
+         return true;
+      return false;
    }
 }

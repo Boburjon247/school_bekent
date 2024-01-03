@@ -1182,13 +1182,18 @@ select {
     background-color: #fff;
     box-shadow: 2px 2px 5px #999;
     margin-bottom: 10px;
-    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
 }
+.body_chat .left_chata ul li a{
+    padding: 10px;
+    width: 100%;
+    display: block;
+    color: #000;
+}
 
 .body_chat .left_chata ul li div:nth-child(1) p {
-    font-size: 20px;
+    font-size: 16px;
     display: block;
     font-weight: 600;
 }
@@ -1213,7 +1218,7 @@ select {
     transform: scale(.98);
 }
 
-.body_chat .left_chata ul li.active {
+.body_chat .left_chata ul li a.active {
     background-color: #56e8b788;
 }
 
@@ -1226,7 +1231,6 @@ select {
     padding: 10px;
     display: none;
 }
-
 .body_chat .right_chat .window_onlin.active {
     display: flex;
 }
@@ -1239,6 +1243,7 @@ select {
     box-shadow: 5px 5px 10px #999;
     padding: 10px !important;
     overflow-y: scroll !important;
+    position: relative;
 }
 
 .body_chat .right_chat .window_onlin ul li {
@@ -1247,7 +1252,7 @@ select {
     align-items: center;
     position: relative;
     z-index: 10;
-
+    margin-bottom: 10px;
 }
 
 .body_chat .right_chat .window_onlin ul li.left {
@@ -1681,4 +1686,31 @@ header-top i:active {
 .NToastJs-close{
     margin-top: -31px;
     color: #ff0000;
+}
+#messageInput_ari{
+    border: none;
+    width: 45px;
+    height: 35px;
+    background-color: orange;
+    border-radius: 5px;
+}
+#messageInput_ari img{
+    width: 50%;
+    height: 50%;
+}
+.madal_messeg{
+    position: fixed;
+    top: 50px;
+    right: 25px;
+    background-color: #1bd42e;
+    color: #ffff;
+    font-size: 18px;
+    width: 200px;
+    padding: 10px !important;
+    border-radius: 5px;
+    z-index: 150;
+    display: none;
+}
+.madal_messeg.active{
+    display: block;
 }

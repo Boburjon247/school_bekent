@@ -81,7 +81,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
                   $(element).val('');
                });
                let data1 = JSON.parse(data);
-               console.log(data1);
                if (data1.status == 200) {
                   $('.NToastJS').removeClass('hideAni');
                   $('.NToastJS').addClass('showAni');

@@ -1,5 +1,6 @@
 <?php
 include '../config.php';
+include '../libs/libs.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,8 +32,8 @@ include '../config.php';
 </head>
 
 <body>
-
    <section class="system_chat">
+      <p class="madal_messeg "></p>
       <div class="header_chat">
          <p class="tet">Xabarlar</p>
          <div class="l-b-w">
@@ -51,87 +52,88 @@ include '../config.php';
       </div>
       <div class="body_chat">
          <div class="left_chata">
-            <ul>
-               <li class="active">
-                  <div>
-                     <p>Mohirbek JIgarim</p>
-                  </div>
-                  <div>
-                     <p>info247@gmail.com</span>
-                     <p>20.20.2023</span>
-                  </div>
-               </li>
-               <li>
-                  <div>
-                     <p>Mohirbek JIgarim</p>
-                  </div>
-                  <div>
-                     <p>info247@gmail.com</span>
-                     <p>20.20.2023</span>
-                  </div>
-               </li>
-               <li>
-                  <div>
-                     <p>Mohirbek JIgarim</p>
-                  </div>
-                  <div>
-                     <p>info247@gmail.com</span>
-                     <p>20.20.2023</span>
-                  </div>
-               </li>
-
+            <ul cl>
+               <?php foreach (GetAll('chat', 'false', 'desc') as $key => $val) : ?>
+                  <li class="user_chat" id="<?= $val['id'] ?>">
+                     <a class="<?= $val['status'] ?>" href="<?= url_system . 'xabarlar.php?id=' . $val['id'] ?> ">
+                        <div>
+                           <p id='chatUserName'><?= textFilter($val['fish'], 21) ?></p>
+                        </div>
+                        <div>
+                           <p><?= textFilter($val['email'], 22) ?></span>
+                           <p><?= $val['date'] ?></span>
+                        </div>
+                     </a>
+                  </li>
+               <?php endforeach; ?>
             </ul>
          </div>
-         <div class="right_chat">
-            <div class="madal_show_chat active">
-               <img src="<?= $config['base']['url'] . 'web/' ?>img/chat.png" alt="">
-            </div>
-            <div class="window_onlin">
-               <ul>
-                  <header-top class="flex-c-sb">
-                     <p>
-                        <span>Mohirbek JIgarim</span>
-                        <span>info247@gmail.com</span>
-                     </p>
-                     <div class="flex-c-sb" style="column-gap: 10px;">
-                        <i class="fa-solid fa-trash"></i>
-                        <i class="mess_exit fa-solid fa-xmark"></i>
-                     </div>
-                  </header-top>
-                  <li>
-                     <p>
-                        Assalomu alekum
-                     </p>
-                  </li>
-                  <li>
-                     <p>Va alekum assalom</p>
-                  </li>
-                  <li>
-                     <p>
-                        Toshkenda soat nechi boldi
-                     </p>
-                  </li>
-                  <li>
-                     <p>Kechirasiz bilmayman</p>
-                  </li>
-                  <li>
-                     <p>
-                        Axa rahmat
-                     </p>
-                  </li>
-
-
-               </ul>
-            </div>
-            <div class="messenge">
-               <div class="m-c">
-                  <input type="text" id="messageInput" readonly="true" placeholder="Message">
-                  <div class="img">
-                     <img src="<?= $config['base']['url'] . 'web/' ?>img/teleg.png" alt="">
+         <?php if (isset($_GET['id'])) : ?>
+            <?php foreach (GetAll('chat', $_GET['id'], 'desc') as $key => $val) : ?>
+               
+               <div class="right_chat">
+                  <div class="madal_show_chat active">
+                     <img src="<?= $config['base']['url'] . 'web/' ?>img/chat.png" alt="">
                   </div>
+                  <form action="" method="POST">
+                     <div class="window_onlin">
+                        <ul>
+                           <header-top class="flex-c-sb">
+                              <p>
+                                 <span><?= $val['fish'] ?></span>
+                                 <span><?= $val['email'] ?></span>
+                              </p>
+                              <p>
+                                 <span><?= $val['manzil'] ?></span>
+                                 <span><?= $val['tel'] ?></span>
+                              </p>
+                              <div class="flex-c-sb" style="column-gap: 10px;">
+                                 <button style="border: none; background-color: transparent;" id="deletItemsChat" name="delete"><i class="fa-solid fa-trash"></i></button>
+                                 <i class="mess_exit fa-solid fa-xmark"></i>
+                              </div>
+                              <p style="display: none;" id="idpage"><?= $_GET['id'] ?></p>
+                           </header-top>
+                           <li class="left">
+                              <p>
+                                 <span style="
+                                    display: block; 
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                    text-transform: capitalize;
+                                    background-color: #0e2f91;
+                                    padding: 5px;
+                                    width: 100%;
+                                    border-radius: 5px;">
+                                    <?= $val['sarlavha'] ?>
+                                 </span>
+                                 <?= $val['title'] ?>
+                              </p>
+                           </li>
+                           <?php foreach (GetAll('xabar', 'false', 'asc') as $k => $v) : ?>
+                              <?php if ($_GET['id'] == $v['raqam']) : ?>
+                                 <li class="right">
+                                    <p>
+                                       <?= $v['text'] ?>
+                                    </p>
+                                 </li>
+                              <?php endif; ?>
+                           <?php endforeach; ?>
+                        </ul>
+                     </div>
+                  </form>
+                  <form action="" method="POST" id="chat_forma">
+                     <div class="messenge">
+                        <div class="m-c">
+                           <input type="text" name="message" id="messageInput" placeholder="Message">
+                           <button name="ok" class="img" id="messageInput_ari">
+                              <img src="<?= $config['base']['url'] . 'web/' ?>img/teleg.png" alt="">
+                           </button>
+                        </div>
+                     </div>
+                  </form>
                </div>
-            </div>
-         </div>
+            <?php endforeach; ?>
+         <?php endif; ?>
       </div>
    </section>
    <script src="<?= $config['base']['url'] . 'web/' ?>js/system/xabarlar.js"></script>
@@ -142,3 +144,66 @@ include '../config.php';
 </body>
 
 </html>
+
+<?php
+
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//required files
+require '../email/src/Exception.php';
+require '../email/src/PHPMailer.php';
+require '../email/src/SMTP.php';
+
+if (isset($_POST['ok']) && isset($_POST['message']) && !empty($_POST['message'])) {
+   if (isset($_GET['id'])) {
+      $messeg = $_POST['message'];
+      foreach (GetAll('chat', $_GET['id'], 'desc') as $key => $val) {
+         $mail = new PHPMailer(true);
+         //Server settings
+         $mail->isSMTP();                              //Send using SMTP
+         $mail->Host       = 'smtp.gmail.com';       //Set the SMTP server to send through
+         $mail->SMTPAuth   = true;             //Enable SMTP authentication
+         $mail->Username   = 'abdunazarov247@gmail.com';   //SMTP write your email
+         $mail->Password   = 'lngvfkpqwpyzvehc';      //SMTP password
+         $mail->SMTPSecure = 'ssl';            //Enable implicit SSL encryption
+         $mail->Port       = 465;
+
+         //Recipients
+         $mail->setFrom($val["email"], "Farg'ona shahar Prizdet Maktabi"); // Sender Email and name
+         $mail->addAddress($val["email"]);     //Add a recipient email  
+         $mail->addReplyTo($val["email"], "Farg'ona shahar Prizdet Maktabi"); // reply to sender email
+
+         //Content
+         $mail->isHTML(true);               //Set email format to HTML
+         $mail->Subject = $val['sarlavha'];   // email subject headings
+         $mail->Body    = $_POST["message"]; //email message
+         // Success sent message alert
+         $mail->send();
+      }
+      //xabar nomli jadvalga malumot yozish 
+      getInsert('xabar', ['raqam', 'text'], [$_GET['id'], $_POST['message']]);
+
+   }
+}
+// chertilgan malumotni ochirish
+if(isset($_POST['delete'])){
+   if(getItemsDelet('chat', 'id', [$_GET['id']]) && getItemsDelet('xabar', 'raqam', [$_GET['id']])){
+      ?>
+         <script>
+            window.location = '<?= url_system.'xabarlar.php'?>';
+         </script>
+      
+      <?php
+   }
+}
+// users items dan kelgan malumot chertilganda activ no activ bolish
+if(isset($_GET['id'])){
+   $id = $_GET['id'];
+   $db =connection();
+   $db -> query("UPDATE chat SET status = 'noactive' WHERE id = '$id'");
+}
+
+?>

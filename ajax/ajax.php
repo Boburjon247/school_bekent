@@ -1,8 +1,9 @@
 <?php
 include '../config.php';
 include '../libs/libs.php';
-sleep(2);
-// aloqa chat xabarnoma
+$today = date("Y-m-d");
+
+// aloqa chat xabarnoma /// 
 if (
      (isset($_GET['fishAJX']) && !empty($_GET['fishAJX'])) &&
      (isset($_GET['emailAJX']) && !empty($_GET['emailAJX'])) &&
@@ -11,6 +12,8 @@ if (
      (isset($_GET['sarlavhaAJX']) && !empty($_GET['sarlavhaAJX'])) &&
      (isset($_GET['titleAJX']) && !empty($_GET['titleAJX']))
 ) {
+     sleep(2);
+
      // input test addslashes html tag .. 
      $aloqaInputGet = test_input([
           $_GET['fishAJX'],
@@ -19,6 +22,8 @@ if (
           $_GET['manzilAJX'],
           $_GET['sarlavhaAJX'],
           $_GET['titleAJX'],
+          $today,
+          'active'
      ]);
 
      //example : : :abdunazarov247@gmail.com
@@ -35,7 +40,7 @@ if (
           if (
                getInsert(
                     'chat',
-                    ['fish', 'email', 'tel', 'manzil', 'sarlavha', 'title'],
+                    ['fish', 'email', 'tel', 'manzil', 'sarlavha', 'title', 'date', 'status'],
                     $aloqaInputGet
                )
           ) {
