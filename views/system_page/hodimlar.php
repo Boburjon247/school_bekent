@@ -1,5 +1,5 @@
    <?php
-   global $config;
+      global $config;
    $today = date("Y-m-d");
    ?>
 
@@ -157,7 +157,7 @@
                      <div>
                         <label for="">Jinsi</label>
                         <select name="jins" id="t_jins" class="input-UserName" required>
-                           <option value=""> </option>
+                           <option value="<?=$value['sex']?>"hidden> <?=$value['sex']?></option>
                            <option value="ayol">ayol</option>
                            <option value="erkak">erkak</option>
                         </select>
@@ -323,14 +323,62 @@
    }
    // yangilash
    if (isset($_POST['yangilash'])) {
-      $db = connection();
-      $filname = $db->query("SELECT * FROM teachers WHERE id='{$_POST["file_id"]}'");
-      $r = $filname->fetch_array();
-      $file1 = $r['picture'];
-      $date2 = $r['work_time'];
+      if (
+         (isset($_POST['file_id']) && !empty($_POST['file_id'])) &&
+         (isset($_POST["ism"]) && !empty($_POST["ism"])) &&
+         (isset($_POST["fam"]) && !empty($_POST["fam"])) &&
+         (isset($_POST["otasiniIsmi"]) && !empty($_POST["otasiniIsmi"])) &&
+         (isset($_POST["sana"]) && !empty($_POST["sana"])) &&
+         (isset($_POST["jins"]) && !empty($_POST["jins"])) &&
+         (isset($_POST["manzil"]) && !empty($_POST["manzil"])) &&
+         (isset($_POST["pasport"]) && !empty($_POST["pasport"])) &&
+         (isset($_POST["tel"]) && !empty($_POST["tel"])) &&
+         (isset($_POST["login"]) && !empty($_POST["login"])) &&
+         (isset($_POST["password"]) && !empty($_POST["password"]))
+      ) {
+         $db = connection();
+         $filname = $db->query("SELECT * FROM teachers WHERE id='{$_POST["file_id"]}'");
+         $r = $filname->fetch_array();
+         $file1 = $r['picture'];
+         $date2 = $r['work_time'];
 
-         echo '<pre>';
-      echo $_POST['file_id'];
-      print_r($_POST);
-      echo '</pre>';
+         $aloqaInputGet = test_input1([
+            $_POST['ism'],
+            $_POST['fam'],
+            $_POST['otasiniIsmi'],
+            $_POST['login'],
+            $_POST['password'],
+            $file1,
+            $_POST['jins'],
+            $_POST['pasport'],
+            $_POST['sana'],
+            $_POST['manzil'],
+            $date2,
+            $_POST['tel'],
+            $_POST['file_id'],
+         ]);
+         
+         $sql = $db->query("UPDATE teachers SET 
+         name = '{$aloqaInputGet[0]}',
+         last_name = '{$aloqaInputGet[1]}',
+         father_name = '{$aloqaInputGet[2]}',
+         login = '{$aloqaInputGet[3]}',
+         password = '{$aloqaInputGet[4]}',
+         picture = '{$aloqaInputGet[5]}',
+         sex = '{$aloqaInputGet[6]}',
+         pas_sery = '{$aloqaInputGet[7]}',
+         date = '{$aloqaInputGet[8]}',
+         home_town = '{$aloqaInputGet[9]}',
+         work_time = '{$aloqaInputGet[10]}',
+         tel = '{$aloqaInputGet[11]}'
+         WHERE id= $aloqaInputGet[12]");
+         if ($sql) {
+            $_SESSION['error'] = "Xodim ma'lumotlari o'zgartitildi 😁";
+            reflesh(url_system, 'hodimlar');
+         } else {
+            $_SESSION['error'] = "Xatolik mavjud ⛔";
+            reflesh(url_system, 'hodimlar');
+            echo 'false';
+         }
+      }
    }

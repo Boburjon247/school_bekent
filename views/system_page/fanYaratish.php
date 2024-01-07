@@ -1,3 +1,6 @@
+<?php
+global $config;
+?>
 <div class="top_title">
    <p>Fanlar</p>
    <span>Fanlar / Fan-yaratish</span>
@@ -6,39 +9,52 @@
    <div class="top_control_add">
       <span>Fanlar ro'yxati</span>
       <input type="search" id="search_f" class="search_file" placeholder="search...">
-      <button class="btn_main" id="opener">Add</button>
+      <button class="btn_main" id="opener">Qo'shish</button>
    </div>
-   <div class="body_year_show">
-      <div class="year_items">
-         <p class="year_items_text">Matematika</p>
-         <div>
-            <button class="delet-edit-icon"><i class="fa-solid fa-pencil" style="color: #005eff;"></i></button>
-            <button class="delet-edit-icon"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
-         </div>
-      </div>
-      <div class="year_items">
-         <p class="year_items_text">Algebra</p>
-         <div>
-            <button class="delet-edit-icon"><i class="fa-solid fa-pencil" style="color: #005eff;"></i></button>
-            <button class="delet-edit-icon"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
-         </div>
-      </div>
-      <div class="year_items">
-         <p class="year_items_text">Geometrya</p>
-         <div>
-            <button class="delet-edit-icon"><i class="fa-solid fa-pencil" style="color: #005eff;"></i></button>
-            <button class="delet-edit-icon"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
-         </div>
-      </div>
-   </div>
+   <div class="body_year_show"></div>
    <div class="dialog_c_m">
       <div class="dialog_center">
-         <span class="dialog_center_exit exit_btn"><i class="fa-solid fa-xmark "></i></span>
-         <p>Fan qo’shish</p>
-         <input type="text" class="input_y" placeholder="Fan nomi...">
-         <span class="error_text"></span>
-         <button class="btn_main add_yil">Add</button>
+         <form action="" method="get" id="insertFormAddSubjeckt">
+            <span class="dialog_center_exit exit_btn"><i class="fa-solid fa-xmark "></i></span>
+            <p>Fan qo’shish</p>
+            <input type="text" name="nameAddSubject" id="nameAddSubject" class="input_y editInput" placeholder="Fan nomi...">
+            <span class="error_text"></span>
+            <button type="submit" class="btn_main add_yil" id="insertBtnAddSubject">Saqlash</button>
+            <button class="btn_main add_yil" id="editBtnAddSubject">Yangilash</button>
+         </form>
       </div>
    </div>
 </div>
-<script src="<?= $config['base']['url'].'web/'?>js/system/fan-yaratish.js"></script>
+<!-- madalka -->
+<div class="NToastJSAJAX">
+      <!-- successToast -->
+      <div class="NToastJS_contentAJAX active errorTrue successToast">
+         <i class="fa fa-xmark exit errorTrue"></i>
+         <div class="icon">
+            <i class="fa fa-check"></i>
+         </div>
+         <div class="text">
+            <p id='successMsg'></p>
+         </div>
+         <div class="time">
+            <p></p>
+         </div>
+      </div>
+   </div>
+<script src="<?= $config['base']['url'] . 'web/' ?>js/system/fan-yaratish.js"></script>
+<?php
+
+// function tek($b) {
+//    if($b > 5 ){
+//       throw new Exception('aaaaa');
+//       return true;
+//    }
+// }
+// try {
+//    tek(4);
+//    echo 'uuuuuuuu';
+// } catch (Exception $e) {
+//    echo $e->getMessage();
+// }
+
+?>

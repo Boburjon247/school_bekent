@@ -28,6 +28,19 @@ function test_input($data)
    }
 }
 
+function test_input1($data)
+{
+   $newArray = [];
+   if (is_array($data)) {
+      for ($i = 0; $i < count($data); $i++) {
+         $data[$i] = addslashes($data[$i]);
+         $data[$i] = strip_tags($data[$i]);
+         $data[$i] = trim($data[$i]);
+         array_push($newArray, $data[$i]);
+      }
+      return $newArray;
+   }
+}
 // text filter agar malumot kop bolsa ... qoyadi
 function textFilter($text, $number)
 {
@@ -121,6 +134,8 @@ function getItemsDelet($tableName, $column, $array)
       return false;
    }
 }
+
+// malumotlarni yangilash
 
 
 // madalka js

@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
       section3.classList.add ('active');
    }
    $('.updateBtn').on('click',()=>{
+      section1.classList.add('active');
       localStorage.setItem('section3', 'noactive');
+      localStorage.setItem('madaka', 'active');
    });
    global:t = '';
    const inputUserName = document.querySelectorAll('.input-UserName');
@@ -125,5 +127,4 @@ document.addEventListener('DOMContentLoaded', () => {
    $('.deleteHodim').on('click',()=>{
       localStorage.setItem('madaka', 'active');
    });
-   // edit hodim
 });
