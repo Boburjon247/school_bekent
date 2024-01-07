@@ -1,6 +1,4 @@
-<?php
-global $config;
-?>
+<?php global $config; ?>
 
 <!-- header-banner -->
 <section class="header-banner container-fluid">
@@ -113,7 +111,7 @@ global $config;
     </section>
 </main>
 <div class="NToastJS ">
-<!-- successToast -->
+    <!-- successToast -->
     <div class="NToastJS_content errorTrue successToast">
         <i class="fa fa-xmark exit errorTrue"></i>
         <div class="icon">

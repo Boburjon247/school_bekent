@@ -86,7 +86,6 @@ function getarray($sql)
    }
    return $array;
 }
-
 // malumotni o'qib olish// massiv
 function GetAll($tableName, $id, $val)
 {
@@ -95,8 +94,7 @@ function GetAll($tableName, $id, $val)
       if ($val == "asc") {
          $sql = $db->query("SELECT * FROM $tableName ORDER BY id asc");
          return getarray($sql);
-      }
-      elseif ($val == "desc") {
+      } elseif ($val == "desc") {
          $sql = $db->query("SELECT * FROM $tableName ORDER BY id desc");
          return getarray($sql);
       }
@@ -107,18 +105,60 @@ function GetAll($tableName, $id, $val)
 }
 
 //malumotlarni o'chirib tashlash.
-function getItemsDelet($tableName, $column, $array){
+function getItemsDelet($tableName, $column, $array)
+{
    $db = connection();
-   if(is_array($array)){
+   if (is_array($array)) {
       $count = count($array);
       $query = "DELETE FROM $tableName WHERE ";
-      for ($i=0; $i < $count; $i++) { 
-         $query .= $column." ="."'".$array[$i]."' OR";
+      for ($i = 0; $i < $count; $i++) {
+         $query .= $column . " =" . "'" . $array[$i] . "' OR";
       }
       $query = rtrim($query, "OR ");
-      $sql = $db -> query($query);
-      if($sql)
+      $sql = $db->query($query);
+      if ($sql)
          return true;
       return false;
    }
 }
+
+
+// madalka js
+function madalka()
+{
+?>
+   <script>
+      const NToastJS = document.querySelector('.NToastJS ');
+      const NToastJS_content = document.querySelector('.NToastJS_content');
+      if (localStorage.getItem('madaka') == 'active') {
+         NToastJS.classList.add('showAni');
+         NToastJS.classList.remove('hideAni');
+         NToastJS_content.classList.add('active');
+         setTimeout(() => {
+            NToastJS.classList.add('hideAni');
+            NToastJS.classList.remove('showAni');
+            // NToastJS_content.classList.remov('active');
+            localStorage.setItem('madaka', 'noactive');
+         }, 7500);
+
+         setTimeout(() => {
+            NToastJS_content.classList.remov('active');
+         }, 7600);
+      }
+   </script>
+<?php
+}
+
+
+// reflesh
+function reflesh($url, $res)
+{
+?>
+   <script>
+      window.location = '<?= $url . $res ?>';
+   </script>
+<?php
+}
+
+
+?>
