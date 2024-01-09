@@ -66,7 +66,7 @@ if ($_GET['action'] === 'editdata') {
     mysqli_close($db);
 };
 //yangilash
-if ($_GET['action'] === 'editSubject'){
+if ($_GET['action'] === 'editSubject') {
     if (isset($_GET['name']) && !empty($_GET['name'])) {
         $id = $_GET['id'];
         $name = mysqli_real_escape_string($db, $_GET['name']);
@@ -83,26 +83,25 @@ if ($_GET['action'] === 'editSubject'){
             ]);
         }
         mysqli_close($db);
-    }
-    else{
+    } else {
         echo json_encode([
             "status" => 400,
             "message" => "Ma'lumotlarda xatolik ⛔"
-        ]);   
+        ]);
     }
 }
 
 //o'chirish / delate
 
-if($_GET['action'] == 'deletdata'){
+if ($_GET['action'] === 'deletdata') {
     $id = $_GET['id'];
     $sql = "DELETE FROM subject WHERE `id` = '$id'";
-    if(mysqli_query($db, $sql)){
+    if (mysqli_query($db, $sql)) {
         echo json_encode([
             'status' => 200,
             'message' => "Ma'lumot o'chirildi 😢"
         ]);
-    }else{
+    } else {
         echo json_encode([
             'status' => 500,
             'message' => "Ma'lumot o'chirilmadi 🙂"

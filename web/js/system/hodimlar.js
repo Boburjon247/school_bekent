@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
    if(localStorage.getItem('section3') == 'active'){
       section1.classList.remove ('active');
       section3.classList.add ('active');
+      localStorage.setItem('section3','noactive');
    }
    $('.updateBtn').on('click',()=>{
       section1.classList.add('active');

@@ -183,20 +183,18 @@ if (isset($_POST['ok']) && isset($_POST['message']) && !empty($_POST['message'])
          // Success sent message alert
          $mail->send();
       }
-      //xabar nomli jadvalga malumot yozish 
-      getInsert('xabar', ['raqam', 'text'], [$_GET['id'], $_POST['message']]);
 
+      //xabar nomli jadvalga malumot yozish 
+      if(getInsert('xabar', ['raqam', 'text'], [$_GET['id'], $_POST['message']])){
+         reflesh(url_system, 'xabarlar.php');
+      }
    }
 }
+
 // chertilgan malumotni ochirish
 if(isset($_POST['delete'])){
    if(getItemsDelet('chat', 'id', [$_GET['id']]) && getItemsDelet('xabar', 'raqam', [$_GET['id']])){
-      ?>
-         <script>
-            window.location = '<?= url_system.'xabarlar.php'?>';
-         </script>
-      
-      <?php
+      reflesh(url_system, 'xabarlar.php');
    }
 }
 // users items dan kelgan malumot chertilganda activ no activ bolish

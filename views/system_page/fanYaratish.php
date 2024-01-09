@@ -42,19 +42,3 @@ global $config;
       </div>
    </div>
 <script src="<?= $config['base']['url'] . 'web/' ?>js/system/fan-yaratish.js"></script>
-<?php
-
-// function tek($b) {
-//    if($b > 5 ){
-//       throw new Exception('aaaaa');
-//       return true;
-//    }
-// }
-// try {
-//    tek(4);
-//    echo 'uuuuuuuu';
-// } catch (Exception $e) {
-//    echo $e->getMessage();
-// }
-
-?>

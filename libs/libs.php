@@ -156,9 +156,6 @@ function madalka()
             localStorage.setItem('madaka', 'noactive');
          }, 7500);
 
-         setTimeout(() => {
-            NToastJS_content.classList.remov('active');
-         }, 7600);
       }
    </script>
 <?php
@@ -174,6 +171,5 @@ function reflesh($url, $res)
    </script>
 <?php
 }
-
 
 ?>

@@ -190,7 +190,7 @@
       </div>
    </div>
    <!-- madalka -->
-   <div class="NToastJS ">
+   <div class="NToastJS">
       <!-- successToast -->
       <div class="NToastJS_content active errorTrue successToast">
          <i class="fa fa-xmark exit errorTrue"></i>
@@ -239,8 +239,7 @@
             return true;
          }
          //file tekshirish
-         function FileTekshir()
-         {
+         function FileTekshir(){
             if ($_FILES['file']['name'] != "") {
                if ($_FILES['file']['size'] < 4608000) {
                   $png = 'image/png';
