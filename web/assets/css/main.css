@@ -1,0 +1,619 @@
+.bg {
+     background-color: #191C24;
+     border-radius: 10px;
+     padding: 10px;
+}
+
+ul {
+     padding: 0;
+     margin: 0;
+}
+
+ul li {
+     list-style-type: none;
+}
+
+a {
+     text-decoration: none;
+}
+
+.borderdiv {
+     border: 1px solid #767676;
+
+}
+
+.admin_BS {
+     background-color: #191C24;
+     display: flex;
+     align-items: center;
+     justify-content: start;
+     border-radius: 5px;
+     margin-bottom: 20px;
+}
+
+.admin_BS p {
+     font-size: 20px;
+     margin: 0 !important;
+     padding: 10px;
+}
+
+.tab {
+     background-color: #191C24 !important;
+     border: 1px solid #767676 !important;
+}
+
+.tab .tab_items {
+     background-color: #191C24 !important;
+     border: none;
+     display: flex;
+     align-items: center;
+     justify-content: end;
+
+}
+
+.bs-img,
+.bs-text {
+     height: 480px;
+     max-height: 480px;
+}
+
+.tab .tab_items li {
+     border: none;
+     margin-left: 5px !important;
+}
+
+.tab .tab_items li a {
+     background-color: #282c35;
+     text-transform: uppercase;
+     color: #fff;
+}
+
+.textUchunForma {
+     display: flex;
+     align-items: flex-end;
+     justify-content: center;
+     flex-direction: column;
+     gap: 10px;
+}
+
+.textUchun {
+     width: 100%;
+     padding: 10px;
+     font-size: 20px !important;
+     background-color: #282C35;
+     color: #fff;
+     border-radius: 5px;
+     height: 150px !important;
+}
+
+.rasimqoshish {
+     padding: 10px;
+     height: 430px;
+     position: relative;
+}
+
+
+/* rasim-qoshissh */
+.rasim-qoshish {
+     height: 356px;
+     overflow-y: auto;
+}
+
+.rasim-qoshish li {
+     height: 180px;
+     padding: 10px;
+}
+
+.rasim-qoshish li .con1 {
+     border: 2px dotted #767676;
+     height: 100%;
+     width: 100%;
+     display: block;
+     position: relative;
+}
+
+.rasim-qoshish li .con1 .imgSCR {
+     width: 100%;
+     height: 100%;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+}
+
+.deleteRasim {
+     width: 35px;
+     height: 35px;
+     background-color: #191C24;
+     border-radius: 50%;
+     position: absolute;
+     top: -10px;
+     right: -10px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.addRadim label {
+     width: 100%;
+     height: 100%;
+     background-color: #282c35b4;
+}
+
+.addRadim label img {
+     width: 100%;
+     height: 100%;
+}
+
+.f-oquvchi-haqida {
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     gap: 15px;
+}
+
+.f-oquvchi-haqida li {
+     background-color: #282C35;
+     padding: 5px;
+     position: relative;
+}
+
+.f-oquvchi-haqida li .img {
+     width: 100%;
+     height: 120px;
+     overflow: hidden;
+}
+
+.f-oquvchi-haqida li .img img {
+     width: 100%;
+     height: 100%;
+}
+
+.f-oquvchi-haqida li .text {
+     padding: 5px;
+}
+
+.f-oquvchi-haqida li .text p {
+     font-size: 15px;
+}
+
+.f-oquvchi-haqida li .text span {
+     font-size: 12px;
+}
+
+.f-oquvchi-qoshish {
+     height: 185px;
+}
+
+.f-oquvchi-qoshish .imgUser {
+     width: 100%;
+     height: 100%;
+
+}
+
+.f-oquvchi-qoshish .imgUser label {
+     width: 100%;
+     height: 100%;
+     display: block;
+     background-color: #282c35b4;
+     border-radius: 10px !important;
+     padding: 5px;
+}
+
+.f-oquvchi-qoshish .imgUser img {
+     width: 100%;
+     height: 100%;
+     border-radius: 5px !important;
+}
+
+.add-o {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-end;
+     justify-content: flex-end;
+     padding-top: 15px;
+}
+
+.add-o input {
+     width: 100%;
+     font-size: 18px;
+     background-color: #282C35;
+     margin-bottom: 10px;
+     padding: 5px 15px;
+     border: none;
+     border-radius: 2px;
+     color: #fff !important;
+}
+
+.add-o input::placeholder {
+     color: #999;
+}
+
+.add-o label {
+     color: #999;
+     font-size: 12px;
+     line-height: 15px;
+}
+
+.tab_item {
+     padding: 0 !important;
+     margin: 10px 5px;
+}
+
+.haqida_tab .tab_item textarea {
+     height: 100px !important;
+}
+
+.videUser {
+     height: 140px;
+}
+
+.videUser label {
+     width: 100%;
+     height: 100%;
+}
+
+.videUser label video {
+     width: 100%;
+     height: 100%;
+}
+
+.button-video {
+     position: absolute;
+     top: -10px;
+     right: -10px;
+     display: flex;
+     gap: 10px;
+}
+
+.deleteRasim1 {
+     width: 35px;
+     height: 35px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: #191C24;
+     border-radius: 50%;
+     cursor: pointer;
+}
+
+.footerInput ul {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 10px;
+}
+
+.footerInput ul li {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: center;
+     width: 100%;
+     margin-top: 10px;
+}
+
+.footerInput ul li label {
+     color: #999;
+     line-height: 10px;
+     padding-left: 10px;
+     font-size: 14px;
+}
+
+.footerInput ul li input {
+     background-color: #282C35;
+     border: none;
+     color: #fff;
+     width: 100%;
+     padding: 8px 10px;
+     font-size: 16px;
+     border-radius: 2px;
+}
+
+.foydaliLinklar {
+     grid-template-columns: 1fr 1fr 1fr;
+     overflow-y: auto;
+     overflow-x: hidden;
+     padding: 10px;
+}
+
+.foydaliLinklar li .text p {
+     font-size: 12px;
+}
+
+.input {
+     width: 100%;
+     background-color: #282C35;
+     border: none;
+     font-size: 18px;
+     padding: 8px 15px;
+     border-radius: 2px;
+}
+
+.linkIMGadd {
+     height: 100%;
+}
+
+.linkIMGadd label {
+     width: 100%;
+     height: 100%;
+}
+
+.linkIMGadd label img {
+     width: 100%;
+     height: 100%;
+}
+
+.prm-haqida {
+     padding: 10px;
+     height: 400px;
+     overflow-y: auto;
+}
+
+.prm-haqida li {
+     padding: 10px;
+     height: 220px;
+}
+
+.prm-haqida li .content-prm {
+     width: 100%;
+     height: 100%;
+     position: relative;
+     background-color: #2A3038;
+     padding: 5px;
+
+}
+
+.prm-haqida li .content-prm .img {
+     width: 100%;
+     height: 120px;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+.prm-haqida li .content-prm .text {
+     height: 80px;
+}
+
+.prm-haqida li .content-prm .text p {
+     font-size: 15px;
+     line-height: 15px;
+     margin: 0 !important;
+     padding-top: 5px;
+}
+
+.prm-haqida li .content-prm .text span {
+     font-size: 12px;
+}
+
+.tab_item input {
+     color: #ffff;
+}
+
+.prm-img {
+     width: 100%;
+     height: 100%;
+}
+
+.prm-img label {
+     width: 100%;
+     height: 100%;
+}
+
+.prm-img label img {
+     width: 100%;
+     height: 100%;
+}
+
+.img-saqlash {
+     margin-top: 20px;
+     margin-left: 12px;
+}
+
+.textUchunFormahaqida .textUchun {
+     height: 480px !important;
+}
+
+.mkt-haqida .tab_item textarea {
+     height: 500px !important;
+}
+
+.mkt-toliq-mal {
+     margin-top: 30px;
+     margin-bottom: 12px;
+}
+
+.rahbar-img {
+     height: 200px;
+}
+
+.rahbar-img label,
+.rahbar-img label img {
+     width: 100%;
+     height: 100%;
+}
+
+.ulLI {
+     list-style-type: none;
+}
+
+.ulLI label {
+     line-height: 12px;
+     margin-top: 20px;
+}
+
+.ulLI input {
+     color: #fff;
+}
+
+
+.hodimlarISM {
+     height: 100%;
+}
+
+.hodimlarRoyhatiDelete {
+     overflow-y: auto;
+     height: 870px;
+}
+
+.hodimlarRoyhatiDelete li {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 10px;
+     margin-bottom: 10px;
+     background-color: #2A3038;
+     border-radius: 10px;
+}
+
+.hodimlarRoyhatiDelete li .img {
+     width: 50px;
+     height: 50px;
+     border-radius: 50%;
+     overflow: hidden;
+}
+
+.hodimlarRoyhatiDelete li .img img {
+     width: 100%;
+     height: 100%;
+
+}
+
+.hodimlarRoyhatiDelete li .text {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     column-gap: 15px;
+}
+
+.hodimlarRoyhatiDelete li .text p {
+     margin: 0;
+     font-size: 18px;
+}
+
+.hodimlarRoyhatiDelete li .text span {
+     color: #999;
+     display: block;
+}
+
+.hodimlarRoyhatiDelete li .btn button {
+     width: 35px;
+     height: 35px;
+     border-radius: 50%;
+     background-color: #191C24;
+}
+
+.hodimlarRoyhatiDelete li .btn button i {
+     width: 100%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+.angi_list{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     gap: 10px;
+     padding: 10px;
+}
+.angi_list li{
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+}
+.angi_list li label{
+     color: #fff;
+}
+.angi_list li textarea{
+     background-color: #282C35;
+     color: #Fff;
+     padding: 12px;
+     font-size: 15px;
+}
+.yangiliklarItems{
+     height: 685px;
+     overflow-y: auto;
+}
+.yangiliklarItems li{
+     padding: 10px;
+}
+.yangiliklarItems li .items{
+     position: relative;
+     background-color: #282c35;
+}
+.yangiliklarItems li .img{
+     width: 100%;
+     padding: 5px;
+}
+.yangiliklarItems li .img img{
+     width: 100%;
+}
+.yangiliklarItems li .items .text{
+     color: #fff;
+     font-size: 20px !important;
+     font-weight: bold;
+     padding: 5px;
+}
+.radiobtn{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 15px;
+}
+.radiobtn label{
+     font-size: 20px;
+     margin-right: 10px;
+}
+.inputFile{
+     width: 250px;
+     height: 250px;
+     position: relative;
+}
+.inputFile label, .inputFile img{
+     width: 100%;
+     height: 100%;
+}
+.inputA label{
+     color: #fff;
+     font-size: 18px;
+     line-height: 15px;
+     display: block;
+}
+.inputA input{
+     margin-bottom: 15px;
+}
+.inputA textarea{
+     background-color: #282C35;
+     padding: 12px;
+     color: #fff;
+     width: 100%
+}
+.itemsUl-li{
+     height: 550px;
+     overflow-y: auto;
+}
+.itemsUl-li li{
+     padding: 10px;
+}
+.itemsUl-li .item-content{
+     position: relative;
+     background-color: #2A3038;
+     height: 250px;
+}
+.itemsUl-li .item-content img{
+     width: 100%;
+     height: 180px !important;
+}
+.itemsUl-li .item-content .img{
+     padding: 10px;
+}
+.itemsUl-li .item-content .text p{
+     font-size: 18px;
+     color: #ffff;
+     padding: 10px;
+}
+.profil{
+     width: 200px;
+     height: 200px;
+     position: relative;
+}

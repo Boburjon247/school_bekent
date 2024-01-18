@@ -172,4 +172,25 @@ function reflesh($url, $res)
 <?php
 }
 
+function getHasId($tablename, $col, $id, $condition = null)
+{
+   if (is_array($col) && is_array($id)) {
+      if (count($col) === count($id)) {
+         $sql = "SELECT * FROM $tablename WHERE ";
+         for ($i = 0; $i < count($col); $i++) {
+            $sql .= $col[$i] . " = '" . strip_tags(addslashes($id[$i])) . "' AND ";
+         }
+         $sql = rtrim($sql, 'AND ');
+         $sql .= $condition;
+      }
+   }
+         $db = connection();
+         $query = $db->query($sql);
+         $count1 = count(getarray($query));
+         if ($count1)
+            return true;
+         return false;
+}
+
+
 ?>

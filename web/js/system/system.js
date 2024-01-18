@@ -56,6 +56,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
+    $('.btnmadalShow').on('click',(e)=>{
+        $('#exampleModal').modal('show');
+        e.preventDefault();
+    });
+    $('#closeMadal').on('click',(e)=>{
+        $('#exampleModal').modal('hide');
+        e.preventDefault();
+    });
+
+
 
 
 

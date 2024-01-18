@@ -10,39 +10,18 @@
       </div>
       <div class="hodim_item">
          <ul>
-            <li>
-               <div class="img-text">
-                  <div class="img">
-                     <img src="<?= $config['base']['url'].'web/'?>img/Dinner.jpg" alt="">
-                  </div>
-                  <p class="userName1">
-                     Boburjon
-                  </p>
-               </div>
-               
-            </li>
-            <li>
-               <div class="img-text">
-                  <div class="img">
-                     <img src="<?= $config['base']['url'].'web/'?>img/Dinner.jpg" alt="">
-                  </div>
-                  <p class="userName1">
-                     Saidmirzo
-                  </p>
-               </div>
-               
-            </li>
-            <li>
-               <div class="img-text">
-                  <div class="img">
-                     <img src="<?= $config['base']['url'].'web/'?>img/Dinner.jpg" alt="">
-                  </div>
-                  <p class="userName1">
-                     Abdulaziz
-                  </p>
-               </div>
-               
-            </li>
+            <?php foreach (GetAll('teachers', 'false', 'asc') as $key => $hodim) : ?>
+               <li style="display: flex; align-items: center;">
+                     <div class="img-text">
+                        <div class="img">
+                           <img class="hodimIMG" src="<?= $config['base']['url'] . 'web/img/hodimlar/' . $hodim['picture'] ?>" alt="">
+                        </div>
+                        <p class="userName1">
+                           <span style="font-weight: 600; color: #000;"><?= $hodim['name'] . ' ' . $hodim['last_name'] ?></span>
+                        </p>
+                     </div>
+               </li>
+            <?php endforeach; ?>
          </ul>
       </div>
    </div>
@@ -63,7 +42,7 @@
          <div>
             <div class="imgUser">
                <label for="file">
-                  <img src="<?= $config['base']['url'].'web/'?>img/userimg.jpg" alt="" id="imgUrl">
+                  <img src="<?= $config['base']['url'] . 'web/' ?>img/userimg.jpg" alt="" id="imgUrl">
                </label>
                <input type="file" class=" lableImg input-UserName" id="file" visibility="none" style="display: none;">
             </div>
@@ -115,4 +94,4 @@
       </div>
    </div>
 </div>
-<script src="<?= $config['base']['url'].'web/'?>js/system/hodimlar.js"></script>
+<script src="<?= $config['base']['url'] . 'web/' ?>js/system/hodimlar.js"></script>

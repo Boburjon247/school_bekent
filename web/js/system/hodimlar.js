@@ -125,7 +125,37 @@ document.addEventListener('DOMContentLoaded', () => {
       }
    });
    //delet hodim
+
+   const userNmaedelete = document.querySelectorAll('.btnmadalShow');
+   const userNameHodim = document.querySelectorAll('.hodimUserName');
+   const madal_text = document.querySelector('.madal_text');
+   const idHodimCl = document.querySelectorAll('.idHodimCl');
+   const idHodim = document.querySelector('.idHodim');
+   let plus = "nomli hodimni o'chirmoqchimisiz"
+   
+   
+   userNmaedelete.forEach((element,index)=>{
+      element.addEventListener('click',()=>{
+         userNameHodim.forEach((e,i)=>{
+            if(index == i){
+               madal_text.textContent = e.textContent + " " + plus;
+            }
+         });
+         idHodimCl.forEach((xe,i)=>{
+            if(index == i){
+               idHodim.value = xe.value;
+            }
+         });
+      });
+   });
+
    $('.deleteHodim').on('click',()=>{
       localStorage.setItem('madaka', 'active');
    });
+
+
+   
+
+
+
 });

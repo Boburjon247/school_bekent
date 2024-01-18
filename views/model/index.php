@@ -4,7 +4,12 @@ global $config;
 <!-- section1 -->
 <section id="section1_1" class="section1 container-fluid">
     <div class="swiper mySwiper">
-        <div class="opasiti_Fon"></div>
+        <div class="opasiti_Fon">
+            <div class="swiper-slide-text">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius labore mollitia atque assumenda, saepe ipsum esse incidunt dolores beatae, sequi recusandae ad quaerat asperiores placeat hic officia vitae suscipit voluptatibus!</span>
+            </div>
+        </div>
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img src="<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg" alt="">

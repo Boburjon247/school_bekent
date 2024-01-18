@@ -1,3 +1,6 @@
+<?php
+global $config;
+?>
 <div class="top_title">
    <p>Statistika</p>
    <span>Statistika/O'quvchilar</span>
@@ -10,39 +13,24 @@
       </div>
       <div class="hodim_item">
          <ul>
-            <li>
-               <div class="img-text">
-                  <div class="img">
-                     <img src="<?= $config['base']['url'].'web/'?>img/Dinner.jpg" alt="">
+            <?php foreach (GetAll('students', 'false', 'desc') as $key => $oquvchi) : ?>
+               <li style="display: flex; align-items: center;">
+                  <div class="img-text">
+                     <div class="img">
+                        <img class="hodimIMG" src="<?php
+                           if ($oquvchi['picture'] === '') {
+                              echo $config['base']['url'] . 'web/img/const/defalut.jpg';
+                           } else {
+                              echo $config['base']['url'] . 'web/img/oquvchilar/' . $oquvchi['picture'];
+                           }
+                           ?>" alt="">
+                     </div>
+                     <p class="userName1">
+                        <span style="font-weight: 600; color: #000;"><?= $oquvchi['name'] . ' ' . $oquvchi['last_name'] ?></span>
+                     </p>
                   </div>
-                  <p class="userName1">
-                     Boburjon
-                  </p>
-               </div>
-               
-            </li>
-            <li>
-               <div class="img-text">
-                  <div class="img">
-                     <img src="<?= $config['base']['url'].'web/'?>img/Dinner.jpg" alt="">
-                  </div>
-                  <p class="userName1">
-                     Saidmirzo
-                  </p>
-               </div>
-            
-            </li>
-            <li>
-               <div class="img-text">
-                  <div class="img">
-                     <img src="<?= $config['base']['url'].'web/'?>img/Dinner.jpg" alt="">
-                  </div>
-                  <p class="userName1">
-                     Abdulaziz
-                  </p>
-               </div>
-               
-            </li>
+               </li>
+            <?php endforeach; ?>
          </ul>
       </div>
    </div>
@@ -105,4 +93,4 @@
       </div>
    </div>
 </div>
-<script src="<?= $config['base']['url'].'web/'?>js/system/hodimlar.js"></script>
+<script src="<?= $config['base']['url'] . 'web/' ?>js/system/hodimlar.js"></script>

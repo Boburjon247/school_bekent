@@ -152,7 +152,7 @@ $(document).ready(function() {
 
    //delete
    $('.body_year_show').on('click', "#openerdelet", (e) => {
-      if(confirm("Ma'lumotni o'chirishni xoxlaysizmi🫣?")){
+      if(alert("Ma'lumotni o'chirishni xoxlaysizmi🫣?")){
          id = e.currentTarget.attributes.value.value;
          $.ajax({
             url: "http://localhost/bekent/school/ajax/server.php?action=deletdata",

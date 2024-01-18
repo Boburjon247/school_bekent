@@ -1,5 +1,5 @@
    <?php
-      global $config;
+   global $config;
    $today = date("Y-m-d");
    ?>
 
@@ -20,20 +20,20 @@
                <?php foreach (GetAll('teachers', 'false', 'asc') as $key => $hodim) : ?>
                   <li>
                      <form action="" method="post">
-                        <input type="hidden" name="id1" value="<?= $hodim['id'] ?>">
+                        <input type="hidden" class="idHodimCl" name="id1" value="<?= $hodim['id'] ?>">
                         <input type="hidden" name="hodimIMG" value="<?= $hodim['picture'] ?>">
                         <div class="img-text">
                            <div class="img">
                               <img class="hodimIMG" src="<?= $config['base']['url'] . 'web/img/hodimlar/' . $hodim['picture'] ?>" alt="">
                            </div>
                            <p class="userName1">
-                              <span style="font-weight: 600; color: #000;"><?= $hodim['name'] . ' ' . $hodim['last_name'] ?></span>
+                              <span style="font-weight: 600; color: #000;" class="hodimUserName"><?= $hodim['name'] . ' ' . $hodim['last_name'] ?></span>
                            </p>
                         </div>
                         <div class="controlBox">
                            <span style="font-size: 13px; color: #999;padding-right: 20px;"><?= $hodim['work_time'] ?></span>
                            <button type="submit" class="editHodim" name="updateBTN"><i class="fa-solid fa-pencil" style="color: #00e1ff;"></i></button>
-                           <button type="submit" class="deleteHodim" name="delete"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
+                           <button type="submit" class="deleteHodim btnmadalShow"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
                         </div>
                      </form>
                   </li>
@@ -157,7 +157,7 @@
                      <div>
                         <label for="">Jinsi</label>
                         <select name="jins" id="t_jins" class="input-UserName" required>
-                           <option value="<?=$value['sex']?>"hidden> <?=$value['sex']?></option>
+                           <option value="<?= $value['sex'] ?>" hidden> <?= $value['sex'] ?></option>
                            <option value="ayol">ayol</option>
                            <option value="erkak">erkak</option>
                         </select>
@@ -189,6 +189,27 @@
          <?php endif; ?>
       </div>
    </div>
+
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <form action="" method="post">
+            <input type="hidden" name="id1" class="idHodim">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Tekshiruv</h5>
+               </div>
+               <div class="modal-body">
+                  <p class="madal_text"></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="closeMadal" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary deleteHodim"  name="delete">Save changes</button>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+
    <!-- madalka -->
    <div class="NToastJS">
       <!-- successToast -->
@@ -239,7 +260,8 @@
             return true;
          }
          //file tekshirish
-         function FileTekshir(){
+         function FileTekshir()
+         {
             if ($_FILES['file']['name'] != "") {
                if ($_FILES['file']['size'] < 4608000) {
                   $png = 'image/png';
@@ -356,7 +378,7 @@
             $_POST['tel'],
             $_POST['file_id'],
          ]);
-         
+
          $sql = $db->query("UPDATE teachers SET 
          name = '{$aloqaInputGet[0]}',
          last_name = '{$aloqaInputGet[1]}',

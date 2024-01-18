@@ -33,11 +33,11 @@ global $view, $config;
 
 <body>
     <!--up link-->
-    <a class="uplink" href="#section1_1a">
+    <a class="uplink" href="">
         <i class="fa-solid fa-chevron-up"></i>
     </a>
     <!-- regist -->
-    <div class="registration_wrap grid-bg ba-grid anim">
+    <div class="registration_wrap grid-bg ba-grid anim" id="uplinkLogin">
         <div class="inner">
             <div class="registration_title">
                 <div class="regist_close">
@@ -47,14 +47,14 @@ global $view, $config;
                     <span><img src="<?= $config['base']['url'] . 'web/' ?>img/6182235a66337.svg" alt=""></span>
                     <span>FARG'ONA SHAHRIDAGI PREZIDENT MAKTAB</span>
                 </div>
-                <form action="<?= $config['base']['url'] . 'createSystem' ?>" method="post" class="login_1 Tab_C">
+                <form action="<?=url?>/login.php" method="post" class="login_1 Tab_C">
                     <div class="form-group">
-                        <input type="text" name="userNmae" class="username" required="required">
+                        <input type="text" name="login" id="loginInput" class="username" required="required">
                         <span for="username" class="text_uesr"">Username</span>
                     <i class=" fa-regular fa-user user_regist"></i>
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control password_login_reg" id="password" required="required">
+                        <input type="password" id="passwordInput" name="password" class="form-control password_login_reg" id="password" required="required">
                         <span for="password">Password</span>
                         <i class="fa-solid fa-lock pas_regist"></i>
                         <p class="eyes">
@@ -63,13 +63,82 @@ global $view, $config;
                     </div>
                     <div class="form-group form-group3">
                         <label for="checkbox">
-                            <input type="checkbox" id="checkbox" class="checkbox_regist">
+                            <input type="checkbox" name="checkbox" id="checkbox" required class="checkbox_regist">
                             <p>Remember me</p>
                         </label>
                     </div>
-                    <div class="regis_btn">
-                        <button class="btn registration-btn">
-                            <span>Login</span>
+                    <p class="loginxatolik"></p>
+                    <div class="regis_btn" style="position: relative;">
+                        <!-- <div class="loading aloqaLOAD registerLading">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: #2B385D; display: block;" width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                                <g  transform="translate(80,50)">
+                                    <g transform="rotate(0)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="1">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.875s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.875s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(71.21320343559643,71.21320343559643)">
+                                    <g transform="rotate(45)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.875">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.75s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.75s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(50,80)">
+                                    <g transform="rotate(90)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.75">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.625s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.625s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(28.786796564403577,71.21320343559643)">
+                                    <g transform="rotate(135)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.625">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.5s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.5s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(20,50.00000000000001)">
+                                    <g transform="rotate(180)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.5">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.375s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.375s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(28.78679656440357,28.786796564403577)">
+                                    <g transform="rotate(225)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.375">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.25s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.25s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(49.99999999999999,20)">
+                                    <g transform="rotate(270)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.25">
+                                            <animateTransform attributeName="transform" type="scale" begin="-0.125s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.125s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                                <g transform="translate(71.21320343559643,28.78679656440357)">
+                                    <g transform="rotate(315)">
+                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.125">
+                                            <animateTransform attributeName="transform" type="scale" begin="0s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
+                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="0s"></animate>
+                                        </circle>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div> -->
+                        <button type="submit" name="loginBtn" class="btn registration-btn">
+                            <span>Login up</span>
                         </button>
                     </div>
                 </form>
@@ -86,31 +155,31 @@ global $view, $config;
             <div>
                 <p class="hamburger_title_text">Shahr Prezident Maktab</p>
             </div>
-            <a href="index.html" class="menu_item menu_item1">Bosh sahifa</a>
+            <a href="<?= $config['base']['url']?>index" class="menu_item menu_item1">Bosh sahifa</a>
             <div id="accordion_hamburger">
                 <h3>Biz haqimizda</h3>
                 <div class="acardion_item">
-                    <a href="about.html">Maktab haqida</a>
-                    <a href="presidental-schools.html">Prezident maktablari</a>
-                    <a href="leadership.html">Rahbariyat</a>
-                    <a href="employees.html">Xodimlar</a>
+                    <a href="<?= $config['base']['url']?>BizHaqimizda/1">Maktab haqida</a>
+                    <a href="<?= $config['base']['url']?>BizHaqimizda/2">Prezident maktablari</a>
+                    <a href="<?= $config['base']['url']?>BizHaqimizda/3">Rahbariyat</a>
+                    <a href="<?= $config['base']['url']?>BizHaqimizda/4">Xodimlar</a>
                 </div>
                 <h3>Matbuot xizmati</h3>
                 <div class="acardion_item">
-                    <a href="news.html">Yangiliklar</a>
-                    <a href="events.html">Tadbirlar</a>
-                    <a href="elon.html">E'lonlar</a>
-                    <a href="photogallery.html">Fotolavhalar</a>
-                    <a href="videogallery.html">Videolavhalar</a>
+                    <a href="<?= $config['base']['url']?>MatbuotXizmati/1">Yangiliklar</a>
+                    <a href="<?= $config['base']['url']?>MatbuotXizmati/2">Tadbirlar</a>
+                    <a href="<?= $config['base']['url']?>MatbuotXizmati/3">E'lonlar</a>
+                    <a href="<?= $config['base']['url']?>MatbuotXizmati/4">Fotolavhalar</a>
+                    <a href="<?= $config['base']['url']?>MatbuotXizmati/5">Videolavhalar</a>
                 </div>
                 <h3>Foydali manbalar</h3>
                 <div class="acardion_item">
-                    <a href="">Xalqaro tanlovlar</a>
-                    <a href="">To'garaklar</a>
-                    <a href="">O'quv qo'llanmalar</a>
+                    <a href="<?= $config['base']['url']?>FoydaliManbalar/1">Xalqaro tanlovlar</a>
+                    <a href="<?= $config['base']['url']?>FoydaliManbalar/2">To'garaklar</a>
+                    <a href="<?= $config['base']['url']?>FoydaliManbalar/3">O'quv qo'llanmalar</a>
                 </div>
             </div>
-            <a href="aloqa.html" class="menu_item">Aloqa</a>
+            <a href="<?= $config['base']['url']?>aloqa" class="menu_item">Aloqa</a>
         </div>
     </div>
     <!--    headerTop-->
@@ -129,31 +198,31 @@ global $view, $config;
                         </div>
                         <ul>
                             <li>
-                                <a href="">
+                                <a href="https://t.me/Boburjon03" target="_blank">
                                     <span><i class="fa-brands fa-telegram"></i></span>
                                     <span>telegram</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a target="_blank" href="https://www.facebook.com/abdunazarov">
                                     <span><i class="fa-brands fa-facebook-f"></i></span>
                                     <span>facebook</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a target="_blank" href="http://www.youtube.com/embed/zX54DIpacNE">
                                     <span><i class="fa-brands fa-youtube"></i></span>
                                     <span>youtube</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a target="_blank" href="http://instagram.com/_u/abdunazarov_bobur030">
                                     <span><i class="fa-brands fa-instagram"></i></span>
                                     <span>instagram</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a target="_blank" href="https://twitter.com/intent/tweet">
                                     <span><i class="fa-brands fa-twitter"></i></span>
                                     <span>twitter</span>
                                 </a>
@@ -168,31 +237,31 @@ global $view, $config;
                         </div>
                         <ul>
                             <li>
-                                <a href="https://yandex.uz/maps/10336/phergana/house/Y0gYcQ5gQE0BQFpqfX92dntkZA==/?azimuth=5.092816215780344&from=mapframe&ll=71.790420%2C40.377354&tilt=0.8726646259971648&z=18.77">
+                                <a target="_blank" href="https://yandex.uz/maps/10336/phergana/house/Y0gYcQ5gQE0BQFpqfX92dntkZA==/?azimuth=5.092816215780344&from=mapframe&ll=71.790420%2C40.377354&tilt=0.8726646259971648&z=18.77">
                                     <span><i class="fa-sharp fa-solid fa-location-dot"></i></span>
                                     <span>Farg'ona sh.,Qashqar k., 1</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a target="_blank" href="tel:+998976665979">
                                     <span><i class="fa-solid fa-phone"></i></span>
                                     <span>+99890 000 00 00</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a target="_blank" href="tel:+998976665979">
                                     <span><i class="fa-solid fa-phone"></i></span>
                                     <span>+99890 000 00 00</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a target="_blank" href="mailto:abdunazarov247@gmail.com">
                                     <span><i class="fa-solid fa-envelope"></i></span>
                                     <span>info@gmail.com</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="">
+                                <a target="_blank" href="mailto:abdunazarov247@gmail.com    ">
                                     <span><i class="fa-solid fa-envelope"></i></span>
                                     <span>info@gmail.com</span>
                                 </a>
@@ -252,6 +321,7 @@ global $view, $config;
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="module" src="<?= $config['base']['url'] . 'web/' ?>js/jQuery.js"></script>
+    <!-- <script type="module" src="<?= $config['base']['url'] . 'web/' ?>js/ajax.js"></script> -->
 </body>
 
 </html>

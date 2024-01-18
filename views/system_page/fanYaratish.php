@@ -27,18 +27,18 @@ global $config;
 </div>
 <!-- madalka -->
 <div class="NToastJSAJAX">
-      <!-- successToast -->
-      <div class="NToastJS_contentAJAX active errorTrue successToast">
-         <i class="fa fa-xmark exit errorTrue"></i>
-         <div class="icon">
-            <i class="fa fa-check"></i>
-         </div>
-         <div class="text">
-            <p id='successMsg'></p>
-         </div>
-         <div class="time">
-            <p></p>
-         </div>
+   <!-- successToast -->
+   <div class="NToastJS_contentAJAX active errorTrue successToast">
+      <i class="fa fa-xmark exit errorTrue"></i>
+      <div class="icon">
+         <i class="fa fa-check"></i>
+      </div>
+      <div class="text">
+         <p id='successMsg'></p>
+      </div>
+      <div class="time">
+         <p></p>
       </div>
    </div>
+</div>
 <script src="<?= $config['base']['url'] . 'web/' ?>js/system/fan-yaratish.js"></script>

@@ -392,6 +392,10 @@ li {
   background-color: rgba(0, 0, 0, 0.611);
   position: absolute;
   z-index: 10;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .swiper {
@@ -408,8 +412,28 @@ li {
   justify-content: center;
   align-items: center;
   transition: all 0.5s ease-in;
+  position: relative;
 }
-
+.swiper-slide-text{
+  color: #fff;
+  z-index: 15000000 !important;
+  max-width: 900px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+.swiper-slide-text p{
+  font-size: 38px;
+  letter-spacing: 2px;
+  line-height: 40px;
+}
+.swiper-slide-text span{
+  color: #999;
+  padding: 0px 15px;
+  display: block;
+  font-size: 18px;
+  line-height: 20px;
+}
 .swiper-slide img {
   display: block;
   width: 100%;
@@ -3233,4 +3257,13 @@ button.btn span::after {
 .aloqaLOAD.active{
   display: flex;
 }
-
+.registerLading{
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+.loginxatolik{
+  font-size: 17px;
+  color: #ff0000;
+}

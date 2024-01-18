@@ -1,6 +1,5 @@
 <?php
 global $config;
-session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -20,7 +19,7 @@ session_start();
     <link rel="stylesheet" href="<?= $config['base']['url'] . 'web/' ?>js/Jquery/jquery-ui.min.css">
     <link rel="stylesheet" href="<?= $config['base']['url'] . 'web/' ?>js/Jquery/jquery-ui.theme.min.css">
     <!-- bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!--font awesome cdn-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="shortcut icon" href="<?= $config['base']['url'] . 'web/' ?>img/logo-icon-new.svg" type="image/x-icon">
@@ -32,6 +31,7 @@ session_start();
 </head>
 
 <body>
+
     <section class="container-fluid system">
         <div class="row">
             <!--leftWindow-->
@@ -129,21 +129,31 @@ session_start();
                             <a href="<?= url ?>" style="color: #212529; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-person-walking-dashed-line-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class=" headerRight">
-                        <p class="userName">Boburjon</p>
-                        <div class="img_user">
-                            <img src="<?= $config['base']['url'] . 'web/' ?>img/Dinner.jpg">
+                    <?php foreach (GetAll('admin', '1', 'asc') as $key => $admin) : ?>
+                        <div class=" headerRight">
+                            <p class="userName"><?= $admin['ism'] ?></p>
+                            <div class="img_user">
+                                <img src="<?php
+                                if ($admin['img'] === '') {
+                                    echo $config['base']['url'] . 'web/img/const/defalut.jpg';
+                                } else {
+                                    echo $config['base']['url'] . 'web/img/Admin/' . $admin['img'];
+                                }
+                                ?>">
+                            </div>
                         </div>
-                    </div>
+                    <?php endforeach; ?>
                 </header>
                 <body_sys>
                     <?php
-                        include $config['base']['path'] . 'views/system_page/' . $view . '.php';
+                    include $config['base']['path'] . 'views/system_page/' . $view . '.php';
                     ?>
                 </body_sys>
             </div>
         </div>
     </section>
+
+
 
     <?php
     madalka();
@@ -152,7 +162,7 @@ session_start();
 
     <script src="<?= $config['base']['url'] . 'web/' ?>js/system/system.js"></script>
     <!-- <script src="../js/systemJQ.js"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="<?= $config['base']['url'] . 'web/' ?>js/Jquery/jquery-3.6.4.min.js"></script>
     <script src="<?= $config['base']['url'] . 'web/' ?>js/Jquery/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

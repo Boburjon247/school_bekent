@@ -18,7 +18,7 @@ global $config;
                <li>
                   <form action="" method="post">
                      <input type="hidden" name="oquvchiIMG" value="<?= $oquvchi['picture'] ?>">
-                     <input type="hidden" name="id1" value="<?= $oquvchi['id'] ?>">
+                     <input type="hidden" class="idHodimCl" name="id1" value="<?= $oquvchi['id'] ?>">
                      <div class="img-text">
                         <div class="img">
                            <img class="hodimIMG" src="<?php
@@ -30,12 +30,12 @@ global $config;
                                                       ?>" alt="">
                         </div>
                         <p class="userName1">
-                           <span style="font-weight: 600; color: #000;"><?= $oquvchi['name'] . ' ' . $oquvchi['last_name'] ?></span>
+                           <span style="font-weight: 600; color: #000;"  class="hodimUserName"><?= $oquvchi['name'] . ' ' . $oquvchi['last_name'] ?></span>
                         </p>
                      </div>
                      <div class="controlBox">
                         <button type="submit" class="editOquvchi" name="updateBTN"><i class="fa-solid fa-pencil" style="color: #00e1ff;"></i></button>
-                        <button type="submit" class="deleteoquvchi" name="delete"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
+                        <button type="submit" class="deleteoquvchi btnmadalShow" name="delete"><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
                      </div>
                   </form>
                </li>
@@ -105,6 +105,26 @@ global $config;
       </form>
    </div>
 
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <form action="" method="post">
+            <input type="hidden" name="id1" class="idHodim">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Tekshiruv</h5>
+               </div>
+               <div class="modal-body">
+                  <p class="madal_text"></p>
+               </div>
+               <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" id="closeMadal" data-dismiss="modal">Close</button>
+                  <button type="submit" class="btn btn-primary deleteHodim" name="delete">Save changes</button>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+
    <!--Yangilash uchun  -->
    <div class="section section3 ">
       <?php if (isset($_POST['updateBTN']) && isset($_POST['id1']) && !empty($_POST['id1'])) : ?>
@@ -128,12 +148,12 @@ global $config;
                      <div class="imgUser">
                         <label for="file1">
                            <img src="<?php
-                              if ($oquvchi['picture'] === '') {
-                                 echo $config['base']['url'] . 'web/img/const/defalut.jpg';
-                              } else {
-                                 echo $config['base']['url'] . 'web/img/oquvchilar/' . $oquvchi['picture'];
-                              }
-                           ?>" alt="" id="imgUrl">
+                                       if ($oquvchi['picture'] === '') {
+                                          echo $config['base']['url'] . 'web/img/const/defalut.jpg';
+                                       } else {
+                                          echo $config['base']['url'] . 'web/img/oquvchilar/' . $oquvchi['picture'];
+                                       }
+                                       ?>" alt="" id="imgUrl">
                         </label>
                      </div>
                   </div>
@@ -176,6 +196,8 @@ global $config;
          <?php endforeach; ?>
       <?php endif; ?>
    </div>
+
+
 
 </div>
 
@@ -318,7 +340,7 @@ if (isset($_POST['yangilashoq'])) {
          $_POST['tel'],
          $_POST['file_id'],
       ]);
-      
+
       $sql = $db->query("UPDATE students SET 
       name = '{$aloqaInputGet[0]}',
       last_name = '{$aloqaInputGet[1]}',

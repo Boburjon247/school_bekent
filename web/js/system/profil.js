@@ -1,10 +1,38 @@
 document.addEventListener('DOMContentLoaded', function () {
    'use strict';
    // img add yashiqchaga imgni qo'shyapti
+   let $img = '';
+   let $size = '';
    $(function () {
       $('.lableImg').change(function (event) {
          let img = URL.createObjectURL(event.target.files[0]);
          $('#imgUrl').attr('src', img);
+         $img = event.target.files[0].name
+         $size = event.target.files[0].size
+
+         let $png = 'png';
+         let $jpg = 'jpg';
+         let $arraytype = $img.split('.');
+         let $typeArray = $arraytype.length - 1;
+         let $fileFarmat = $arraytype[$typeArray];
+         if ($fileFarmat !== 'jpg' && $fileFarmat !== 'png') {
+            $('#notFile1').css('display', 'flex');
+            $('.malumotSaqlashprofil').addClass('tr');
+         }
+         else if ($size > 4608000) {
+            $('#kattaFile1').css('display', 'flex');
+            $('.malumotSaqlashprofil').addClass('tr');
+
+         }
+         else if ($fileFarmat !== $jpg && $fileFarmat !== $png && $size > 4608000) {
+            $('#notFile1').css('display', 'flex');
+            $('#kattaFile1').css('display', 'flex');
+            $('.malumotSaqlashprofil').addClass('tr');
+         }
+         else {
+            $('#notFile1').css('display', 'none');
+            $('#kattaFile1').css('display', 'none');
+         }
       })
    });
 
@@ -16,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.userEye').removeClass('fa-eye-slash');
             $('.userEye').addClass('fa-eye');
             //inputni type o'zgaryapti
-            $('.input-UserName').attr('type', 'text');
+            $('.input-UserNameEys').attr('type', 'text');
 
          }
          else if ($('.userEye').hasClass('fa-eye')) {
@@ -24,28 +52,22 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.userEye').addClass('fa-eye-slash');
             $('.userEye').removeClass('fa-eye');
             //inputni type o'zgaryapti
-            $('.input-UserName').attr('type', 'password');
+            $('.input-UserNameEys').attr('type', 'password');
 
          }
       });
-   })
+   });
 
-   //yangi parol qoyish uchun chekboxni activlashtrish
-   const yamgi_parol = document.querySelectorAll('.yamgi_parol');
-   const btn_true = document.querySelector('#btn_true');
-   yamgi_parol.forEach(element => {
-      element.style.backgroundColor = '#eee'
-      btn_true.addEventListener('click', () => {
-         if (btn_true.checked == true) {
-            element.removeAttribute('readonly')
-            element.style.backgroundColor = '#FFFFFF'
-         }
-         else if(btn_true.checked == false){
-            element.setAttribute('readonly', '')
-            element.style.backgroundColor = '#eee'
-         }
-      })
-   })
+
+   $('.malumotSaqlashprofil').on('click',()=>{
+      if($('.malumotSaqlashprofil').hasClass('tr')){
+         alert('faylda xatolik');
+      }
+      else{
+         localStorage.setItem('madaka', 'active');
+      }
+   });
+
 
 
 });
