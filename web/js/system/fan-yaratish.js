@@ -135,7 +135,6 @@ $(document).ready(function() {
          },
          success: function (data) {
             let data1 = JSON.parse(data);
-            console.log(data1);
             if (data1.status == 200) {
                fetchData();
                madalkaJs(data1.message);
@@ -152,7 +151,7 @@ $(document).ready(function() {
 
    //delete
    $('.body_year_show').on('click', "#openerdelet", (e) => {
-      if(alert("Ma'lumotni o'chirishni xoxlaysizmi🫣?")){
+      if(alert("Ma'lumotni o'chirishni xoxlaysizmi🫣?") == undefined){
          id = e.currentTarget.attributes.value.value;
          $.ajax({
             url: "http://localhost/bekent/school/ajax/server.php?action=deletdata",

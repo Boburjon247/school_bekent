@@ -324,7 +324,7 @@ if (isset($_POST['yangilashoq'])) {
       (isset($_POST["tel"]) && !empty($_POST["tel"]))
    ) {
       $db = connection();
-      $filname = $db->query("SELECT * FROM teachers WHERE id='{$_POST["file_id"]}'");
+      $filname = $db->query("SELECT * FROM students WHERE id='{$_POST["file_id"]}'");
       $r = $filname->fetch_array();
       $file1 = $r['picture'];
 

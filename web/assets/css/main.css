@@ -243,17 +243,15 @@ a {
 }
 
 .videUser {
-     height: 140px;
+     height: 180px;
 }
 
 .videUser label {
      width: 100%;
-     height: 100%;
 }
 
 .videUser label video {
      width: 100%;
-     height: 100%;
 }
 
 .button-video {

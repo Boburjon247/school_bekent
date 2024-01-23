@@ -1,28 +1,25 @@
 <?php
 global $config;
+
+
 ?>
 <!-- section1 -->
 <section id="section1_1" class="section1 container-fluid">
     <div class="swiper mySwiper">
         <div class="opasiti_Fon">
             <div class="swiper-slide-text">
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius labore mollitia atque assumenda, saepe ipsum esse incidunt dolores beatae, sequi recusandae ad quaerat asperiores placeat hic officia vitae suscipit voluptatibus!</span>
+                <?php foreach (GetAll('admin_boshsahifa_salyder_text', 'false', 'asc') as $key => $text1) : ?>
+                    <p><?= $text1['title_' . $_SESSION['lang']] ?></p>
+                    <span><?= $text1['text_' . $_SESSION['lang']] ?><span>
+                <?php endforeach; ?>
             </div>
         </div>
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img src="<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="<?= $config['base']['url'] . 'web/' ?>img/PIIM2.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg" alt="">
-            </div>
-            <div class="swiper-slide">
-                <img src="<?= $config['base']['url'] . 'web/' ?>img/Dinner.jpg" alt="">
-            </div>
+            <?php foreach (GetAll('admin_boshsahifa_salyder_img', 'false', 'asc') as $key => $img) : ?>
+                <div class="swiper-slide">
+                    <img src="<?= $config['base']['url'] . 'web/img/body/' . $img['img'] ?>" alt="">
+                </div>
+            <?php endforeach; ?>
         </div>
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
@@ -39,7 +36,9 @@ global $config;
                 <span></span>
             </div>
             <div class="col-lg-6 section8_text">
-                <p>Prezident maktabi ixtisoslashtirilgan davlat umumta’lim muassasasi hisoblanib, uning faoliyati yuqori malakali mutaxassislarni tayyorlash uchun iqtidorli bolalarni aniqlash va o‘qitishni ta’minlashga qaratilgan.Maqsadimiz«Millatning xalqaro olimpiadalarda, tanlovlarda g‘olib bo‘ladigan va dunyoning eng yaxshi oliy o‘quv yurtlariga kira oladigan kelajakdagi yetakchilarini, o‘quvchilarini tayyorlash. Biz jahon maydonida raqobatbardosh bo‘la oladigan yetakchilarni tarbiyalaymiz».</p>
+                <?php foreach (GetAll('admin_boshsahifa_maktab_haqida', 'false', 'asc') as $key => $text1) : ?>
+                    <p><?= $text1['text_' . $_SESSION['lang']] ?></p>
+                <?php endforeach; ?>
             </div>
             <div class="col-lg-6 uzb_map">
                 <div class="titleHover">Fargʻona</div>
@@ -234,7 +233,9 @@ global $config;
     <div class="section3_cart_img_show">
         <span><i class="section3_cart_img_hide fa-solid fa-xmark"></i></span>
         <div class="img_X ">
-            <video class="video_section3_tab1" src="<?= $config['base']['url'] . 'web/' ?>video/Jaloliddin Ahmadaliyev - Bahor chog'i (Mood video).mp4" controls width="320" height="240"></video>
+            <?php foreach (GetAll('admin_boshsahifa_maktab_video', 'false', 'asc') as $key => $video) : ?>
+                <video class="video_section3_tab1" src="<?= $config['base']['url'] . 'web/video/' . $video['video'] ?>" controls width="320" height="240"></video>
+            <?php endforeach; ?>
         </div>
     </div>
     <div class="container section3_content">
@@ -273,42 +274,17 @@ global $config;
         </div>
         <div class="section4_content_wrap">
             <div class="section4_maktab_f">
-                <div class="f_card">
-                    <div class="f_img">
-                        <div class="f_img_content" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/s1.avif');"></div>
+                <?php foreach (GetAll('admin_boshsahifa_maktab_faxrli_o', 'false', 'asc') as $key => $text) : ?>
+                    <div class="f_card">
+                        <div class="f_img">
+                            <div class="f_img_content" style='background-image: url("<?= $config['base']['url'] . 'web/img/faxrlioquvchilar/' . $text['img'] ?>");'></div>
+                        </div>
+                        <div class="f_text">
+                            <span><?= $text['fish'] ?></span>
+                            <span><?= $text['sinif'] ?></span>
+                        </div>
                     </div>
-                    <div class="f_text">
-                        <span>Ikromov Abduvali Bahromjon o'g'li</span>
-                        <span>11-green sinif o’quvchisi</span>
-                    </div>
-                </div>
-                <div class="f_card">
-                    <div class="f_img">
-                        <div class="f_img_content" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/s2.avif');"></div>
-                    </div>
-                    <div class="f_text">
-                        <span>Ikromov Abduvali Bahromjon o'g'li</span>
-                        <span>11-green sinif o’quvchisi</span>
-                    </div>
-                </div>
-                <div class="f_card">
-                    <div class="f_img">
-                        <div class="f_img_content" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/s3.jpg');"></div>
-                    </div>
-                    <div class="f_text">
-                        <span>Ikromov Abduvali Bahromjon o'g'li</span>
-                        <span>11-green sinif o’quvchisi</span>
-                    </div>
-                </div>
-                <div class="f_card">
-                    <div class="f_img">
-                        <div class="f_img_content" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/s4.jpg');"></div>
-                    </div>
-                    <div class="f_text">
-                        <span>Ikromov Abduvali Bahromjon o'g'li</span>
-                        <span>11-green sinif o’quvchisi</span>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
@@ -326,7 +302,7 @@ global $config;
         <div class="section5_content_wrap">
             <div class="img_s5" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/l-1.jpg');">
                 <div class="after">
-                    <img src="<?= $config['base']['url'] . 'web/' ?>img/ovqat.svg" alt="">
+                    <img src="img/ovqat.svg" alt="">
                     <p>Ovqatlanish vaqtlari</p>
                     <span>5 mahal ovqatlanish, bepul</span>
                 </div>
@@ -360,78 +336,20 @@ global $config;
         </div>
         <div class="section6_content_wrap">
             <div class="owl-carousel owl-theme">
-                <div class="item">
-                    <div class="section6_carusel_Iitem">
-                        <a href="https://president.uz/uz">
-                            <div class="img">
-                                <img src="<?= $config['base']['url'] . 'web/' ?>img/uzb_gerb.jpg" alt="">
-                            </div>
-                            <div class="text_link">
-                                <p>O'zbekiston Respublikasi Prezidenti</p>
-                            </div>
-                        </a>
+                <?php foreach (GetAll('admin_boshsahifa_foydali_linklar', 'false', 'asc') as $key => $text) : ?>
+                    <div class="item">
+                        <div class="section6_carusel_Iitem">
+                            <a target="_blank" href="<?= $text['link'] ?>">
+                                <div class="img">
+                                    <img src="<?= $config['base']['url'] . 'web/img/linklar/' . $text['img'] ?>" alt="">
+                                </div>
+                                <div class="text_link">
+                                    <p><?= $text['nomi_' . $_SESSION['lang']] ?></p>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="section6_carusel_Iitem">
-                        <a href="https://pm.piima.uz/">
-                            <div class="img">
-                                <img src="<?= $config['base']['url'] . 'web/' ?>img/logo-icon-new.svg" style="width: 200px;" alt="">
-                            </div>
-                            <div class="text_link">
-                                <p>Prezident, Ijod va Ixtisoslashtirilgan Maktablarni Rivojlantirish Agentligi</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="section6_carusel_Iitem">
-                        <a href="https://www.gov.uz/uz">
-                            <div class="img">
-                                <img src="<?= $config['base']['url'] . 'web/' ?>img/uzb_gerb.jpg" alt="">
-                            </div>
-                            <div class="text_link">
-                                <p>O'zbekiston Respublikasi hukumat portali</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="section6_carusel_Iitem">
-                        <a href="https://ziyonet.uz/">
-                            <div class="img">
-                                <img src="<?= $config['base']['url'] . 'web/' ?>img/5ce7da174ef81.png" style="width: 200px;" alt="">
-                            </div>
-                            <div class="text_link">
-                                <p>ZiyoNet Ta'lim Portali</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="section6_carusel_Iitem">
-                        <a href="https://www.kitob.uz/">
-                            <div class="img">
-                                <img src="<?= $config['base']['url'] . 'web/' ?>img/kitobuz.jpg" style="width: 200px;" alt="">
-                            </div>
-                            <div class="text_link">
-                                <p>Respublika bolalar kutubxonasi</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="section6_carusel_Iitem">
-                        <a href="https://my.gov.uz/ru">
-                            <div class="img">
-                                <img src="<?= $config['base']['url'] . 'web/' ?>img/mygov.png" style="width: 200px;" alt="">
-                            </div>
-                            <div class="text_link">
-                                <p>Yagona Interaktiv Davlat Xizmatlari Portali</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>

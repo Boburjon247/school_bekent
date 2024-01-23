@@ -157,3 +157,97 @@
                </form>
             <?php endforeach; ?>
          <?php endif; ?>
+
+
+
+
+
+         <script>
+        let cardArray = [{
+                icon: 'logo1.png',
+                title: 'Navoiy shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/29'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Buhoro shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/28'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Termiz shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/27'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Qarshi shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/26'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Samarqand shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/25'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Jizzah shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/24'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Guliston shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/23'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Nurafshon shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/22'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Xiva shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/4'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Nukus shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/3'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Andijon shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/20'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Namangan shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/2'
+            },
+            {
+                icon: 'logo1.png',
+                title: "Farg'ona shahridagi Prezident maktabi",
+                link: 'https://portal.piima.uz/schools/presidental-schools/21'
+            },
+            {
+                icon: 'logo1.png',
+                title: 'Toshkent shahridagi Prezident maktabi',
+                link: 'https://portal.piima.uz/schools/presidental-schools/1'
+            },
+        ];
+
+        const containerSchools = document.querySelector('.containerSchools')
+        for (let index = 0; index < cardArray.length; index++) {
+            containerSchools.insertAdjacentHTML(
+                'afterbegin',
+                `<div class="schoolsCard">
+                  <div class="icon">
+                     <img src="<?= $config['base']['url'] . 'web/' ?>img/${cardArray[index].icon}" alt="">
+                  </div>
+                  <div class="title">
+                     <p>${cardArray[index].title}</p>
+                     <a target="_blank" href="${cardArray[index].link}">Batafsil</a>
+                  </div>
+               </div>`
+            )
+        }
+    </script>

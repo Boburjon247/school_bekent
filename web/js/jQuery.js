@@ -120,4 +120,19 @@ $(document).ready(function () {
         $('.section3_cart_img_show').toggle('fast');
     });
 
+
+    const langItem = document.querySelectorAll('.langItem');
+    const langAbout = document.querySelector('.langAbout');
+    langItem.forEach((element, index) => {
+        element.addEventListener('click', (e) => {
+            langAbout.innerHTML = ' ';
+            localStorage.setItem('lang', element.textContent);
+            langAbout.innerHTML = localStorage.getItem('lang');
+        });
+    });
+    if (localStorage.getItem('lang')) {
+        langAbout.innerHTML = localStorage.getItem('lang');
+    }
+
+
 });

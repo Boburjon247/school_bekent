@@ -36,8 +36,32 @@
       </ul>
    </div>
 </div>
-<!-- 
-<div class="madal">
-   <p>Assalomu alekum</p>
-</div> -->
-<script src="<?=$config['base']['url'].'web/'?>js/system/yildan-yilga-kochirish.js"></script>
+<div class="NToastJS ">
+   <!-- successToast -->
+   <div class="NToastJS_content errorTrue successToast">
+      <i class="fa fa-xmark exit errorTrue"></i>
+      <div class="icon">
+         <i class="fa fa-check"></i>
+      </div>
+      <div class="text">
+         <p id='successMsg'></p>
+      </div>
+      <div class="time">
+         <p></p>
+      </div>
+   </div>
+   <!-- errorToast -->
+   <div class="NToastJS_content errorFalse errorToast">
+      <i class="fa fa-xmark exit errorFalse"></i>
+      <div class="icon">
+         <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <div class="text">
+         <p id='errorMsg'></p>
+      </div>
+      <div class="time">
+         <p></p>
+      </div>
+   </div>
+</div>
+<script src="<?= $config['base']['url'] . 'web/' ?>js/system/yildan-yilga-kochirish.js"></script>

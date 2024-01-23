@@ -13,77 +13,77 @@
                                    <li><a href="#tabs-2">eng</a></li>
                                    <li><a href="#tabs-3">rus</a></li>
                               </ul>
-                              <div id="tabs-1" class="tab_item">
-                                   <div action="" method="post" class="textUchunForma ">
-                                        <textarea class="textUchun " name="sahifa" placeholder="Haqida"></textarea>
-                                   </div>
-                              </div>
-                              <div id="tabs-2" class="tab_item">
-                                   <div action="" method="post" class="textUchunForma ">
-                                        <textarea class="textUchun" name="sahifa" placeholder="About"></textarea>
-                                   </div>
-                              </div>
-                              <div id="tabs-3" class="tab_item">
-                                   <div action="" method="post" class="textUchunForma ">
-                                        <textarea class="textUchun" name="sahifa" placeholder="O"></textarea>
+                              <form action="" method="post">
+                                   <?php foreach (GetAll('admin_m_haqida', 'false', 'asc') as $key => $text) : ?>
+                                        <div id="tabs-1" class="tab_item">
+                                             <div action="" method="post" class="textUchunForma ">
+                                                  <textarea class="textUchun " name="text_uz" placeholder="Haqida"><?= $text['text_uz'] ?></textarea>
+                                             </div>
+                                        </div>
+                                        <div id="tabs-2" class="tab_item">
+                                             <div action="" method="post" class="textUchunForma ">
+                                                  <textarea class="textUchun" name="text_en" placeholder="About"><?= $text['text_en'] ?></textarea>
+                                             </div>
+                                        </div>
+                                        <div id="tabs-3" class="tab_item">
+                                             <div action="" method="post" class="textUchunForma ">
+                                                  <textarea class="textUchun" name="text_ru" placeholder="O"><?= $text['text_ru'] ?></textarea>
+                                             </div>
+                                        </div>
+                                        <button type="submit" name="haqida" class="btn btn-outline-warning btn-fw mkt-toliq-mal">Saqlash</button>
+                                   <?php endforeach; ?>
 
-                                   </div>
-                              </div>
+                              </form>
                          </div>
-                         <button type="button" class="btn btn-outline-warning btn-fw mkt-toliq-mal">Saqlash</button>
                     </div>
                </div>
+               <?php
+               if (isset($_POST['haqida'])) {
+                    if (
+                         (isset($_POST['text_uz']) && !empty($_POST['text_uz'])) &&
+                         (isset($_POST['text_ru']) && !empty($_POST['text_ru'])) &&
+                         (isset($_POST['text_en']) && !empty($_POST['text_en']))
+                    ) {
+                         $aloqaInputGet = test_input([
+                              $_POST['text_uz'],
+                              $_POST['text_en'],
+                              $_POST['text_ru']
+                         ]);
+                         $db = connection();
+                         $sql = $db->query("UPDATE admin_m_haqida SET 
+                                   text_uz = '{$aloqaInputGet[0]}',
+                                   text_en = '{$aloqaInputGet[1]}',
+                                   text_ru = '{$aloqaInputGet[2]}'
+                                   ");
+                         if ($sql) {
+                              reflesh(url_admin, 'bizhaqimizda');
+                         }
+                    }
+               }
+               ?>
                <div class="col-6">
                     <div class="bg">
                          <p>Prezident Maktablari</p>
                          <ul class="row prm-haqida">
-                              <li class="col-4">
-                                   <div class="content-prm">
-                                        <div class="img" style="background-image: url(assets/img/banner_4.jpg);">
-                                        </div>
-                                        <div class="text">
-                                             <p>nomi</p>
-                                             <span>linki</span>
-                                        </div>
-                                        <button class="deleteRasim"><i class="fa-solid fa-trash fa-shake" style="color: #ff0000;"></i></button>
-                                   </div>
-                              </li>
-                              <li class="col-4">
-                                   <div class="content-prm">
-                                        <div class="img" style="background-image: url(assets/img/banner_4.jpg);">
-                                        </div>
-                                        <div class="text">
-                                             <p>nomi</p>
-                                             <span>linki</span>
-                                        </div>
-                                        <button class="deleteRasim"><i class="fa-solid fa-trash fa-shake" style="color: #ff0000;"></i></button>
-                                   </div>
-                              </li>
-                              <li class="col-4">
-                                   <div class="content-prm">
-                                        <div class="img" style="background-image: url(assets/img/banner_4.jpg);">
-                                        </div>
-                                        <div class="text">
-                                             <p>nomi</p>
-                                             <span>linki</span>
-                                        </div>
-                                        <button class="deleteRasim"><i class="fa-solid fa-trash fa-shake" style="color: #ff0000;"></i></button>
-                                   </div>
-                              </li>
-                              <li class="col-4">
-                                   <div class="content-prm">
-                                        <div class="img" style="background-image: url(assets/img/banner_4.jpg);">
-                                        </div>
-                                        <div class="text">
-                                             <p>nomi</p>
-                                             <span>linki</span>
-                                        </div>
-                                        <button class="deleteRasim"><i class="fa-solid fa-trash fa-shake" style="color: #ff0000;"></i></button>
-                                   </div>
-                              </li>
-
+                              <?php foreach (GetAll('admin_maktablar_linklar', 'false', 'asc') as $key => $text) : ?>
+                                   <li class="col-4">
+                                        <form action="" method="post">
+                                             <input type="hidden" name="id" value="<?= $text['id'] ?>">
+                                             <input type="hidden" name="img" value="<?= $text['img'] ?>">
+                                             <div class="content-prm">
+                                                  <div class="img" style="background-image: url('<?= $config['base']['url'] . 'web/img/maktanlar-logo/' . $text['img'] ?>');">
+                                                  </div>
+                                                  <div class="text">
+                                                       <p><?= $text['text_uz'] ?></p>
+                                                       <span><?= $text['link'] ?></span>
+                                                  </div>
+                                                  <button name="deleteRasim" type="submit" class="deleteRasim"><i class="fa-solid fa-trash fa-shake" style="color: #ff0000;"></i></button>
+                                             </div>
+                                        </form>
+                                   </li>
+                              <?php endforeach; ?>
                          </ul>
-                         <form class="row p-2">
+                         <form class="row p-2" method="post" enctype="multipart/form-data">
                               <div class="col-4">
                                    <div class="imgUser prm-img">
                                         <label for="file4">
@@ -104,30 +104,81 @@
                                         </ul>
                                         <div id="tabs-1" class="tab_item">
                                              <div class="textUchunForma">
-                                                  <input class="input" type="text" placeholder="Nomi">
-                                                  <input class="input" type="text" placeholder="Linki">
+                                                  <input name="text_uz" class="input" type="text" placeholder="Nomi">
+                                                  <input name="link" class="input" type="text" placeholder="Linki">
                                              </div>
                                         </div>
                                         <div id="tabs-2" class="tab_item">
                                              <div class="textUchunForma">
-                                                  <input class="input" type="text" placeholder="Nomi">
-                                                  <input class="input" type="text" placeholder="Linki">
+                                                  <input name="text_en" class="input" type="text" placeholder="Nomi">
 
                                              </div>
                                         </div>
                                         <div id="tabs-3" class="tab_item">
                                              <div class="textUchunForma">
-                                                  <input class="input" type="text" placeholder="Nomi">
-                                                  <input class="input" type="text" placeholder="Linki">
+                                                  <input name="text_ru" class="input" type="text" placeholder="Nomi">
                                              </div>
                                         </div>
                                    </div>
                               </div>
-                              <button type="button" class="btn btn-outline-warning btn-fw img-saqlash">Saqlash</button>
+                              <button name="prizdentML" type="submit" class="btn btn-outline-warning btn-fw img-saqlash">Saqlash</button>
                          </form>
                     </div>
                </div>
           </div>
+          <?php
+          //  qoshish
+          if (isset($_POST['prizdentML'])) {
+               if (
+                    (isset($_POST['text_uz']) && !empty($_POST['text_uz'])) &&
+                    (isset($_POST['text_en']) && !empty($_POST['text_en'])) &&
+                    (isset($_POST['text_ru']) && !empty($_POST['text_ru'])) &&
+                    (isset($_POST['link']) && !empty($_POST['link']))
+               ) {
+                    if ($_FILES['file']['size'] < 4608000) {
+                         $png = 'image/png';
+                         $jpeg = 'image/jpeg';
+                         if ($_FILES['file']['type'] == $png || $_FILES['file']['type'] == $jpeg) {
+                              $array_file_name = explode('.', $_FILES['file']['name']);
+                              $type = count($array_file_name) - 1;
+                              $name = $_POST['text_uz'] . time() . '.' . $array_file_name[$type];
+                              $bool = move_uploaded_file($_FILES['file']['tmp_name'], '../web/img/maktanlar-logo/' . $name);
+                              if ($bool) {
+                                   $aloqaInputGet = test_input([
+                                        $_POST['text_uz'],
+                                        $_POST['text_en'],
+                                        $_POST['text_ru'],
+                                        $_POST['link'],
+                                        $name
+                                   ]);
+                                   if (getInsert(
+                                        'admin_maktablar_linklar',
+                                        ['text_uz', 'text_en', 'text_ru', 'link', 'img'],
+                                        $aloqaInputGet
+                                   )) {
+                                        reflesh(url_admin, 'bizhaqimizda');
+                                   }
+                              } else {
+                                   echo 'saqlanmadi';
+                              }
+                         } else {
+                              echo 'notogri fayl';
+                         }
+                    } else {
+                         echo 'hazmi katta';
+                    }
+               }
+          }
+          // ochirish
+          if (isset($_POST['deleteRasim'])) {
+               if (getItemsDelet('admin_maktablar_linklar', 'id', [$_POST['id']])) {
+                    unlink('../web/img/maktanlar-logo/' . $_POST['img']);
+                    reflesh(url_admin, 'bizhaqimizda');
+               }
+          }
+          ?>
+
+          ?>
           <div class="row">
                <div class="col-12 admin_BS" style="margin-top: 20px;">
                     <p>Rahbariyat</p>

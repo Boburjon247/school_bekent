@@ -114,7 +114,7 @@ function GetAll($tableName, $id, $val)
    } else {
       $sql = $db->query("SELECT * FROM $tableName WHERE  `id` = $id");
       return getarray($sql);
-   }
+   }  
 }
 
 //malumotlarni o'chirib tashlash.
@@ -191,6 +191,7 @@ function getHasId($tablename, $col, $id, $condition = null)
             return true;
          return false;
 }
+
 
 
 ?>

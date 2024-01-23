@@ -10,25 +10,9 @@ include $config['base']['path'] . 'views/model/header-banner.php'
         <section class="container-fluid about">
             <div class="container aboutContainer">
                 <h2>Farg'ona shaxar Prezident maktabi</h2>
-                <span>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero dolores asperiores, beatae voluptate nemo mollitia qui quo ipsam hic ut, nisi sapiente pariatur eaque dolorem voluptatum veritatis assumenda eius maiores.
-                    Vero, aliquid corrupti reiciendis illum saepe, molestiae, nobis pariatur esse dignissimos nam veniam natus nostrum obcaecati consequuntur fugiat! Quod voluptate non repellat at fugit quisquam minima fuga cumque ut
-                </span>
-                <span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nam distinctio maxime labore odit provident dolorum quam laboriosam tenetur consequatur quia quis nulla neque, veritatis officiis a possimus voluptatibus autem.
-                    Nihil at quaerat fugiat error odit distinctio quisquam doloremque ipsum corrupti molestiae harum nostrum ipsa illo modi, necessitatibus qui temporibus, pariatur accusamus? Illo sed possimus repudiandae deserunt quae commodi enim.
-                    Possimus suscipit consequuntur tenetur dicta magni sequi deleniti harum temporibus facilis accusamus nisi pariatur vel reprehenderit, corrupti assumenda expedita id a debitis, placeat obcaecati. Explicabo, odit? Velit architecto accusantium quidem!
-                    Rem voluptates maiores numquam corporis nemo perspiciatis optio dicta, animi minus earum modi laudantium dolorum temporibus molestias cumque doloribus ut consequatur. Non quidem necessitatibus quos dignissimos numquam aliquam ut fugiat!
-                    Reprehenderit tenetur corporis nulla numquam officiis ad quisquam assumenda eum consectetur sequi, nemo pariatur magni provident cumque excepturi minima nesciunt veritatis, sapiente deserunt perspiciatis expedita temporibus iste laborum? Necessitatibus, quisquam?
-                </span>
-                <span>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae deserunt totam id maiores quos aperiam quas ad culpa corrupti possimus odit ipsum fuga ipsa saepe rerum consequatur reiciendis, architecto laboriosam.
-                    Expedita fugiat voluptatum quo quas exercitationem praesentium tempore ab accusantium ipsum temporibus illo autem hic, tempora, quibusdam sequi. Excepturi accusantium sunt ut quo saepe obcaecati possimus id autem, quam nostrum.
-                    Pariatur doloremque iure obcaecati quaerat modi debitis nesciunt expedita aperiam, et enim tempore qui! Ullam, illo. Saepe ducimus qui deleniti dolores voluptatibus? Ad rerum aliquam, sint quidem sapiente nam nobis?
-                    Commodi blanditiis quos at molestias architecto rerum quia error soluta qui aspernatur nesciunt autem adipisci aut, nihil veritatis dolor unde tempora. Ipsa placeat delectus vero sed et fugit error iusto.
-                    Facere veritatis amet quod possimus corrupti, rem recusandae! Esse similique minima aut, aperiam reiciendis, iusto quidem architecto assumenda, fugit itaque eaque vitae? Temporibus dicta possimus laudantium aliquam praesentium, culpa ipsam.
-                    Nisi soluta quis iure, praesentium qui neque possimus aliquid illo, fuga suscipit explicabo minima voluptatem rem ducimus asperiores unde facere officiis, totam sunt quas quam adipisci! Quod itaque explicabo asperiores!
-                </span>
+                <?php foreach (GetAll('admin_m_haqida', 'false', 'asc') as $key => $text) : ?>
+                    <span><?= $text['text_' . $_SESSION['lang']] ?></span>
+                <?php endforeach; ?>
             </div>
         </section>
     </main>
@@ -38,98 +22,21 @@ include $config['base']['path'] . 'views/model/header-banner.php'
     <!-- main -->
     <main>
         <section class="container-fluid schools">
-            <div class="container containerSchools"></div>
+            <div class="container containerSchools">
+                <?php foreach (GetAll('admin_maktablar_linklar', 'false', 'asc') as $key => $text) : ?>
+                    <div class="schoolsCard">
+                        <div class="icon">
+                            <img src="<?= $config['base']['url'] . 'web/img/maktanlar-logo/'.$text['img']?>" alt="">
+                        </div>
+                        <div class="title">
+                            <p><?= $text['text_'.$_SESSION['lang']]?></p>
+                            <a target="_blank" href="<?= $text['link']?>">Batafsil</a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </section>
     </main>
-    <script>
-        let cardArray = [{
-                icon: 'logo1.png',
-                title: 'Navoiy shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/29'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Buhoro shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/28'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Termiz shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/27'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Qarshi shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/26'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Samarqand shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/25'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Jizzah shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/24'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Guliston shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/23'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Nurafshon shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/22'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Xiva shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/4'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Nukus shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/3'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Andijon shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/20'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Namangan shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/2'
-            },
-            {
-                icon: 'logo1.png',
-                title: "Farg'ona shahridagi Prezident maktabi",
-                link: 'https://portal.piima.uz/schools/presidental-schools/21'
-            },
-            {
-                icon: 'logo1.png',
-                title: 'Toshkent shahridagi Prezident maktabi',
-                link: 'https://portal.piima.uz/schools/presidental-schools/1'
-            },
-        ];
-
-        const containerSchools = document.querySelector('.containerSchools')
-        for (let index = 0; index < cardArray.length; index++) {
-            containerSchools.insertAdjacentHTML(
-                'afterbegin',
-                `<div class="schoolsCard">
-                  <div class="icon">
-                     <img src="<?= $config['base']['url'] . 'web/' ?>img/${cardArray[index].icon}" alt="">
-                  </div>
-                  <div class="title">
-                     <p>${cardArray[index].title}</p>
-                     <a target="_blank" href="${cardArray[index].link}">Batafsil</a>
-                  </div>
-               </div>`
-            )
-        }
-    </script>
 <?php elseif (isset($_GET['id']) && $_GET['id'] == 3) : ?>
     <!-- header-banner -->
     <?php headerBanner('Rahbariyat'); ?>

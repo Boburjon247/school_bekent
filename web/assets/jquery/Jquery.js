@@ -97,5 +97,12 @@ $(function () {
     let img = URL.createObjectURL(event.target.files[0]);
     $('#imgUrl10').attr('src', img);
     
-  })
+  });
+
+
+  if($('.videoNameHidden').val() != undefined){
+      $('.addVideoBody').css('display', 'none'); 
+  }else{
+    $('.addVideoBody').css('display', 'flex'); 
+  }
 });

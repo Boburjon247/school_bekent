@@ -192,42 +192,42 @@ global $view, $config;
         <div class="header">
             <div class="container section7_content">
                 <ul class="section7_text_wrap">
+                    <?php foreach (GetAll('admin_boshsahifa_footer', 'false', 'asc') as $key => $link) : ?>
                     <li>
                         <div class="text_a">
                             <p>Ijtimoiy tarmoqlar</p>
                         </div>
                         <ul>
                             <li>
-                                <a href="https://t.me/Boburjon03" target="_blank">
+                                <a href="https://t.me/<?=$link['telegram']?>" target="_blank">
                                     <span><i class="fa-brands fa-telegram"></i></span>
                                     <span>telegram</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://www.facebook.com/abdunazarov">
+                                <a target="_blank" href="https://www.facebook.com/<?=$link['facebook']?>">
                                     <span><i class="fa-brands fa-facebook-f"></i></span>
                                     <span>facebook</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="http://www.youtube.com/embed/zX54DIpacNE">
+                                <a target="_blank" href="http://www.youtube.com/<?=$link['youtube']?>">
                                     <span><i class="fa-brands fa-youtube"></i></span>
                                     <span>youtube</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="http://instagram.com/_u/abdunazarov_bobur030">
+                                <a target="_blank" href="http://instagram.com/_u/<?=$link['instagram']?>">
                                     <span><i class="fa-brands fa-instagram"></i></span>
                                     <span>instagram</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="https://twitter.com/intent/tweet">
+                                <a target="_blank" href="https://twitter.com/intent/<?=$link['twitter']?>">
                                     <span><i class="fa-brands fa-twitter"></i></span>
                                     <span>twitter</span>
                                 </a>
                             </li>
-
                         </ul>
                     </li>
                     <li>
@@ -237,31 +237,31 @@ global $view, $config;
                         </div>
                         <ul>
                             <li>
-                                <a target="_blank" href="https://yandex.uz/maps/10336/phergana/house/Y0gYcQ5gQE0BQFpqfX92dntkZA==/?azimuth=5.092816215780344&from=mapframe&ll=71.790420%2C40.377354&tilt=0.8726646259971648&z=18.77">
+                                <a target="_blank" href="<?= $link['lakatsiya']?>">
                                     <span><i class="fa-sharp fa-solid fa-location-dot"></i></span>
                                     <span>Farg'ona sh.,Qashqar k., 1</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="tel:+998976665979">
+                                <a target="_blank" href="tel:<?=$link['telefon1']?>">
                                     <span><i class="fa-solid fa-phone"></i></span>
                                     <span>+99890 000 00 00</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="tel:+998976665979">
+                                <a target="_blank" href="tel:<?=$link['telefon2']?>">
                                     <span><i class="fa-solid fa-phone"></i></span>
                                     <span>+99890 000 00 00</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="mailto:abdunazarov247@gmail.com">
+                                <a target="_blank" href="mailto:<?=$link['email1']?>">
                                     <span><i class="fa-solid fa-envelope"></i></span>
                                     <span>info@gmail.com</span>
                                 </a>
                             </li>
                             <li>
-                                <a target="_blank" href="mailto:abdunazarov247@gmail.com    ">
+                                <a target="_blank" href="mailto:<?=$link['email2']?>">
                                     <span><i class="fa-solid fa-envelope"></i></span>
                                     <span>info@gmail.com</span>
                                 </a>
@@ -284,6 +284,7 @@ global $view, $config;
                         </div>
                         <div class="img_c"></div>
                     </li>
+                    <?php endforeach ;?>
                 </ul>
             </div>
             <!--Content before waves-->
