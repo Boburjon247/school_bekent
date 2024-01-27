@@ -11,7 +11,7 @@ global $config;
                 <?php foreach (GetAll('admin_boshsahifa_salyder_text', 'false', 'asc') as $key => $text1) : ?>
                     <p><?= $text1['title_' . $_SESSION['lang']] ?></p>
                     <span><?= $text1['text_' . $_SESSION['lang']] ?><span>
-                <?php endforeach; ?>
+                        <?php endforeach; ?>
             </div>
         </div>
         <div class="swiper-wrapper">
@@ -115,113 +115,38 @@ global $config;
         <div class="section2_card_slider">
             <div class="section2_all_button">
                 <button>
-                    <a href="?view=Matbuot-xizmati&id=1">all</a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/1">all</a>
                 </button>
             </div>
             <div class="owl-carousel owl-theme">
-                <div class="item">
-                    <div class="item_content">
-                        <div class="img img_active_click" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg');"></div>
-                        <div class="card_wrap">
-                            <a href="#">
-                                <p>Turkiyani Sogʻliq bilimlari Universiteti bilan hamkorlikda urologiya va xirurgik bemorlarni davolash boʻyicha konferensiyasi oʻtdi</p>
-                            </a>
-                            <p>
-                                <span>10.05.2023</span>
-                            </p>
+                <?php foreach (GetAllRowLimit('admin_maktab_yangiliklar', 'status', 'yangilik', '10') as $key => $val) : ?>
+                    <?php
+                    $imgarray = [];
+                    $imgarray = explode(' ', $val['img']);
+                    $newImg = $imgarray[0];
+                    ?>
+                    <div class="item">
+                        <div class="item_content">
+                            <div class="img img_active_click" style="background-image: url('<?= $config['base']['url'] . 'web/img/news/' . $newImg ?>');"></div>
+                            <div class="card_wrap">
+                                <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>">
+                                    <p><?= textFilter($val['title_' . $_SESSION['lang']], 80) ?></p>
+                                </a>
+                                <p>
+                                    <span>
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                        <?= $val['date']?>
+                                    </span>
+                                </p>
+                            </div>
+                            <span class="eyes_card">
+                                <i class="fa-solid fa-eye"></i>
+                                <span>000</span>
+                            </span>
                         </div>
-                        <span class="eyes_card">
-                            <i class="fa-solid fa-eye"></i>
-                            <span>000</span>
-                        </span>
-                    </div>
-                    </a>
-                </div>
-                <div class="item">
-                    <div class="item_content">
-                        <div class="img img_active_click" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/PIIM2.jpg');"></div>
-                        <a href="#">
-                            <div class="card_wrap">
-                                <p>Turkiyani Sogʻliq bilimlari Universiteti bilan hamkorlikda urologiya va xirurgik bemorlarni davolash boʻyicha konferensiyasi oʻtdi</p>
-                                <p>
-                                    <span>10.05.2023</span>
-                                </p>
-                            </div>
                         </a>
-                        <span class="eyes_card">
-                            <i class="fa-solid fa-eye"></i>
-                            <span>000</span>
-                        </span>
                     </div>
-                </div>
-                <div class="item">
-                    <div class="item_content">
-                        <div class="img img_active_click" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg');"></div>
-                        <a href="#">
-                            <div class="card_wrap">
-                                <p>Turkiyani Sogʻliq bilimlari Universiteti bilan hamkorlikda urologiya va xirurgik bemorlarni davolash boʻyicha konferensiyasi oʻtdi</p>
-                                <p>
-                                    <span>10.05.2023</span>
-                                </p>
-                            </div>
-                        </a>
-                        <span class="eyes_card">
-                            <i class="fa-solid fa-eye"></i>
-                            <span>000</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_content">
-                        <div class="img img_active_click" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/Dinner.jpg');"></div>
-                        <a href="#">
-                            <div class="card_wrap">
-                                <p>Turkiyani Sogʻliq bilimlari Universiteti bilan hamkorlikda urologiya va xirurgik bemorlarni davolash boʻyicha konferensiyasi oʻtdi</p>
-                                <p>
-                                    <span>10.05.2023</span>
-                                </p>
-                            </div>
-                        </a>
-                        <span class="eyes_card">
-                            <i class="fa-solid fa-eye"></i>
-                            <span>000</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_content">
-                        <div class="img img_active_click" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/PIIM5.jpg');"></div>
-                        <div class="card_wrap">
-                            <a href="#">
-                                <p>Turkiyani Sogʻliq bilimlari Universiteti bilan hamkorlikda urologiya va xirurgik bemorlarni davolash boʻyicha konferensiyasi oʻtdi</p>
-                            </a>
-                            <p>
-                                <span>10.05.2023</span>
-                            </p>
-                        </div>
-                        <span class="eyes_card">
-                            <i class="fa-solid fa-eye"></i>
-                            <span>000</span>
-                        </span>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="item_content">
-                        <div class="img img_active_click" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/Dinner.jpg');"></div>
-                        <a href="#">
-                            <div class="card_wrap">
-                                <p>Turkiyani Sogʻliq bilimlari Universiteti bilan hamkorlikda urologiya va xirurgik bemorlarni davolash boʻyicha konferensiyasi oʻtdi</p>
-                                <p>
-                                    <span>10.05.2023</span>
-                                </p>
-                            </div>
-                        </a>
-                        <span class="eyes_card">
-                            <i class="fa-solid fa-eye"></i>
-                            <span>000</span>
-                        </span>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
 

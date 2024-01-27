@@ -102,26 +102,30 @@ li {
   align-items: center;
   justify-content: space-between !important;
 }
-.top_title_header button{
+
+.top_title_header button {
   background-color: #051B57;
   color: #fff;
   border-radius: 5px;
   border: none;
   box-shadow: 2px 2px 3px #2754d1;
 }
-.top_title_header button a{
+
+.top_title_header button a {
   height: 40px !important;
   width: 40px !important;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff !important;
-  
+
 }
-.top_title_header button:active{
+
+.top_title_header button:active {
   box-shadow: inset 2px 2px 3px #002998;
 }
-.top_title_header button:active i{
+
+.top_title_header button:active i {
   font-size: 14px;
 }
 
@@ -414,7 +418,8 @@ li {
   transition: all 0.5s ease-in;
   position: relative;
 }
-.swiper-slide-text{
+
+.swiper-slide-text {
   color: #fff;
   z-index: 15000000 !important;
   max-width: 900px;
@@ -422,18 +427,21 @@ li {
   text-align: center;
   border-radius: 10px;
 }
-.swiper-slide-text p{
+
+.swiper-slide-text p {
   font-size: 38px;
   letter-spacing: 2px;
   line-height: 40px;
 }
-.swiper-slide-text span{
+
+.swiper-slide-text span {
   color: #999;
   padding: 0px 15px;
   display: block;
   font-size: 18px;
   line-height: 20px;
 }
+
 .swiper-slide img {
   display: block;
   width: 100%;
@@ -1137,6 +1145,11 @@ button.btn span::after {
   padding: 10px;
 }
 
+.owl-carousel .item .card_wrap a{
+  display: block;
+  max-height:70px;
+  height: 70px;
+}
 .owl-carousel .item .card_wrap p:nth-child(1) {
   font-size: 18px;
   color: #444;
@@ -1933,12 +1946,18 @@ button.btn span::after {
 
 .newSection .card-info {
   padding: 10px 20px;
-  max-height: 120px;
+  max-height: 100px;
+  height: 100px;
   overflow: hidden;
 }
 
 .newSection .card-info a {
   display: block;
+  font-size: 18px;
+}
+
+.newSection .card-info a:hover {
+  color: blue !important;
 }
 
 .newSection .card-info a h3 {
@@ -1974,6 +1993,10 @@ button.btn span::after {
 
 }
 
+.pagination .page-item:nth-child(1) {
+  margin-top: 17px;
+}
+
 .pagination .page-item {
   width: 40px;
   height: 40px;
@@ -1983,14 +2006,17 @@ button.btn span::after {
   justify-content: center;
   background-color: #fff;
   transition: all .2s ease-in;
+
 }
 
 .pagination .page-item.active {
   background-color: #051b57e7;
+  box-shadow: inset -3px -3px 3px #13224be7, inset 3px 3px 3px #4160b8e7;
 }
 
 .pagination .page-item:hover {
   background-color: #1B2F67;
+  box-shadow: inset 3px 3px 3px #13224be7, inset -3px -3px 3px #4160b8e7;
 }
 
 .pagination .page-item:hover a {
@@ -3117,7 +3143,7 @@ button.btn span::after {
   opacity: .6;
 }
 
-.NToastJS{
+.NToastJS {
   display: inline-block !important;
   top: 10px;
   right: -100%;
@@ -3128,33 +3154,40 @@ button.btn span::after {
   align-items: center;
   justify-content: end;
 }
-.NToastJS.showAni{
+
+.NToastJS.showAni {
   animation: NToastJSshow 1s 1 forwards;
 }
-.NToastJS.hideAni{
+
+.NToastJS.hideAni {
   animation: NToastJShide 1s 1 forwards;
 }
-@keyframes  NToastJSshow{
-  0%{
-     top: 10px;
-     right: -100%;
+
+@keyframes NToastJSshow {
+  0% {
+    top: 10px;
+    right: -100%;
   }
-  100%{
+
+  100% {
     top: 10px;
     right: 30px;
   }
 }
-@keyframes  NToastJShide{
-  0%{
+
+@keyframes NToastJShide {
+  0% {
     top: 10px;
     right: 30px;
   }
-  100%{
+
+  100% {
     top: 10px;
     right: -100%;
   }
 }
-.NToastJS_content{
+
+.NToastJS_content {
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
   width: 250px;
@@ -3168,11 +3201,12 @@ button.btn span::after {
   margin-top: 10px;
   display: none !important;
 }
-.NToastJS_content.active{
+
+.NToastJS_content.active {
   display: flex !important;
 }
 
-.NToastJS_content .icon i{
+.NToastJS_content .icon i {
   border: 1px solid #fff;
   border-radius: 50%;
   width: 30px;
@@ -3182,23 +3216,28 @@ button.btn span::after {
   justify-content: center;
   font-size: 20px;
 }
-.errorTrue{
+
+.errorTrue {
   background-color: rgb(56, 147, 56);
 }
-.errorFalse{
+
+.errorFalse {
   background-color: rgb(165, 34, 34);
 }
-.NToastJS_content .text{
+
+.NToastJS_content .text {
   width: 100%;
 }
-.NToastJS_content .text p{
+
+.NToastJS_content .text p {
   margin: 0 !important;
   font-size: 14px;
   font-weight: 400;
   display: inline-block;
   height: 100%;
 }
-.NToastJS_content i.exit{
+
+.NToastJS_content i.exit {
   position: absolute;
   font-size: 12px;
   width: 20px;
@@ -3211,11 +3250,13 @@ button.btn span::after {
   top: -8px;
   right: -8px;
 }
-.NToastJS_content i.exit:hover{
+
+.NToastJS_content i.exit:hover {
   background-color: red;
   cursor: pointer;
 }
-.NToastJS .time{
+
+.NToastJS .time {
   width: 100%;
   height: 3px;
   position: absolute;
@@ -3223,7 +3264,8 @@ button.btn span::after {
   left: 0;
   padding: 0 2px;
 }
-.NToastJS .time p{
+
+.NToastJS .time p {
   background-color: orange;
   margin-left: 1px;
   margin-right: 1px;
@@ -3232,18 +3274,21 @@ button.btn span::after {
   animation: timeexit 5s 1 forwards;
   animation-delay: 2s;
 }
+
 @keyframes timeexit {
-  0%{
+  0% {
     width: 100%;
     height: 3px;
   }
-  100%{
+
+  100% {
     width: 0;
     height: 3px;
 
   }
 }
-.aloqaLOAD{
+
+.aloqaLOAD {
   position: absolute;
   width: 150px;
   height: 150px;
@@ -3254,16 +3299,130 @@ button.btn span::after {
   right: 50px;
   display: none;
 }
-.aloqaLOAD.active{
+
+.aloqaLOAD.active {
   display: flex;
 }
-.registerLading{
+
+.registerLading {
   position: absolute;
   left: 50px;
   top: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
-.loginxatolik{
+
+.loginxatolik {
   font-size: 17px;
   color: #ff0000;
+}
+
+.new-contener {
+  padding: 20px 0;
+}
+
+.new-contener .news-title {
+  font-size: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #051B57;
+}
+
+.new-contener .news-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.new-contener .news-date i {
+  font-size: 12px;
+}
+
+.news-img {
+  display: block;
+  position: relative;
+
+}
+
+.naw_news {
+  padding: 10px;
+  box-shadow: inset 2px 2px 5px #999;
+  max-height: 700px;
+  height: 700px !important;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+
+.naw_news li {
+  gap: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px #999;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .2s;
+  padding: 3px;
+}
+.naw_news li a{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.naw_news li:hover {
+  box-shadow: 0px 0px 1px #999;
+}
+
+.naw_news li:hover .text span {
+  color: blue;
+}
+
+.naw_news li .img {
+  width: 120px;
+  height: 100%;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.naw_news li .img img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+
+}
+
+.naw_news li .text span {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.naw_news li .text span:nth-child(1) {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.naw_news li .text span:nth-child(2) {
+  color: #999;
+  font-size: 13px;
+}
+.news-img{
+  height: 450px;
+}
+.news-img .carousel{
+  height: 100%;
+  position: relative;
+  overflow: hidden !important;
+}
+.news-text{
+  padding: 15px 10px;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 1px;
+}
+.carousel-item{
+  height: 100%;
+}
+.carousel-item img{
+  height: 100%;
 }

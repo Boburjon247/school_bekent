@@ -8,6 +8,12 @@ $(function () {
   $("#tabsxm").tabs();
 });
 $(function () {
+  $("#tabsxm1").tabs();
+});
+$(function () {
+  $("#tabsxm2").tabs();
+});
+$(function () {
   $("#tabsxml").tabs();
 });
 $(function () {
@@ -15,6 +21,12 @@ $(function () {
 });
 $(function () {
   $("#tabsxl").tabs();
+});
+$(function () {
+  $("#tabsxl1").tabs();
+});
+$(function () {
+  $("#tabsq").tabs();
 });
 // body ga img qoshish
 $(function () {

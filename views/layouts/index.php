@@ -28,7 +28,6 @@ global $view, $config;
     <link rel="stylesheet" href="<?= $config['base']['url'] . 'web/' ?>css/style.css">
     <link rel="stylesheet" href="<?= $config['base']['url'] . 'web/' ?>css/mediya.css">
     <link rel="shortcut icon" href="<?= $config['base']['url'] . 'web/' ?>img/logo-icon-new.svg" type="image/x-icon">
-
 </head>
 
 <body>
@@ -47,7 +46,7 @@ global $view, $config;
                     <span><img src="<?= $config['base']['url'] . 'web/' ?>img/6182235a66337.svg" alt=""></span>
                     <span>FARG'ONA SHAHRIDAGI PREZIDENT MAKTAB</span>
                 </div>
-                <form action="<?=url?>/login.php" method="post" class="login_1 Tab_C">
+                <form action="<?= url ?>/login.php" method="post" class="login_1 Tab_C">
                     <div class="form-group">
                         <input type="text" name="login" id="loginInput" class="username" required="required">
                         <span for="username" class="text_uesr"">Username</span>
@@ -63,80 +62,12 @@ global $view, $config;
                     </div>
                     <div class="form-group form-group3">
                         <label for="checkbox">
-                            <input type="checkbox" name="checkbox" id="checkbox" required class="checkbox_regist">
+                            <input type="checkbox" name="checkbox" id="checkbox" class="checkbox_regist">
                             <p>Remember me</p>
                         </label>
                     </div>
                     <p class="loginxatolik"></p>
                     <div class="regis_btn" style="position: relative;">
-                        <!-- <div class="loading aloqaLOAD registerLading">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: #2B385D; display: block;" width="50px" height="50px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-                                <g  transform="translate(80,50)">
-                                    <g transform="rotate(0)">
-                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="1">
-                                            <animateTransform attributeName="transform" type="scale" begin="-0.875s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
-                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.875s"></animate>
-                                        </circle>
-                                    </g>
-                                </g>
-                                <g transform="translate(71.21320343559643,71.21320343559643)">
-                                    <g transform="rotate(45)">
-                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.875">
-                                            <animateTransform attributeName="transform" type="scale" begin="-0.75s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
-                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.75s"></animate>
-                                        </circle>
-                                    </g>
-                                </g>
-                                <g transform="translate(50,80)">
-                                    <g transform="rotate(90)">
-                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.75">
-                                            <animateTransform attributeName="transform" type="scale" begin="-0.625s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
-                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.625s"></animate>
-                                        </circle>
-                                    </g>
-                                </g>
-                                <g transform="translate(28.786796564403577,71.21320343559643)">
-                                    <g transform="rotate(135)">
-                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.625">
-                                            <animateTransform attributeName="transform" type="scale" begin="-0.5s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
-                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.5s"></animate>
-                                        </circle>
-                                    </g>
-                                </g>
-                                <g transform="translate(20,50.00000000000001)">
-                                    <g transform="rotate(180)">
-                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.5">
-                                            <animateTransform attributeName="transform" type="scale" begin="-0.375s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
-                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.375s"></animate>
-                                        </circle>
-                                    </g>
-                                </g>
-                                <g transform="translate(28.78679656440357,28.786796564403577)">
-                                    <g transform="rotate(225)">
-                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.375">
-                                            <animateTransform attributeName="transform" type="scale" begin="-0.25s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
-                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.25s"></animate>
-                                        </circle>
-                                    </g>
-                                </g>
-                                <g transform="translate(49.99999999999999,20)">
-                                    <g transform="rotate(270)">
-                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.25">
-                                            <animateTransform attributeName="transform" type="scale" begin="-0.125s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
-                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="-0.125s"></animate>
-                                        </circle>
-                                    </g>
-                                </g>
-                                <g transform="translate(71.21320343559643,28.78679656440357)">
-                                    <g transform="rotate(315)">
-                                        <circle cx="0" cy="0" r="6" fill="#1c4595" fill-opacity="0.125">
-                                            <animateTransform attributeName="transform" type="scale" begin="0s" values="1.5 1.5;1 1" keyTimes="0;1" dur="1s" repeatCount="indefinite"></animateTransform>
-                                            <animate attributeName="fill-opacity" keyTimes="0;1" dur="1s" repeatCount="indefinite" values="1;0" begin="0s"></animate>
-                                        </circle>
-                                    </g>
-                                </g>
-                            </svg>
-                        </div> -->
                         <button type="submit" name="loginBtn" class="btn registration-btn">
                             <span>Login up</span>
                         </button>
@@ -155,31 +86,31 @@ global $view, $config;
             <div>
                 <p class="hamburger_title_text">Shahr Prezident Maktab</p>
             </div>
-            <a href="<?= $config['base']['url']?>index" class="menu_item menu_item1">Bosh sahifa</a>
+            <a href="<?= $config['base']['url'] ?>index" class="menu_item menu_item1">Bosh sahifa</a>
             <div id="accordion_hamburger">
                 <h3>Biz haqimizda</h3>
                 <div class="acardion_item">
-                    <a href="<?= $config['base']['url']?>BizHaqimizda/1">Maktab haqida</a>
-                    <a href="<?= $config['base']['url']?>BizHaqimizda/2">Prezident maktablari</a>
-                    <a href="<?= $config['base']['url']?>BizHaqimizda/3">Rahbariyat</a>
-                    <a href="<?= $config['base']['url']?>BizHaqimizda/4">Xodimlar</a>
+                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/1">Maktab haqida</a>
+                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/2">Prezident maktablari</a>
+                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/3">Rahbariyat</a>
+                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/4">Xodimlar</a>
                 </div>
                 <h3>Matbuot xizmati</h3>
                 <div class="acardion_item">
-                    <a href="<?= $config['base']['url']?>MatbuotXizmati/1">Yangiliklar</a>
-                    <a href="<?= $config['base']['url']?>MatbuotXizmati/2">Tadbirlar</a>
-                    <a href="<?= $config['base']['url']?>MatbuotXizmati/3">E'lonlar</a>
-                    <a href="<?= $config['base']['url']?>MatbuotXizmati/4">Fotolavhalar</a>
-                    <a href="<?= $config['base']['url']?>MatbuotXizmati/5">Videolavhalar</a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/1">Yangiliklar</a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/2">Tadbirlar</a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/3">E'lonlar</a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/4">Fotolavhalar</a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/5">Videolavhalar</a>
                 </div>
                 <h3>Foydali manbalar</h3>
                 <div class="acardion_item">
-                    <a href="<?= $config['base']['url']?>FoydaliManbalar/1">Xalqaro tanlovlar</a>
-                    <a href="<?= $config['base']['url']?>FoydaliManbalar/2">To'garaklar</a>
-                    <a href="<?= $config['base']['url']?>FoydaliManbalar/3">O'quv qo'llanmalar</a>
+                    <a href="<?= $config['base']['url'] ?>FoydaliManbalar/1">Xalqaro tanlovlar</a>
+                    <a href="<?= $config['base']['url'] ?>FoydaliManbalar/2">To'garaklar</a>
+                    <a href="<?= $config['base']['url'] ?>FoydaliManbalar/3">O'quv qo'llanmalar</a>
                 </div>
             </div>
-            <a href="<?= $config['base']['url']?>aloqa" class="menu_item">Aloqa</a>
+            <a href="<?= $config['base']['url'] ?>aloqa" class="menu_item">Aloqa</a>
         </div>
     </div>
     <!--    headerTop-->
@@ -193,98 +124,98 @@ global $view, $config;
             <div class="container section7_content">
                 <ul class="section7_text_wrap">
                     <?php foreach (GetAll('admin_boshsahifa_footer', 'false', 'asc') as $key => $link) : ?>
-                    <li>
-                        <div class="text_a">
-                            <p>Ijtimoiy tarmoqlar</p>
-                        </div>
-                        <ul>
-                            <li>
-                                <a href="https://t.me/<?=$link['telegram']?>" target="_blank">
-                                    <span><i class="fa-brands fa-telegram"></i></span>
-                                    <span>telegram</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://www.facebook.com/<?=$link['facebook']?>">
-                                    <span><i class="fa-brands fa-facebook-f"></i></span>
-                                    <span>facebook</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="http://www.youtube.com/<?=$link['youtube']?>">
-                                    <span><i class="fa-brands fa-youtube"></i></span>
-                                    <span>youtube</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="http://instagram.com/_u/<?=$link['instagram']?>">
-                                    <span><i class="fa-brands fa-instagram"></i></span>
-                                    <span>instagram</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="https://twitter.com/intent/<?=$link['twitter']?>">
-                                    <span><i class="fa-brands fa-twitter"></i></span>
-                                    <span>twitter</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <div class="text_a">
-                            <p>Bizning manzil
-                            </p>
-                        </div>
-                        <ul>
-                            <li>
-                                <a target="_blank" href="<?= $link['lakatsiya']?>">
-                                    <span><i class="fa-sharp fa-solid fa-location-dot"></i></span>
-                                    <span>Farg'ona sh.,Qashqar k., 1</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="tel:<?=$link['telefon1']?>">
-                                    <span><i class="fa-solid fa-phone"></i></span>
-                                    <span>+99890 000 00 00</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="tel:<?=$link['telefon2']?>">
-                                    <span><i class="fa-solid fa-phone"></i></span>
-                                    <span>+99890 000 00 00</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="mailto:<?=$link['email1']?>">
-                                    <span><i class="fa-solid fa-envelope"></i></span>
-                                    <span>info@gmail.com</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="mailto:<?=$link['email2']?>">
-                                    <span><i class="fa-solid fa-envelope"></i></span>
-                                    <span>info@gmail.com</span>
-                                </a>
-                            </li>
+                        <li>
+                            <div class="text_a">
+                                <p>Ijtimoiy tarmoqlar</p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a href="https://t.me/<?= $link['telegram'] ?>" target="_blank">
+                                        <span><i class="fa-brands fa-telegram"></i></span>
+                                        <span>telegram</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://www.facebook.com/<?= $link['facebook'] ?>">
+                                        <span><i class="fa-brands fa-facebook-f"></i></span>
+                                        <span>facebook</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="http://www.youtube.com/<?= $link['youtube'] ?>">
+                                        <span><i class="fa-brands fa-youtube"></i></span>
+                                        <span>youtube</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="http://instagram.com/_u/<?= $link['instagram'] ?>">
+                                        <span><i class="fa-brands fa-instagram"></i></span>
+                                        <span>instagram</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="https://twitter.com/intent/<?= $link['twitter'] ?>">
+                                        <span><i class="fa-brands fa-twitter"></i></span>
+                                        <span>twitter</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="text_a">
+                                <p>Bizning manzil
+                                </p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <a target="_blank" href="<?= $link['lakatsiya'] ?>">
+                                        <span><i class="fa-sharp fa-solid fa-location-dot"></i></span>
+                                        <span>Farg'ona sh.,Qashqar k., 1</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="tel:<?= $link['telefon1'] ?>">
+                                        <span><i class="fa-solid fa-phone"></i></span>
+                                        <span>+99890 000 00 00</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="tel:<?= $link['telefon2'] ?>">
+                                        <span><i class="fa-solid fa-phone"></i></span>
+                                        <span>+99890 000 00 00</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="mailto:<?= $link['email1'] ?>">
+                                        <span><i class="fa-solid fa-envelope"></i></span>
+                                        <span>info@gmail.com</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="mailto:<?= $link['email2'] ?>">
+                                        <span><i class="fa-solid fa-envelope"></i></span>
+                                        <span>info@gmail.com</span>
+                                    </a>
+                                </li>
 
-                        </ul>
-                    </li>
-                    <li class="karta_map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4298.366140973782!2d71.78458560570324!3d40.37773429703404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb8580a7cc85f7%3A0x23350da476023dc4!2sPresidential%20School%20in%20Fergana!5e0!3m2!1sen!2s!4v1697522294991!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </li>
-                    <li class="li4">
-                        <div class="img_a">
-                            <div class="img" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/6182235a66337.svg');"></div>
-                        </div>
-                        <div class="img_b">
-                            <p>
-                                Barcha huquqlar himoyalangan. Saytdagi barcha huquqlar O'zbekiston Respublikasi qonunlariga, shu jumladan mualliflik huquqi va turdosh huquqlarga muvofiq himoya qilinadi. Sayt materiallaridan foydalanganda, Farg'ona Shahr Prezident Maktab web Saytiga havola ko'rsatilishi shart. <br>
-                                Diqqat! Agar siz matnda xatoliklarni aniqlasangiz, ularni belgilab, ma`muriyatni xabardor qilish uchun <a href="#" id="a12">admin xabar</a> tugmalarini bosing
-                            </p>
-                        </div>
-                        <div class="img_c"></div>
-                    </li>
-                    <?php endforeach ;?>
+                            </ul>
+                        </li>
+                        <li class="karta_map">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4298.366140973782!2d71.78458560570324!3d40.37773429703404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bb8580a7cc85f7%3A0x23350da476023dc4!2sPresidential%20School%20in%20Fergana!5e0!3m2!1sen!2s!4v1697522294991!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </li>
+                        <li class="li4">
+                            <div class="img_a">
+                                <div class="img" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/6182235a66337.svg');"></div>
+                            </div>
+                            <div class="img_b">
+                                <p>
+                                    Barcha huquqlar himoyalangan. Saytdagi barcha huquqlar O'zbekiston Respublikasi qonunlariga, shu jumladan mualliflik huquqi va turdosh huquqlarga muvofiq himoya qilinadi. Sayt materiallaridan foydalanganda, Farg'ona Shahr Prezident Maktab web Saytiga havola ko'rsatilishi shart. <br>
+                                    Diqqat! Agar siz matnda xatoliklarni aniqlasangiz, ularni belgilab, ma`muriyatni xabardor qilish uchun <a href="#" id="a12">admin xabar</a> tugmalarini bosing
+                                </p>
+                            </div>
+                            <div class="img_c"></div>
+                        </li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
             <!--Content before waves-->
@@ -322,7 +253,6 @@ global $view, $config;
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="module" src="<?= $config['base']['url'] . 'web/' ?>js/jQuery.js"></script>
-    <!-- <script type="module" src="<?= $config['base']['url'] . 'web/' ?>js/ajax.js"></script> -->
 </body>
 
 </html>

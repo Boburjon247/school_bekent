@@ -7,100 +7,37 @@ include $config['base']['path'] . 'views/model/header-banner.php';
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
+                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'yangilik') as $key => $val) : ?>
+                    <?php
+                    $imgarray = [];
+                    $imgarray = explode(' ', $val['img']);
+                    $newImg = $imgarray[0];
+                    ?>
+                    <div class="card">
+                        <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/img/news/' . $newImg ?>);"></div>
+                        <div class="card-info">
+                            <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>" class="cardTextJs">
+                                <?=
+                                textFilter($val['title_' . $_SESSION['lang']], 80)
+                                ?>
+                            </a>
+                        </div>
+                        <div class="card-date">
+                            <p>
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <?= $val['date'] ?>
+                            </p>
+                            <p>
+                                <span><i class="fa-solid fa-eye"></i></span>
+                                <span>000</span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <div class="pagination container">
                 <ul>
-                    <li class="page-item previous-page "><a href="#">
+                    <li class="page-item previous-page"><a href="#">
                             << /a>
                     </li>
                     <li class="page-item current-page"><a href="#">1</a></li>
@@ -120,101 +57,38 @@ include $config['base']['path'] . 'views/model/header-banner.php';
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
+                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'tadbir') as $key => $val) : ?>
+                    <?php
+                    $imgarray = [];
+                    $imgarray = explode(' ', $val['img']);
+                    $newImg = $imgarray[0];
+                    ?>
+                    <div class="card">
+                        <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/img/news/' . $newImg ?>);"></div>
+                        <div class="card-info">
+                            <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>" class="cardTextJs">
+                                <?=
+                                textFilter($val['title_' . $_SESSION['lang']], 80)
+                                ?>
+                            </a>
+                        </div>
+                        <div class="card-date">
+                            <p>
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <?= $val['date'] ?>
+                            </p>
+                            <p>
+                                <span><i class="fa-solid fa-eye"></i></span>
+                                <span>000</span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <div class="pagination container">
                 <ul>
                     <li class="page-item previous-page "><a href="#">
-                            << /a>
+                            < </a>
                     </li>
                     <li class="page-item current-page"><a href="#">1</a></li>
                     <li class="page-item current-page"><a href="#">2</a></li>
@@ -233,101 +107,38 @@ include $config['base']['path'] . 'views/model/header-banner.php';
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
+                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'elon') as $key => $val) : ?>
+                    <?php
+                    $imgarray = [];
+                    $imgarray = explode(' ', $val['img']);
+                    $newImg = $imgarray[0];
+                    ?>
+                    <div class="card">
+                        <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/img/news/' . $newImg ?>);"></div>
+                        <div class="card-info">
+                            <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>" class="cardTextJs">
+                                <?=
+                                textFilter($val['title_' . $_SESSION['lang']], 80)
+                                ?>
+                            </a>
+                        </div>
+                        <div class="card-date">
+                            <p>
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <?= $val['date'] ?>
+                            </p>
+                            <p>
+                                <span><i class="fa-solid fa-eye"></i></span>
+                                <span>000</span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <div class="pagination container">
                 <ul>
                     <li class="page-item previous-page "><a href="#">
-                            << /a>
+                            < </a>
                     </li>
                     <li class="page-item current-page"><a href="#">1</a></li>
                     <li class="page-item current-page"><a href="#">2</a></li>
@@ -346,101 +157,38 @@ include $config['base']['path'] . 'views/model/header-banner.php';
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
+                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'FotoLavhalar') as $key => $val) : ?>
+                    <?php
+                    $imgarray = [];
+                    $imgarray = explode(' ', $val['img']);
+                    $newImg = $imgarray[0];
+                    ?>
+                    <div class="card">
+                        <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/img/news/' . $newImg ?>);"></div>
+                        <div class="card-info">
+                            <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>" class="cardTextJs">
+                                <?=
+                                textFilter($val['title_' . $_SESSION['lang']], 80)
+                                ?>
+                            </a>
+                        </div>
+                        <div class="card-date">
+                            <p>
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <?= $val['date'] ?>
+                            </p>
+                            <p>
+                                <span><i class="fa-solid fa-eye"></i></span>
+                                <span>000</span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <div class="pagination container">
                 <ul>
                     <li class="page-item previous-page "><a href="#">
-                            << /a>
+                            < </a>
                     </li>
                     <li class="page-item current-page"><a href="#">1</a></li>
                     <li class="page-item current-page"><a href="#">2</a></li>
@@ -459,131 +207,38 @@ include $config['base']['path'] . 'views/model/header-banner.php';
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
+                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'VideoLavlahalar') as $key => $val) : ?>
+                    <?php
+                    $imgarray = [];
+                    $imgarray = explode(' ', $val['img']);
+                    $newImg = $imgarray[0];
+                    ?>
+                    <div class="card">
+                        <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/img/news/' . $newImg ?>);"></div>
+                        <div class="card-info">
+                            <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>" class="cardTextJs">
+                                <?=
+                                textFilter($val['title_' . $_SESSION['lang']], 80)
+                                ?>
+                            </a>
+                        </div>
+                        <div class="card-date">
+                            <p>
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <?= $val['date'] ?>
+                            </p>
+                            <p>
+                                <span><i class="fa-solid fa-eye"></i></span>
+                                <span>000</span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-img" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM1.jpg);"></div>
-                    <div class="card-info">
-                        <a href="" class="cardTextJs"> ipsum dolor sit amet consectetur adipisicing elit. In, sunt?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, sunt? Lorem ipsum dolor sit
-                            amet consectetur adipisicing elit. In, sunt? </a>
-                    </div>
-                    <div class="card-date">
-                        <p>12.12.2023</p>
-                        <p>
-                            <span><i class="fa-solid fa-eye"></i></span>
-                            <span>000</span>
-                        </p>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <div class="pagination container">
                 <ul>
                     <li class="page-item previous-page "><a href="#">
-                            << /a>
+                            < </a>
                     </li>
                     <li class="page-item current-page"><a href="#">1</a></li>
                     <li class="page-item current-page"><a href="#">2</a></li>

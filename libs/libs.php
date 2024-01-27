@@ -116,6 +116,27 @@ function GetAll($tableName, $id, $val)
       return getarray($sql);
    }  
 }
+// ixtiyoriy ustuni boyich oqib olish
+function GetAllRow($tableName, $col,$val)
+{
+   $db = connection();
+   $sql = $db->query("SELECT * FROM $tableName WHERE  $col = '$val' ORDER BY id desc");
+   return getarray($sql);
+}
+// malumotni ikkta ustuni boyicha oqib olish
+function GetAllustun($tableName, $col1,$val1,$col2,$val2)
+{
+   $db = connection();
+   $sql = $db->query("SELECT * FROM $tableName WHERE  $col1 = '$val1' AND $col2 = '$val2'");
+   return getarray($sql);
+}
+// limit boyicha chiqaradi
+function GetAllRowLimit($tableName, $col,$val, $limit)
+{
+   $db = connection();
+   $sql = $db->query("SELECT * FROM $tableName WHERE  $col = '$val' ORDER BY id desc LIMIT $limit");
+   return getarray($sql);
+}
 
 //malumotlarni o'chirib tashlash.
 function getItemsDelet($tableName, $column, $array)
