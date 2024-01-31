@@ -11,8 +11,8 @@
                          <div id="tabs" class="tab">
                               <ul class="tab_items">
                                    <li><a href="#tabs-1">uzb</a></li>
-                                   <li><a href="#tabs-2">eng</a></li>
-                                   <li><a href="#tabs-3">rus</a></li>
+                                   <li><a href="#tabs-2">rus</a></li>
+                                   <li><a href="#tabs-3">eng</a></li>
                               </ul>
                               <form action="" method="post">
                                    <?php foreach (GetAll('admin_boshsahifa_salyder_text', 'false', 'asc') as $key => $text) : ?>
@@ -257,17 +257,17 @@
                                    <?php foreach (GetAll('admin_boshsahifa_maktab_haqida', 'false', 'asc') as $key => $text_m_h) : ?>
                                         <div id="tabs-1" class="tab_item">
                                              <div class="textUchunForma">
-                                                  <textarea name="text_m_h_uz" class="textUchun " name="sahifa" placeholder="Haqida"><?= $text_m_h['text_uz'] ?></textarea>
+                                                  <textarea name="text_m_h_uz" class="textUchun " placeholder="Haqida"><?= $text_m_h['text_uz'] ?></textarea>
                                              </div>
                                         </div>
                                         <div id="tabs-2" class="tab_item">
                                              <div class="textUchunForma">
-                                                  <textarea name="text_m_h_en" class="textUchun" name="sahifa" placeholder="About"><?= $text_m_h['text_en'] ?></textarea>
+                                                  <textarea name="text_m_h_en" class="textUchun" placeholder="About"><?= $text_m_h['text_en'] ?></textarea>
                                              </div>
                                         </div>
                                         <div id="tabs-3" class="tab_item">
                                              <div class="textUchunForma">
-                                                  <textarea name="text_m_h_ru" class="textUchun" name="sahifa" placeholder="O"><?= $text_m_h['text_ru'] ?></textarea>
+                                                  <textarea name="text_m_h_ru" class="textUchun" placeholder="O"><?= $text_m_h['text_ru'] ?></textarea>
                                              </div>
                                         </div>
                                    <?php endforeach; ?>
@@ -284,10 +284,10 @@
                               (isset($_POST['text_m_h_en']) && !empty($_POST['text_m_h_en'])) &&
                               (isset($_POST['text_m_h_ru']) && !empty($_POST['text_m_h_ru']))
                          ) {
-                              $aloqaInputGet = test_input([
+                              $aloqaInputGet = test_input1([
                                    $_POST['text_m_h_uz'],
                                    $_POST['text_m_h_ru'],
-                                   $_POST['text_m_h_en'],
+                                   $_POST['text_m_h_en']
                               ]);
                               $db = connection();
                               $sql = $db->query("UPDATE admin_boshsahifa_maktab_haqida SET 
@@ -304,54 +304,82 @@
                     <div class="bg" style="position: relative;">
                          <p>Vidyo</p>
                          <div class="videUser">
-                              <form action="" method="post" enctype="multipart/form-data">
-                                   <label for="file2">
-                                        <div class="button-video">
-                                             <div class="deleteRasim1 addVideoBody" style="border: 1px solid #767676;">
-                                                  <i style="color: lime;" class="fa-solid fa-circle-plus"></i>
-                                             </div>
-                                             <button type="submit" name="video_qoshish" class="deleteRasim1">
-                                                  <i class="fa-solid fa-check fa-flip" style="color: orange;"></i>
-                                             </button>
-                                             <button type="submit" name="video_ochirish" class="deleteRasim1">
-                                                  <i class="fa-solid fa-trash fa-shake" style="color: #ff0000;"></i>
-                                             </button>
+                              <div id="tabsx120" class="tab haqida_tab" style="height: 100%;">
+                                   <form action="" method="post" enctype="multipart/form-data">
+                                        <ul class="tab_items">
+                                             <li><a href="#tabs-1">Video link</a></li>
+                                             <li><a href="#tabs-2">Rasim</a></li>
+                                        </ul>
+                                        <div id="tabs-1" class="tab_item">
+                                             <label for="" style="color: #Fff;">video link</label>
+                                             <input type="text" name="video" placeholder="Video Link" class="input">
                                         </div>
-                                        <?php foreach (GetAll('admin_boshsahifa_maktab_video', 'false', 'asc') as $key => $video) : ?>
-                                             <input type="hidden" name="id" value="<?= $video['id'] ?>">
-                                             <input type="hidden" class="videoNameHidden" name="video" value="<?= $video['video'] ?>">
-                                             <video controls src="<?= $config['base']['url'] . 'web/video/' . $video['video'] ?>" id="imgvideo"></video>
-                                        <?php endforeach; ?>
-                                   </label>
-                                   <input type="file" name="file" class=" lableImg2 input-UserName" id="file2" visibility="none" style="display: none;">
-                              </form>
+                                        <div id="tabs-2" class="tab_item">
+                                             <ul class="row">
+                                                  <li class="col-6">
+                                                       <div class="vido_img con1 imgUser addRadim">
+                                                            <label for="file300">
+                                                                 <div class="deleteRasim" style="border: 1px solid #767676;">
+                                                                      <i style="color: lime;" class="fa-solid fa-circle-plus"></i>
+                                                                 </div>
+                                                                 <img src="" alt="" id="imgUrl300">
+                                                            </label>
+                                                            <input type="file" name="file" class=" lableImg300 input-UserName" id="file300" visibility="none" style="display: none;">
+                                                       </div>
+                                                  </li>
+                                                  <li class="col-6">
+                                                       <?php foreach (GetAll('admin_boshsahifa_maktab_video', 'false', 'asc') as $key => $img) : ?>
+                                                            <div class="con1">
+                                                                 <input type="hidden" name="id" value="<?=$img['id']?>" id="">
+                                                                 <input type="hidden" name="img" value="<?=$img['img']?>" id="">
+                                                                 <div class="imgSCR1 imgSCR_video_img" 
+                                                                 style="background-image: 
+                                                                 url('<?= $config['base']['url'] . 'web/video/' . $img['img'] ?>');">
+                                                                 </div>
+                                                            </div>
+                                                       <?php endforeach; ?>
+                                                  </li>
+                                             </ul>
+                                        </div>
+                                        <button type="sunmit" name="video_save" class="video_save btn btn-outline-warning btn-fw">Saqlash</button>
+                                        <button type="sunmit" name="video_delet" class="btn btn-outline-warning btn-fw" style="color: red; border:1px solid red">O'chirish</button>
+                                   </form>
+                              </div>
                          </div>
                     </div>
 
                     <!-- //video qoshish -->
                     <?php
-                    if (isset($_POST['video_qoshish'])) {
-                         $type = 'video/mp4';
-                         if ($_FILES['file']['type'] == $type) {
-                              $name = time() . $_FILES['file']['name'];
-                              $bool = move_uploaded_file($_FILES['file']['tmp_name'], '../web/video/' . $name);
-                              if ($bool) {
-                                   getInsert('admin_boshsahifa_maktab_video', ['video'], [$name]);
-                                   reflesh(url_admin, 'boshsahifa');
-                              } else {
-
-                                   echo 'yuklanmadi';
+                    if (isset($_POST['video_save'])) {
+                         if (isset($_POST['video']) && !empty($_POST['video'])) {
+                              if ($_FILES['file']['name'] !== '') {
+                                   if ($_FILES['file']['size'] < 4608000) {
+                                        $array_file_name = explode('.', $_FILES['file']['name']);
+                                        $type = count($array_file_name) - 1;
+                                        $name = 'video' . time() . '.' . $array_file_name[$type];
+                                        $bool = move_uploaded_file($_FILES['file']['tmp_name'], '../web/video/' . $name);
+                                        if ($bool) {
+                                             $aloqaInputGet = test_input([
+                                                  $_POST['video'],
+                                                  $name
+                                             ]);
+                                             getInsert('admin_boshsahifa_maktab_video', ['video_link', 'img'], $aloqaInputGet);
+                                             reflesh(url_admin, 'boshsahifa');
+                                        } else {
+                                             echo 'saqlanmadi';
+                                        }
+                                   } else {
+                                        echo 'fayl katta';
+                                   }
                               }
-                         } else {
-                              echo 'fayl notogri';
                          }
                     }
                     ?>
                     <!-- video ochirish -->
                     <?php
-                    if (isset($_POST['video_ochirish'])) {
+                    if (isset($_POST['video_delet'])) {
                          if (getItemsDelet('admin_boshsahifa_maktab_video', 'id', [$_POST['id']])) {
-                              unlink('../web/video/' . $_POST['video']);
+                              unlink('../web/video/' . $_POST['img']);
                               reflesh(url_admin, 'boshsahifa');
                          }
                     }
@@ -488,43 +516,43 @@
                                    <?php foreach (GetAll('admin_boshsahifa_footer', 'false', 'asc') as $key => $text) : ?>
                                         <li>
                                              <label for="">Telegram</label>
-                                             <input name="telegram" value="<?= $text['telegram']?>" type="text" placeholder="Telegram">
+                                             <input name="telegram" value="<?= $text['telegram'] ?>" type="text" placeholder="Telegram">
                                         </li>
                                         <li>
                                              <label for="">Facebook</label>
-                                             <input name="facebook" value="<?= $text['facebook']?>" type="text" placeholder="Facebook">
+                                             <input name="facebook" value="<?= $text['facebook'] ?>" type="text" placeholder="Facebook">
                                         </li>
                                         <li>
                                              <label for="">Youtube</label>
-                                             <input name="youtube" value="<?= $text['youtube']?>" type="text" placeholder="Youtube">
+                                             <input name="youtube" value="<?= $text['youtube'] ?>" type="text" placeholder="Youtube">
                                         </li>
                                         <li>
                                              <label for="">Instagram</label>
-                                             <input name="instagram" value="<?= $text['instagram']?>" type="text" placeholder="Instagram">
+                                             <input name="instagram" value="<?= $text['instagram'] ?>" type="text" placeholder="Instagram">
                                         </li>
                                         <li>
                                              <label for="">Twitter</label>
-                                             <input name="twitter" value="<?= $text['twitter']?>" type="text" placeholder="Twitter">
+                                             <input name="twitter" value="<?= $text['twitter'] ?>" type="text" placeholder="Twitter">
                                         </li>
                                         <li>
                                              <label for="">Lakatsiya</label>
-                                             <input name="lakatsiya" value="<?= $text['lakatsiya']?>" type="text" placeholder="Lakatsiya">
+                                             <input name="lakatsiya" value="<?= $text['lakatsiya'] ?>" type="text" placeholder="Lakatsiya">
                                         </li>
                                         <li>
                                              <label for="">Telefon1</label>
-                                             <input name="telefon1" value="<?= $text['telefon1']?>" type="tel" placeholder="Telefon1">
+                                             <input name="telefon1" value="<?= $text['telefon1'] ?>" type="tel" placeholder="Telefon1">
                                         </li>
                                         <li>
                                              <label for="">Telefon2</label>
-                                             <input name="telefon2" value="<?= $text['telefon2']?>" type="tel" placeholder="Telefon2">
+                                             <input name="telefon2" value="<?= $text['telefon2'] ?>" type="tel" placeholder="Telefon2">
                                         </li>
                                         <li>
                                              <label for="">Email1</label>
-                                             <input name="email1" value="<?= $text['email1']?>" type="email" placeholder="Email1">
+                                             <input name="email1" value="<?= $text['email1'] ?>" type="email" placeholder="Email1">
                                         </li>
                                         <li>
                                              <label for="">Email2</label>
-                                             <input name="email2" value="<?= $text['email2']?>" type="email" placeholder="Email2">
+                                             <input name="email2" value="<?= $text['email2'] ?>" type="email" placeholder="Email2">
                                         </li>
                                    <?php endforeach; ?>
                               </ul>

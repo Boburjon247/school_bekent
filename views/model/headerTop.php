@@ -1,4 +1,11 @@
 <?php global  $view, $config; ?>
+<?php
+if (isset($_POST['lang'])) {
+    $_SESSION['lang'] = $_POST['lang'];
+} 
+include 'langs/' . $_SESSION['lang'] . '.php';
+?>
+
 <?php if ($view == 'index') : ?>
     <header class="headerTop   container-fluid" id="section1_1a">
         <div class="container">
@@ -10,49 +17,49 @@
                     <div class="navbar_item">
                         <a href="<?= $config['base']['url'] ?>index">
                             <span>
-                                Bosh sahifa
+                                <?= $lang['bosh_sahifa'] ?>
                             </span>
                         </a>
                     </div>
                 </li>
                 <li>
                     <div class="navbar_item">
-                        <span>Biz haqimizda</span>
+                        <span><?= $lang['biz_haqimizda'] ?></span>
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/1">Maktab haqida</a>
-                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/2">Prezident maktablari</a>
-                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/3">Rahbariyat</a>
-                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/4">Xodimlar</a>
+                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/1"><?= $lang['maktab_haqida'] ?></a>
+                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/2"><?= $lang['prezident_maktablari'] ?></a>
+                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/3"><?= $lang['rahbariyat'] ?></a>
+                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/4"><?= $lang['xodimlar'] ?></a>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="navbar_item">
-                        <span>Matbuot xizmati</span>
+                        <span><?= $lang['matbuot_xizmati'] ?></span>
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/1">Yangiliklar</a>
-                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/2">Tadbirlar</a>
-                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/3">E'lonlar</a>
-                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/4">Fotolavhalar</a>
-                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/5">Videolavhalar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/1"><?= $lang['yangiliklar'] ?></a>
+                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/2"><?= $lang['tadbirlar'] ?></a>
+                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/3"><?= $lang['elonlar'] ?></a>
+                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/4"><?= $lang['fotolavhalar'] ?></a>
+                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/5"><?= $lang['videolavhalar'] ?></a>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="navbar_item">
-                        <span>Foydali manbalar</span>
+                        <span><?= $lang['foydali_manbalar'] ?></span>
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/1">Xalqaro tanlovlar</a>
-                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/2">To'garaklar</a>
-                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/3">O'quv qo'llanmalar</a>
+                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/1"><?= $lang['xalqaro_tanlovlar'] ?></a>
+                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/2"><?= $lang['togaraklar'] ?></a>
+                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/3"><?= $lang['oquv_qollanmalar'] ?></a>
                             </div>
                         </div>
                     </div>
@@ -60,7 +67,7 @@
                 <li>
                     <div class="navbar_item">
                         <a href="<?= $config['base']['url'] ?>aloqa">
-                            <span>Aloqa</span>
+                            <span><?= $lang['aloqa'] ?></span>
                         </a>
                     </div>
                 </li>
@@ -72,9 +79,9 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <button type="submit" name="lang" value="uz" class="langItem" href="">O'zbekcha</button>
-                                <button type="submit" name="lang" value="ru" class="langItem" href="">Русски</button>
-                                <button type="submit" name="lang" value="en" class="langItem" href="">English</button>
+                                <button name="lang" value="uz" class="langItem" type="submit">O'zbekcha</button>
+                                <button name="lang" value="en" class="langItem" type="submit">English</button>
+                                <button name="lang" value="ru" class="langItem" type="submit">Русски</button>
                             </div>
                         </div>
                     </form>
@@ -96,49 +103,49 @@
                     <div class="navbar_item">
                         <a href="<?= $config['base']['url'] ?>index">
                             <span>
-                                Bosh sahifa
+                                <?= $lang['bosh_sahifa'] ?>
                             </span>
                         </a>
                     </div>
                 </li>
                 <li>
                     <div class="navbar_item">
-                        <span>Biz haqimizda</span>
+                        <span><?= $lang['biz_haqimizda'] ?></span>
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/1">Maktab haqida</a>
-                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/2">Prezident maktablari</a>
-                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/3">Rahbariyat</a>
-                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/4">Xodimlar</a>
+                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/1"><?= $lang['maktab_haqida'] ?></a>
+                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/2"><?= $lang['prezident_maktablari'] ?></a>
+                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/3"><?= $lang['rahbariyat'] ?></a>
+                                <a href="<?= $config['base']['url'] ?>BizHaqimizda/4"><?= $lang['xodimlar'] ?></a>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="navbar_item">
-                        <span>Matbuot xizmati</span>
+                        <span><?= $lang['matbuot_xizmati'] ?></span>
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/1">Yangiliklar</a>
-                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/2">Tadbirlar</a>
-                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/3">E'lonlar</a>
-                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/4">Fotolavhalar</a>
-                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/5">Videolavhalar</a>
+                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/1"><?= $lang['yangiliklar'] ?></a>
+                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/2"><?= $lang['tadbirlar'] ?></a>
+                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/3"><?= $lang['elonlar'] ?></a>
+                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/4"><?= $lang['fotolavhalar'] ?></a>
+                                <a id="newBtnClick" href="<?= $config['base']['url'] ?>MatbuotXizmati/5"><?= $lang['videolavhalar'] ?></a>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="navbar_item">
-                        <span>Foydali manbalar</span>
+                        <span><?= $lang['foydali_manbalar'] ?></span>
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/1">Xalqaro tanlovlar</a>
-                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/2">To'garaklar</a>
-                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/3">O'quv qo'llanmalar</a>
+                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/1"><?= $lang['xalqaro_tanlovlar'] ?></a>
+                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/2"><?= $lang['togaraklar'] ?></a>
+                                <a href="<?= $config['base']['url'] ?>FoydaliManbalar/3"><?= $lang['oquv_qollanmalar'] ?></a>
                             </div>
                         </div>
                     </div>
@@ -146,7 +153,7 @@
                 <li>
                     <div class="navbar_item">
                         <a href="<?= $config['base']['url'] ?>aloqa">
-                            <span>Aloqa</span>
+                            <span><?= $lang['aloqa'] ?></span>
                         </a>
                     </div>
                 </li>
@@ -158,9 +165,9 @@
                         <span><i class="fa-solid fa-chevron-down"></i></span>
                         <div class="itemMenu">
                             <div class="itemMenuContent">
-                                <button type="submit" name="lang" value="uz" class="langItem" href="">O'zbekcha</button>
-                                <button type="submit" name="lang" value="ru" class="langItem" href="">Русски</button>
-                                <button type="submit" name="lang" value="en" class="langItem" href="">English</button>
+                                <button name="lang" value="uz" class="langItem" type="submit">O'zbekcha</button>
+                                <button name="lang" value="en" class="langItem" type="submit">English</button>
+                                <button name="lang" value="ru" class="langItem" type="submit">Русски</button>
                             </div>
                         </div>
                     </form>
@@ -172,9 +179,3 @@
         </div>
     </header>
 <?php endif; ?>
-<?php
-    $_SESSION['lang'] = 'uz';
-    if(isset($_POST['lang'])){
-        $_SESSION['lang'] = $_POST['lang'];
-    }
-?>

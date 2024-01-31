@@ -119,6 +119,12 @@ a {
      background-size: cover;
      background-position: center;
 }
+.imgSCR1{
+     height: 150px;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+}
 
 .deleteRasim {
      width: 35px;
@@ -243,7 +249,6 @@ a {
 }
 
 .videUser {
-     height: 180px;
 }
 
 .videUser label {
@@ -619,4 +624,7 @@ a {
      width: 200px;
      height: 200px;
      position: relative;
+}
+.vido_img{
+     height: 150px;
 }

@@ -34,21 +34,7 @@ $(document).ready(function () {
             }
         }
     });
-    // uzbekmap
-    // const uzbekmap = document.querySelectorAll('.mapdiv path');
-    // const titleHover = document.querySelector('.titleHover');
-    // uzbekmap.forEach((element,index)=>{
-    //     element.addEventListener('mouseover',(e)=>{
-    //         let maptitle = element.getAttribute('name');
-    //         titleHover.innerHTML = maptitle
-    //     });
-    //     element.classList.remove('active');
-    // });
-    // $('.mapdiv').hover(function () {
-    //     $('.titleHover').text("Fargʻona");
-    //     $('.fargona').addClass('active');
-    // })
-
+    
     // register
     $('.user').on('click', () => {
         $('.registration_wrap').toggle('slow');

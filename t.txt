@@ -257,3 +257,48 @@
     <div class="carousel-item active">
       <img src="<?= $config['base']['url'] . 'web/img/news/'.$imgarray[$i] ?>" class="d-block w-100" alt="...">
                                                        </div>
+
+
+
+
+
+
+   
+                    <div class="card">
+                        <div class="card-img card_img_employees" style="background-image: url('');">
+                            <div class="card-hide">
+                                <div class="card-hide-content">
+                                    <div class="tel pb-2">
+                                        <label for="">telefon raqami</label>
+                                        <span><?= $text['tel']?></span>
+                                    </div>
+                                    <div class="email">
+                                        <label for="">E-mail</label>
+                                        <span><?= $text['email']?></span>
+                                    </div>
+                                    <div class="devasi_link">
+                                        <div class="tg">
+                                            <a href="">
+                                                <i class="fa-brands fa-telegram"></i>
+                                            </a>
+                                        </div>
+                                        <div class="inst">
+                                            <a href="">
+                                                <i class="fa-brands fa-square-instagram"></i>
+                                            </a>
+                                        </div>
+                                        <div class="fecbk">
+                                            <a href="">
+                                                <i class="fa-brands fa-facebook"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-title">
+                            <h3><?= $text['ism'].' '.$text['fam']?></h3>
+                            <span><?= $text['fani']?></span>
+                        </div>
+                    </div>
+                

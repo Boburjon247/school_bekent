@@ -28,6 +28,9 @@ $(function () {
 $(function () {
   $("#tabsq").tabs();
 });
+$(function () {
+  $("#tabsx120").tabs();
+});
 // body ga img qoshish
 $(function () {
   $('.lableImg').change(function (event) {
@@ -105,16 +108,33 @@ $(function () {
   })
 });
 $(function () {
+  $('.lableImg20').change(function (event) {
+    let img = URL.createObjectURL(event.target.files[0]);
+    $('#imgUrl20').attr('src', img);
+    
+  })
+});
+$(function () {
+  $('.lableImg300').change(function (event) {
+    let img = URL.createObjectURL(event.target.files[0]);
+    $('#imgUrl300').attr('src', img);
+    
+  })
+});
+$(function () {
   $('.lableImg10').change(function (event) {
     let img = URL.createObjectURL(event.target.files[0]);
     $('#imgUrl10').attr('src', img);
     
   });
-
-
-  if($('.videoNameHidden').val() != undefined){
-      $('.addVideoBody').css('display', 'none'); 
-  }else{
-    $('.addVideoBody').css('display', 'flex'); 
-  }
 });
+
+
+
+const imgSCR_video_img = document.querySelector('.imgSCR_video_img');
+const video_save = document.querySelector('.video_save');
+if(imgSCR_video_img == null) {
+  video_save.setAttribute('name','video_save');
+}else{
+  video_save.setAttribute('name','a');
+}

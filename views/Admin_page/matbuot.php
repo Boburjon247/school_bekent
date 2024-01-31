@@ -18,7 +18,7 @@ $today = date("Y-m-d");
                          </ul>
                          <div id="tabsx-1" class="tab_item">
                               <form action="" method="post" enctype="multipart/form-data">
-                                   <input type="hidden" name="status" value="yangilik">
+                                   <input type="hidden" name="status" value="Yangiliklar">
                                    <p style="color: #fff; font-size: 18px;">Yangiliklar</p>
                                    <div id="tabsxml" class="tab haqida_tab mkt-haqida">
                                         <ul class="tab_items">
@@ -29,7 +29,7 @@ $today = date("Y-m-d");
                                         <div class="row">
                                              <div class="col-8">
                                                   <ul class="row yangiliklarItems">
-                                                       <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'yangilik') as $key => $val) : ?>
+                                                       <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'Yangiliklar') as $key => $val) : ?>
                                                             <?php
                                                             $imgarray = [];
                                                             $imgarray = explode(' ', $val['img']);
@@ -100,7 +100,7 @@ $today = date("Y-m-d");
                          </div>
                          <div id="tabsx-2" class="tab_item">
                               <form action="" method="post" enctype="multipart/form-data">
-                                   <input type="hidden" name="status" value="tadbir">
+                                   <input type="hidden" name="status" value="Tadbirlar">
                                    <p style="color: #fff; font-size: 18px;">Tadbirlar</p>
                                    <div id="tabsxs" class="tab haqida_tab mkt-haqida">
                                         <ul class="tab_items">
@@ -111,7 +111,7 @@ $today = date("Y-m-d");
                                         <div class="row">
                                              <div class="col-8">
                                                   <ul class="row yangiliklarItems">
-                                                       <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'tadbir') as $key => $val) : ?>
+                                                       <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'Tadbirlar') as $key => $val) : ?>
                                                             <?php
                                                             $imgarray = [];
                                                             $imgarray = explode(' ', $val['img']);
@@ -181,7 +181,7 @@ $today = date("Y-m-d");
                          </div>
                          <div id="tabsx-3" class="tab_item">
                               <form action="" method="post" enctype="multipart/form-data">
-                                   <input type="hidden" name="status" value="elon">
+                                   <input type="hidden" name="status" value="E'lonlar">
                                    <p style="color: #fff; font-size: 18px;">E'lonlar</p>
                                    <div id="tabsq" class="tab haqida_tab mkt-haqida">
                                         <ul class="tab_items">
@@ -192,7 +192,7 @@ $today = date("Y-m-d");
                                         <div class="row">
                                              <div class="col-8">
                                                   <ul class="row yangiliklarItems">
-                                                       <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'elon') as $key => $val) : ?>
+                                                       <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", "E\'lonlar") as $key => $val) : ?>
                                                             <?php
                                                             $imgarray = [];
                                                             $imgarray = explode(' ', $val['img']);
@@ -442,14 +442,14 @@ if (isset($_POST['yangilikqoishish'])) {
           if ($_FILES['files']['name'] != '') {
                $imgArray = [];
                for ($i = 0; $i < count($_FILES['files']['name']); $i++) {
-                    $bool = move_uploaded_file($_FILES['files']['tmp_name'][$i], '../web/img/news/' . $_FILES['files']['name'][$i]);
+                    $fileNmae = time().$_FILES['files']['name'][$i];
+                    $bool = move_uploaded_file($_FILES['files']['tmp_name'][$i], '../web/img/news/' . $fileNmae);
                     if ($bool) {
-                         array_push($imgArray, $_FILES['files']['name'][$i]);
+                         array_push($imgArray, $fileNmae);
                     } else {
                          echo 'saqlanmadi';
                     }
                }
-               // echo print_r($imgArray);
                $imgString = implode(' ', $imgArray);
 
                $aloqaInputGet = test_input([

@@ -44,7 +44,7 @@
                          (isset($_POST['text_ru']) && !empty($_POST['text_ru'])) &&
                          (isset($_POST['text_en']) && !empty($_POST['text_en']))
                     ) {
-                         $aloqaInputGet = test_input([
+                         $aloqaInputGet = test_input2([
                               $_POST['text_uz'],
                               $_POST['text_en'],
                               $_POST['text_ru']
@@ -75,7 +75,6 @@
                                                   </div>
                                                   <div class="text">
                                                        <p><?= $text['text_uz'] ?></p>
-                                                       <span><?= $text['link'] ?></span>
                                                   </div>
                                                   <button name="deleteRasim" type="submit" class="deleteRasim"><i class="fa-solid fa-trash fa-shake" style="color: #ff0000;"></i></button>
                                              </div>

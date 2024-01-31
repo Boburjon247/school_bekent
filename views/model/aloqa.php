@@ -4,12 +4,12 @@
 <section class="header-banner container-fluid">
     <div class="container">
         <div class="top_title_header">
-            <span>aloqa</span>
+            <span><?=$lang['aloqa']?></span>
         </div>
         <div class="navbar_control">
-            <a href="">Asosiy</a>
+            <a href="<?=url?>"><?=$lang['asosiy']?></a>
             <span></span>
-            <a href="">aloqa</a>
+            <a href="#"><?=$lang['aloqa']?></a>
         </div>
     </div>
 </section>
@@ -18,15 +18,15 @@
         <div class="container aloqa_container">
             <div class="left">
                 <form action="" id="aloqaforma" method="get">
-                    <p>murojaat</p>
-                    <input type="text" class="input_fish" required name="fish" id="inputA" placeholder="f.i.sh">
-                    <input type="text" class="input_email" required name="email" id="inputA" placeholder="email: xxxx123@gmail.xx">
-                    <input type="text" class="input_tel" required name="tel" id="inputA" placeholder="Tel">
-                    <input type="text" class="input_manzil" required name="manzil" id="inputA" placeholder="yashash manzili">
-                    <input type="text" class="input_sarlavha" required name="sarlavha" id="inputA" placeholder="sarlavha">
-                    <textarea name="title" required id="inputA" class="input_title" placeholder="murojat mazmuni"></textarea>
+                    <p><?= $lang['murojaat']?></p>
+                    <input type="text" class="input_fish" required name="fish" id="inputA" placeholder="<?= $lang['fish']?>">
+                    <input type="text" class="input_email" required name="email" id="inputA" placeholder="<?= $lang['e']?>">
+                    <input type="text" class="input_tel" required name="tel" id="inputA" placeholder="<?= $lang['tl']?>">
+                    <input type="text" class="input_manzil" required name="manzil" id="inputA" placeholder="<?= $lang['y_m']?>">
+                    <input type="text" class="input_sarlavha" required name="sarlavha" id="inputA" placeholder="<?= $lang['sarlavha']?>">
+                    <textarea name="title" required id="inputA" class="input_title" placeholder="<?= $lang['mazmun']?>"></textarea>
                     <div class="canvas">
-                        <label for=""> kodni kiriting:</label>
+                        <label for=""><?= $lang['kod']?></label>
                         <div class="canvas_chake">
                             <canvas id="canvas"></canvas>
                             <input type="text" required name="canvas" class="canvasItemCheck" id="inputA">
@@ -100,7 +100,7 @@
                             </svg>
                         </div>
                     </div>
-                    <input type="submit" name="murojatYuborish" id="murojatAdd" value="yuborish">
+                    <input type="submit" name="murojatYuborish" id="murojatAdd" value="<?= $lang['btn4']?>">
 
                 </form>
             </div>

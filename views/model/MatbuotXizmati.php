@@ -3,11 +3,11 @@ global $view, $config;
 include $config['base']['path'] . 'views/model/header-banner.php';
 ?>
 <?php if (isset($_GET['id']) && $_GET['id'] == 1) : ?>
-    <?php headerBanner('Yangiliklar'); ?>
+    <?php headerBanner($lang['yangiliklar']); ?>
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">
-                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'yangilik') as $key => $val) : ?>
+                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'Yangiliklar') as $key => $val) : ?>
                     <?php
                     $imgarray = [];
                     $imgarray = explode(' ', $val['img']);
@@ -37,9 +37,7 @@ include $config['base']['path'] . 'views/model/header-banner.php';
             </div>
             <div class="pagination container">
                 <ul>
-                    <li class="page-item previous-page"><a href="#">
-                            << /a>
-                    </li>
+                    <li class="page-item previous-page"><a href="#"><</a></li>
                     <li class="page-item current-page"><a href="#">1</a></li>
                     <li class="page-item current-page"><a href="#">2</a></li>
                     <li class="page-item current-page"><a href="#">3</a></li>
@@ -53,11 +51,11 @@ include $config['base']['path'] . 'views/model/header-banner.php';
     </main>
     <script src="<?= $config['base']['url'] . 'web/' ?>js/pagination.js"></script>
 <?php elseif (isset($_GET['id']) && $_GET['id'] == 2) : ?>
-    <?php headerBanner('Tadbirlar'); ?>
+    <?php headerBanner($lang['tadbirlar']); ?>
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">
-                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'tadbir') as $key => $val) : ?>
+                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'Tadbirlar') as $key => $val) : ?>
                     <?php
                     $imgarray = [];
                     $imgarray = explode(' ', $val['img']);
@@ -103,11 +101,11 @@ include $config['base']['path'] . 'views/model/header-banner.php';
     </main>
     <script src="<?= $config['base']['url'] . 'web/' ?>js/pagination.js"></script>
 <?php elseif (isset($_GET['id']) && $_GET['id'] == 3) : ?>
-    <?php headerBanner("E'lonlar"); ?>
+    <?php headerBanner($lang['elonlar']); ?>
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">
-                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'elon') as $key => $val) : ?>
+                <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", "E\'lonlar") as $key => $val) : ?>
                     <?php
                     $imgarray = [];
                     $imgarray = explode(' ', $val['img']);
@@ -153,7 +151,7 @@ include $config['base']['path'] . 'views/model/header-banner.php';
     </main>
     <script src="<?= $config['base']['url'] . 'web/' ?>js/pagination.js"></script>
 <?php elseif (isset($_GET['id']) && $_GET['id'] == 4) : ?>
-    <?php headerBanner("Fotolavhalar"); ?>
+    <?php headerBanner($lang['fotolavhalar']); ?>
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">
@@ -203,7 +201,7 @@ include $config['base']['path'] . 'views/model/header-banner.php';
     </main>
     <script src="<?= $config['base']['url'] . 'web/' ?>js/pagination.js"></script>
 <?php elseif (isset($_GET['id']) && $_GET['id'] == 5) : ?>
-    <?php headerBanner("Videolavhalar"); ?>
+    <?php headerBanner($lang['videolavhalar']); ?>
     <main>
         <section class="container-fluid newSection">
             <div class="card-content container">

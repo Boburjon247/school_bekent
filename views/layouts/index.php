@@ -1,6 +1,14 @@
 <?php
 global $view, $config;
 ?>
+<?php
+if (empty($_SESSION['lang'])) {
+    $_SESSION['lang'] = 'uz';
+}
+if (isset($_GET['lang'])) {
+    $_SESSION['lang'] = $_GET['lang'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,9 +40,11 @@ global $view, $config;
 
 <body>
     <!--up link-->
-    <a class="uplink" href="">
+    <a class="uplink" href="#">
         <i class="fa-solid fa-chevron-up"></i>
     </a>
+    <!--    headerTop-->
+    <?php include $config['base']['path'] . 'views/model/headerTop.php' ?>
     <!-- regist -->
     <div class="registration_wrap grid-bg ba-grid anim" id="uplinkLogin">
         <div class="inner">
@@ -44,17 +54,17 @@ global $view, $config;
                 </div>
                 <div class="logo_regist">
                     <span><img src="<?= $config['base']['url'] . 'web/' ?>img/6182235a66337.svg" alt=""></span>
-                    <span>FARG'ONA SHAHRIDAGI PREZIDENT MAKTAB</span>
+                    <span><?= $lang['F_Sh_P_Maktab1'] ?></span>
                 </div>
                 <form action="<?= url ?>/login.php" method="post" class="login_1 Tab_C">
                     <div class="form-group">
                         <input type="text" name="login" id="loginInput" class="username" required="required">
-                        <span for="username" class="text_uesr"">Username</span>
+                        <span for="username" class="text_uesr""><?= $lang['ism'] ?></span>
                     <i class=" fa-regular fa-user user_regist"></i>
                     </div>
                     <div class="form-group">
                         <input type="password" id="passwordInput" name="password" class="form-control password_login_reg" id="password" required="required">
-                        <span for="password">Password</span>
+                        <span for="password"><?= $lang['parol'] ?></span>
                         <i class="fa-solid fa-lock pas_regist"></i>
                         <p class="eyes">
                             <i class="eyes_regest fa-regular fa-eye-slash"></i>
@@ -62,14 +72,14 @@ global $view, $config;
                     </div>
                     <div class="form-group form-group3">
                         <label for="checkbox">
-                            <input type="checkbox" name="checkbox" id="checkbox" class="checkbox_regist">
-                            <p>Remember me</p>
+                            <input type="checkbox" name="checkbox" id="checkbox" class="checkbox_regist" required>
+                            <p><?= $lang['eslabqol'] ?></p>
                         </label>
                     </div>
                     <p class="loginxatolik"></p>
                     <div class="regis_btn" style="position: relative;">
                         <button type="submit" name="loginBtn" class="btn registration-btn">
-                            <span>Login up</span>
+                            <span><?= $lang['btn'] ?></span>
                         </button>
                     </div>
                 </form>
@@ -84,40 +94,36 @@ global $view, $config;
         </div>
         <div class="hamburger_title">
             <div>
-                <p class="hamburger_title_text">Shahr Prezident Maktab</p>
+                <p class="hamburger_title_text"><?= $lang['F_Sh_P_Maktab1'] ?></p>
             </div>
-            <a href="<?= $config['base']['url'] ?>index" class="menu_item menu_item1">Bosh sahifa</a>
+            <a href="<?= $config['base']['url'] ?>index" class="menu_item menu_item1"><?= $lang['bosh_sahifa']?></a>
             <div id="accordion_hamburger">
-                <h3>Biz haqimizda</h3>
+                <h3><?= $lang['biz_haqimizda']?></h3>
                 <div class="acardion_item">
-                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/1">Maktab haqida</a>
-                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/2">Prezident maktablari</a>
-                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/3">Rahbariyat</a>
-                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/4">Xodimlar</a>
+                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/1"><?= $lang['maktab_haqida']?></a>
+                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/2"><?= $lang['prezident_maktablari']?></a>
+                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/3"><?= $lang['rahbariyat']?></a>
+                    <a href="<?= $config['base']['url'] ?>BizHaqimizda/4"><?= $lang['xodimlar']?></a>
                 </div>
-                <h3>Matbuot xizmati</h3>
+                <h3><?=$lang['matbuot_xizmati']?></h3>
                 <div class="acardion_item">
-                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/1">Yangiliklar</a>
-                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/2">Tadbirlar</a>
-                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/3">E'lonlar</a>
-                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/4">Fotolavhalar</a>
-                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/5">Videolavhalar</a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/1"><?=$loang['yangiliklar']?></a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/2"><?=$loang['tadbirlar']?></a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/3"><?=$loang['elonlar']?></a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/4"><?=$loang['fotolavhalar']?></a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/5"><?=$loang['videolavhalar']?></a>
                 </div>
-                <h3>Foydali manbalar</h3>
+                <h3><?= $lang['foydali_manbalar']?></h3>
                 <div class="acardion_item">
-                    <a href="<?= $config['base']['url'] ?>FoydaliManbalar/1">Xalqaro tanlovlar</a>
-                    <a href="<?= $config['base']['url'] ?>FoydaliManbalar/2">To'garaklar</a>
-                    <a href="<?= $config['base']['url'] ?>FoydaliManbalar/3">O'quv qo'llanmalar</a>
+                    <a href="<?= $config['base']['url'] ?>FoydaliManbalar/1"><?=$lang['xalqaro_tanlovlar']?></a>
+                    <a href="<?= $config['base']['url'] ?>FoydaliManbalar/2"><?=$lang['togaraklar']?></a>
+                    <a href="<?= $config['base']['url'] ?>FoydaliManbalar/3"><?=$lang['oquv_qollanmalar']?></a>
                 </div>
             </div>
-            <a href="<?= $config['base']['url'] ?>aloqa" class="menu_item">Aloqa</a>
+            <a href="<?= $config['base']['url'] ?>aloqa" class="menu_item"><?=$lang['aloqa']?></a>
         </div>
     </div>
-    <!--    headerTop-->
-    <?php include $config['base']['path'] . 'views/model/headerTop.php' ?>
-    <!--main   -->
     <?php include  $config['base']['path'] . 'views/model/' . $view . '.php'; ?>
-
     <!-- section7 footer-->
     <div class="section7 container-fluid">
         <div class="header">
@@ -126,7 +132,7 @@ global $view, $config;
                     <?php foreach (GetAll('admin_boshsahifa_footer', 'false', 'asc') as $key => $link) : ?>
                         <li>
                             <div class="text_a">
-                                <p>Ijtimoiy tarmoqlar</p>
+                                <p><?= $lang['ijtimoviy_t'] ?></p>
                             </div>
                             <ul>
                                 <li>
@@ -163,7 +169,7 @@ global $view, $config;
                         </li>
                         <li>
                             <div class="text_a">
-                                <p>Bizning manzil
+                                <p><?= $lang['biz_hamizda'] ?>
                                 </p>
                             </div>
                             <ul>
@@ -209,8 +215,7 @@ global $view, $config;
                             </div>
                             <div class="img_b">
                                 <p>
-                                    Barcha huquqlar himoyalangan. Saytdagi barcha huquqlar O'zbekiston Respublikasi qonunlariga, shu jumladan mualliflik huquqi va turdosh huquqlarga muvofiq himoya qilinadi. Sayt materiallaridan foydalanganda, Farg'ona Shahr Prezident Maktab web Saytiga havola ko'rsatilishi shart. <br>
-                                    Diqqat! Agar siz matnda xatoliklarni aniqlasangiz, ularni belgilab, ma`muriyatni xabardor qilish uchun <a href="#" id="a12">admin xabar</a> tugmalarini bosing
+                                    <?= $lang['footer'] ?>
                                 </p>
                             </div>
                             <div class="img_c"></div>

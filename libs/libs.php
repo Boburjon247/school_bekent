@@ -41,6 +41,18 @@ function test_input1($data)
       return $newArray;
    }
 }
+function test_input2($data)
+{
+   $newArray = [];
+   if (is_array($data)) {
+      for ($i = 0; $i < count($data); $i++) {
+         $data[$i] = addslashes($data[$i]);
+         $data[$i] = trim($data[$i]);
+         array_push($newArray, $data[$i]);
+      }
+      return $newArray;
+   }
+}
 // text filter agar malumot kop bolsa ... qoyadi
 function textFilter($text, $number)
 {

@@ -3,55 +3,26 @@ global $view, $config;
 include $config['base']['path'] . 'views/model/header-banner.php';
 ?>
 <?php if (isset($_GET['id']) && $_GET['id'] == 1) : ?>
-    <?php headerBanner('Xolqaro Tanlovlar'); ?>
+    <?php headerBanner($lang['xalqaro_tanlovlar']); ?>
     <main>
         <section class="container-fluid">
             <div class="container xolqaro-tanlovlar">
                 <div class="row">
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
+                    <?php foreach (GetAllRow('admin_maktab_foydalimanbalar', "status", 'Tanlovlar') as $key => $val) : ?>
+                        <div class="col">
+                            <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/img/qollanmalar/img/' . $val['img'] ?>"></div>
+                            <div class="card_title">
+                                <p><?= $val['title_' . $_SESSION['lang']] ?></p>
+                                <span><?= textFilter($val['text_' . $_SESSION['lang']], 25) ?></span>
+                            </div>
+                            <div class="card_control">
+                                <button>
+                                    <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>">batavsil</a>
+                                </button>
+                                <span><?= $val['date'] ?></span>
+                            </div>
                         </div>
-                        <div class="card_control">
-                            <button>batavsil</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
-                        </div>
-                        <div class="card_control">
-                            <button>batavsil</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
-                        </div>
-                        <div class="card_control">
-                            <button>batavsil</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
-                        </div>
-                        <div class="card_control">
-                            <button>batavsil</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
@@ -59,105 +30,50 @@ include $config['base']['path'] . 'views/model/header-banner.php';
     <script src="<?= $config['base']['url'] . 'web/' ?>js/pagination.js"></script>
 
 <?php elseif (isset($_GET['id']) && $_GET['id'] == 2) : ?>
-    <?php headerBanner('Togaraklar'); ?>
+    <?php headerBanner($lang['togaraklar']); ?>
     <main>
         <section class="container-fluid">
             <div class="container xolqaro-tanlovlar">
                 <div class="row">
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
+                    <?php foreach (GetAllRow('admin_maktab_foydalimanbalar', "status", "To\'garaklar") as $key => $val) : ?>
+                        <div class="col">
+                            <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/img/qollanmalar/img/' . $val['img'] ?>"></div>
+                            <div class="card_title">
+                                <p><?= $val['title_' . $_SESSION['lang']] ?></p>
+                                <span><?= textFilter($val['text_' . $_SESSION['lang']], 50) ?></span>
+                            </div>
+                            <div class="card_control">
+                                <button>
+                                    <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>">batavsil</a>
+                                </button>
+                                <span><?= $val['date'] ?></span>
+                            </div>
                         </div>
-                        <div class="card_control">
-                            <button>batavsil</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
-                        </div>
-                        <div class="card_control">
-                            <button>batavsil</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
-                        </div>
-                        <div class="card_control">
-                            <button>batavsil</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptas numquam adipisci?</span>
-                        </div>
-                        <div class="card_control">
-                            <button>batavsil</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>
     </main>
 <?php elseif (isset($_GET['id']) && $_GET['id'] == 3) : ?>
-    <?php headerBanner("O'quv qo'llanmalar"); ?>
+    <?php headerBanner($lang['oquv_qollanmalar']); ?>
     <main>
         <section class="container-fluid">
             <div class="container xolqaro-tanlovlar">
                 <div class="row">
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
+                    <?php foreach (GetAllRow('admin_maktab_foydalimanbalar', "status", "Qo\'llanmalar") as $key => $val) : ?>
+                        <div class="col">
+                            <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/img/qollanmalar/img/' . $val['img'] ?>"></div>
+                            <div class="card_title">
+                                <p><?= $val['title_' . $_SESSION['lang']] ?></p>
+                            </div>
+                            <div class="card_control">
+                                <button>
+                                    <a href="<?= $config['base']['url'] . 'web/img/qollanmalar/file/' . $val['qollanma'] ?>" download>Yuklan olish</a>
+                                </button>
+                                <span><?= $val['date'] ?></span>
+                            </div>
                         </div>
-                        <div class="card_control">
-                            <button>Yuklash olish</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                        </div>
-                        <div class="card_control">
-                            <button>Yuklash olish</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                        </div>
-                        <div class="card_control">
-                            <button>Yuklash olish</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/' ?>img/PIIM4.jpg);"></div>
-                        <div class="card_title">
-                            <p>title</p>
-                        </div>
-                        <div class="card_control">
-                            <button>Yuklash olish</button>
-                            <span>10.10.2023</span>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </section>

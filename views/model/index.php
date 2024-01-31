@@ -15,7 +15,7 @@ global $config;
             </div>
         </div>
         <div class="swiper-wrapper">
-            <?php foreach (GetAll('admin_boshsahifa_salyder_img', 'false', 'asc') as $key => $img) : ?>
+            <?php foreach (GetAll('admin_boshsahifa_salyder_img', 'false', 'desc') as $key => $img) : ?>
                 <div class="swiper-slide">
                     <img src="<?= $config['base']['url'] . 'web/img/body/' . $img['img'] ?>" alt="">
                 </div>
@@ -31,7 +31,7 @@ global $config;
 <section class="section8 container-fluid">
     <div class="container container_section8">
         <div class="row">
-            <h3 class="text_title_header">Hududiy manzillari</h3>
+            <h3 class="text_title_header"><?= $lang['hududiy_manzillari'] ?></h3>
             <div class="animation_S2">
                 <span></span>
             </div>
@@ -107,7 +107,7 @@ global $config;
 <section class="section2 container-fluid">
     <div class="container section2_content">
         <div class="section2_text">
-            <p>So'nggi Yangiliklar</p>
+            <p><?= $lang['songgi_yangiliklar'] ?></p>
             <div class="animation_S2">
                 <span></span>
             </div>
@@ -115,11 +115,11 @@ global $config;
         <div class="section2_card_slider">
             <div class="section2_all_button">
                 <button>
-                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/1">all</a>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/1"><?= $lang['barchasi'] ?></a>
                 </button>
             </div>
             <div class="owl-carousel owl-theme">
-                <?php foreach (GetAllRowLimit('admin_maktab_yangiliklar', 'status', 'yangilik', '10') as $key => $val) : ?>
+                <?php foreach (GetAllRowLimit('admin_maktab_yangiliklar', 'status', 'Yangiliklar', '10') as $key => $val) : ?>
                     <?php
                     $imgarray = [];
                     $imgarray = explode(' ', $val['img']);
@@ -135,7 +135,7 @@ global $config;
                                 <p>
                                     <span>
                                         <i class="fa-solid fa-calendar-days"></i>
-                                        <?= $val['date']?>
+                                        <?= $val['date'] ?>
                                     </span>
                                 </p>
                             </div>
@@ -155,17 +155,16 @@ global $config;
 
 <!-- section3 -->
 <section class="section3 container-fluid">
+    <?php foreach (GetAll('admin_boshsahifa_maktab_video', 'false', 'asc') as $key => $video) : ?>
     <div class="section3_cart_img_show">
         <span><i class="section3_cart_img_hide fa-solid fa-xmark"></i></span>
         <div class="img_X ">
-            <?php foreach (GetAll('admin_boshsahifa_maktab_video', 'false', 'asc') as $key => $video) : ?>
-                <video class="video_section3_tab1" src="<?= $config['base']['url'] . 'web/video/' . $video['video'] ?>" controls width="320" height="240"></video>
-            <?php endforeach; ?>
+                <iframe src="<?= $video['video_link'] ?>"></iframe>
         </div>
     </div>
     <div class="container section3_content">
         <div class="section3_text">
-            <p>Farg'ona Shahr Prezident Maktab </p>
+            <p><?= $lang['F_Sh_P_Maktab'] ?></p>
             <div class="animation_S2">
                 <span></span>
             </div>
@@ -180,19 +179,20 @@ global $config;
                                 <span></span>
                             </div>
                         </div>
-                        <div class="tab1_img" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/PIIM5.jpg')"></div>
+                        <div class="tab1_img" style="background-image: url('<?= $config['base']['url'] . 'web/video/'.$video['img'] ?>')"></div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <?php endforeach; ?>
 
 </section>
 <!-- section4 -->
 <section class="section4 container-fluid">
     <div class="container  section4_content">
         <div class="section4_text">
-            <p>Maktabimiz faxrlari</p>
+            <p><?= $lang['m_faxrlari'] ?></p>
             <div class="animation_S2">
                 <span></span>
             </div>
@@ -219,7 +219,7 @@ global $config;
 <section class="section5 container-fluid">
     <div class="container section5_content">
         <div class="section5_text">
-            <p>Qo'shimcha ma'lumot</p>
+            <p><?= $lang['Qoshimcha_malumot'] ?></p>
             <div class="animation_S2">
                 <span></span>
             </div>
@@ -227,23 +227,23 @@ global $config;
         <div class="section5_content_wrap">
             <div class="img_s5" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/l-1.jpg');">
                 <div class="after">
-                    <img src="img/ovqat.svg" alt="">
-                    <p>Ovqatlanish vaqtlari</p>
-                    <span>5 mahal ovqatlanish, bepul</span>
+                    <img src="<?= $config['base']['url'] . 'web/' ?>img/ovqat.svg" alt="">
+                    <p><?= $lang['ovqatlanish_vaqtlari']?></p>
+                    <span><?= $lang['r1']?></span>
                 </div>
             </div>
             <div class="img_s5" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/l-2.jpg');">
                 <div class="after">
                     <img src="<?= $config['base']['url'] . 'web/' ?>img/forma.svg" alt="">
-                    <p>Maktab formasi</p>
-                    <span>bepul</span>
+                    <p><?= $lang['maktab_formasi']?></p>
+                    <span><?= $lang['r2']?></span>
                 </div>
             </div>
             <div class="img_s5" style="background-image: url('<?= $config['base']['url'] . 'web/' ?>img/l-3.jpg');">
                 <div class="after">
                     <img src="<?= $config['base']['url'] . 'web/' ?>img/yot.svg" alt="">
-                    <p>Maktab yotoqxonasii</p>
-                    <span>bepul</span>
+                    <p><?= $lang['maktab_yotoqxonasi']?></p>
+                    <span><?= $lang['r2']?></span>
                 </div>
             </div>
         </div>
@@ -254,7 +254,7 @@ global $config;
 <section class="section6 container-fluid">
     <div class="container section6_content">
         <div class="section6_text">
-            <p>Foydali saytlar</p>
+            <p><?= $lang['foydali_saytlar'] ?></p>
             <div class="animation_S2">
                 <span></span>
             </div>
@@ -279,3 +279,19 @@ global $config;
         </div>
     </div>
 </section>
+<script>
+    const uzbekmap = document.querySelectorAll('.mapdiv path');
+    const titleHover = document.querySelector('.titleHover');
+    uzbekmap.forEach((element, index) => {
+        element.addEventListener('mouseover', (e) => {
+            let maptitle = element.getAttribute('name');
+            titleHover.innerHTML = maptitle
+        });
+        element.classList.remove('active');
+        setInterval(() => {
+            titleHover.innerHTML = "Fargʻona"
+        }, 3000);
+    });
+    const fargona = document.querySelector('.fargona');
+    fargona.classList.add('active');
+</script>
