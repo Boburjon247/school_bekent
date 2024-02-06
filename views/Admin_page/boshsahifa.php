@@ -11,8 +11,8 @@
                          <div id="tabs" class="tab">
                               <ul class="tab_items">
                                    <li><a href="#tabs-1">uzb</a></li>
-                                   <li><a href="#tabs-2">rus</a></li>
-                                   <li><a href="#tabs-3">eng</a></li>
+                                   <li><a href="#tabs-2">eng</a></li>
+                                   <li><a href="#tabs-3">rus</a></li>
                               </ul>
                               <form action="" method="post">
                                    <?php foreach (GetAll('admin_boshsahifa_salyder_text', 'false', 'asc') as $key => $text) : ?>
@@ -24,14 +24,14 @@
                                         </div>
                                         <div id="tabs-2" class="tab_item">
                                              <div class="textUchunForma">
-                                                  <textarea class="textUchun" name="title_en" placeholder="page"><?= $text['title_ru'] ?></textarea>
-                                                  <textarea class="textUchun" name="sahifa_en" placeholder="page"><?= $text['text_ru'] ?></textarea>
+                                                  <textarea class="textUchun" name="title_en" placeholder="page"><?= $text['title_en'] ?></textarea>
+                                                  <textarea class="textUchun" name="sahifa_en" placeholder="page"><?= $text['text_en'] ?></textarea>
                                              </div>
                                         </div>
                                         <div id="tabs-3" class="tab_item">
                                              <div class="textUchunForma">
-                                                  <textarea class="textUchun" name="title_ru" placeholder="страница"><?= $text['title_en'] ?></textarea>
-                                                  <textarea class="textUchun" name="sahifa_ru" placeholder="страница"><?= $text['text_en'] ?></textarea>
+                                                  <textarea class="textUchun" name="title_ru" placeholder="страница"><?= $text['title_ru'] ?></textarea>
+                                                  <textarea class="textUchun" name="sahifa_ru" placeholder="страница"><?= $text['text_ru'] ?></textarea>
                                              </div>
                                         </div>
                                         <button type="submit" name="textBodyYangilash" class="btn btn-outline-warning btn-fw">Saqlash</button>
@@ -107,20 +107,20 @@
           // asosiy oynadagi text
           if (isset($_POST['textBodyYangilash'])) {
                if (
-                    (isset($_POST['sahifa_uz']) && !empty($_POST['sahifa_uz'])) &&
-                    (isset($_POST['title_uz']) && !empty($_POST['title_uz'])) &&
-                    (isset($_POST['sahifa_ru']) && !empty($_POST['sahifa_ru'])) &&
-                    (isset($_POST['title_ru']) && !empty($_POST['title_ru'])) &&
-                    (isset($_POST['title_en']) && !empty($_POST['title_en'])) &&
-                    (isset($_POST['sahifa_en']) && !empty($_POST['sahifa_en']))
+                    (isset($_POST["sahifa_uz"]) && !empty($_POST["sahifa_uz"])) &&
+                    (isset($_POST["title_uz"]) && !empty($_POST["title_uz"])) &&
+                    (isset($_POST["sahifa_ru"]) && !empty($_POST["sahifa_ru"])) &&
+                    (isset($_POST["title_ru"]) && !empty($_POST["title_ru"])) &&
+                    (isset($_POST["title_en"]) && !empty($_POST["title_en"])) &&
+                    (isset($_POST["sahifa_en"]) && !empty($_POST["sahifa_en"]))
                ) {
-                    $aloqaInputGet = test_input([
-                         $_POST['title_uz'],
-                         $_POST['sahifa_uz'],
-                         $_POST['title_ru'],
-                         $_POST['sahifa_ru'],
-                         $_POST['title_en'],
-                         $_POST['sahifa_en'],
+                    $aloqaInputGet = test_input1([
+                         $_POST["title_uz"],
+                         $_POST["sahifa_uz"],
+                         $_POST["title_en"],
+                         $_POST["sahifa_en"],
+                         $_POST["title_ru"],
+                         $_POST["sahifa_ru"],
                     ]);
                     $db = connection();
                     $sql = $db->query("UPDATE admin_boshsahifa_salyder_text SET 
@@ -280,14 +280,14 @@
                     <?php
                     if (isset($_POST['maktabhaqida'])) {
                          if (
-                              (isset($_POST['text_m_h_uz']) && !empty($_POST['text_m_h_uz'])) &&
-                              (isset($_POST['text_m_h_en']) && !empty($_POST['text_m_h_en'])) &&
-                              (isset($_POST['text_m_h_ru']) && !empty($_POST['text_m_h_ru']))
+                              (isset($_POST["text_m_h_uz"]) && !empty($_POST["text_m_h_uz"])) &&
+                              (isset($_POST["text_m_h_en"]) && !empty($_POST["text_m_h_en"])) &&
+                              (isset($_POST["text_m_h_ru"]) && !empty($_POST["text_m_h_ru"]))
                          ) {
                               $aloqaInputGet = test_input1([
-                                   $_POST['text_m_h_uz'],
-                                   $_POST['text_m_h_ru'],
-                                   $_POST['text_m_h_en']
+                                   $_POST["text_m_h_uz"],
+                                   $_POST["text_m_h_ru"],
+                                   $_POST["text_m_h_en"]
                               ]);
                               $db = connection();
                               $sql = $db->query("UPDATE admin_boshsahifa_maktab_haqida SET 
@@ -330,10 +330,9 @@
                                                   <li class="col-6">
                                                        <?php foreach (GetAll('admin_boshsahifa_maktab_video', 'false', 'asc') as $key => $img) : ?>
                                                             <div class="con1">
-                                                                 <input type="hidden" name="id" value="<?=$img['id']?>" id="">
-                                                                 <input type="hidden" name="img" value="<?=$img['img']?>" id="">
-                                                                 <div class="imgSCR1 imgSCR_video_img" 
-                                                                 style="background-image: 
+                                                                 <input type="hidden" name="id" value="<?= $img['id'] ?>" id="">
+                                                                 <input type="hidden" name="img" value="<?= $img['img'] ?>" id="">
+                                                                 <div class="imgSCR1 imgSCR_video_img" style="background-image: 
                                                                  url('<?= $config['base']['url'] . 'web/video/' . $img['img'] ?>');">
                                                                  </div>
                                                             </div>

@@ -4,40 +4,70 @@ global $view, $config;
 <?php foreach (GetAllRow('admin_maktab_yangiliklar', 'id', $_GET['id']) as $key => $val) : ?>
      <?php
      $type = '';
-          switch ($val['status']) {
-               case 'Yangiliklar':
-                    $type = '1';
-                    break;
-                    case 'Tadbirlar':
-                         $type = '2';
-                         break;
-                         case "E'lonlar":
-                              $type = '3';
-                              break;
-                              case 'Fotolavhalar':
-                                   $type = '4';
-                                   break;
-                                   case 'VideoLavlahalar':
-                                        $type = '5';
-                                        break;
-          }
+     switch ($val['status']) {
+          case 'Yangiliklar':
+               $type = '1';
+               break;
+          case 'Tadbirlar':
+               $type = '2';
+               break;
+          case "E'lonlar":
+               $type = '3';
+               break;
+          case 'Fotolavhalar':
+               $type = '4';
+               break;
+          case 'VideoLavlahalar':
+               $type = '5';
+               break;
+     }
 
      ?>
-<section class="header-banner container-fluid">
-     
-     <div class="container">
-          <div class="top_title_header">
-               <span><?= $val['status']?></span>
+     <section class="header-banner container-fluid">
+
+          <div class="container">
+               <div class="top_title_header">
+                    <span>
+                         <?php
+                         if ($type == '1') {
+                              echo $lang['yangiliklar'];
+                         } else if ($type == '2') {
+                              echo $lang['tadbirlar'];
+                         } else if ($type == '3') {
+                              echo $lang['elonlar'];
+                         } else if ($type == '4') {
+                              echo $lang['fotolavhalar'];
+                         } else if ($type == '5') {
+                              echo $lang['videolavhalar'];
+                         }
+
+                         ?>
+                    </span>
+               </div>
+               <div class="navbar_control">
+                    <a href="<?= url ?>"><?= $lang['asosiy'] ?></a>
+                    <span></span>
+                    <a href="<?= $config['base']['url'] ?>MatbuotXizmati/<?= $type ?>">
+                         <?php
+                         if ($type == '1') {
+                              echo $lang['yangiliklar'];
+                         } else if ($type == '2') {
+                              echo $lang['tadbirlar'];
+                         } else if ($type == '3') {
+                              echo $lang['elonlar'];
+                         } else if ($type == '4') {
+                              echo $lang['fotolavhalar'];
+                         } else if ($type == '5') {
+                              echo $lang['videolavhalar'];
+                         }
+
+                         ?>
+                    </a>
+                    <span></span>
+                    <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>"><?= $val['title_' . $_SESSION['lang']] ?></a>
+               </div>
           </div>
-          <div class="navbar_control">
-               <a href="<?= url?>">Asosiy</a>
-               <span></span>
-               <a href="<?= $config['base']['url'] ?>MatbuotXizmati/<?=$type?>"><?= $val['status']?></a>
-               <span></span>
-               <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>"><?= $val['title_'.$_SESSION['lang']]?></a>
-          </div>
-     </div>
-</section>
+     </section>
 <?php endforeach; ?>
 
 
@@ -45,7 +75,7 @@ global $view, $config;
      <section class="container-fluid newSection">
           <div class="container">
                <div class="row">
-                    <div class="col-8" style="display: block;">
+                    <div class="col-xl-8" style="display: block;">
                          <?php foreach (GetAllRow('admin_maktab_yangiliklar', 'id', $_GET['id']) as $key => $val) : ?>
                               <?php
                               $imgarray = [];
@@ -111,10 +141,10 @@ global $view, $config;
                          <?php endforeach; ?>
 
                     </div>
-                    <div class="col-4" style="display: block;">
+                    <div class="col-xl-4" style="display: block;">
                          <div class="new-contener">
                               <p class="news-title">
-                                   So'nggi yangiliklar
+                                   <?= $lang['songi_yan'] ?>
                               </p>
                               <ul class="naw_news">
                                    <?php foreach (GetAllRowLimit('admin_maktab_yangiliklar', 'status', 'Yangiliklar', '15') as $key => $val) : ?>

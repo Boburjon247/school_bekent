@@ -74,5 +74,6 @@ $lang = array(
      'mazmun' => 'content of the application',
      'kod' =>'enter the code:',
      'btn4' => 'to send',
+     'songi_yan' => "Latest news",
 
 );

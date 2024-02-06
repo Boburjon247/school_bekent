@@ -17,25 +17,25 @@ $today = date("Y-m-d");
                               <li><a href="#tabsx-5">VideoLavlahalar</a></li>
                          </ul>
                          <div id="tabsx-1" class="tab_item">
-                              <form action="" method="post" enctype="multipart/form-data">
-                                   <input type="hidden" name="status" value="Yangiliklar">
-                                   <p style="color: #fff; font-size: 18px;">Yangiliklar</p>
-                                   <div id="tabsxml" class="tab haqida_tab mkt-haqida">
-                                        <ul class="tab_items">
-                                             <li><a href="#tabsxl-1">uzb</a></li>
-                                             <li><a href="#tabsxl-2">eng</a></li>
-                                             <li><a href="#tabsxl-3">rus</a></li>
-                                        </ul>
-                                        <div class="row">
-                                             <div class="col-8">
-                                                  <ul class="row yangiliklarItems">
-                                                       <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'Yangiliklar') as $key => $val) : ?>
-                                                            <?php
-                                                            $imgarray = [];
-                                                            $imgarray = explode(' ', $val['img']);
-                                                            $newImg = $imgarray[0];
-                                                            ?>
-                                                            <li class="col-3">
+                              <p style="color: #fff; font-size: 18px;">Yangiliklar</p>
+                              <div id="tabsxml" class="tab haqida_tab mkt-haqida">
+                                   <ul class="tab_items">
+                                        <li><a href="#tabsxl-1">uzb</a></li>
+                                        <li><a href="#tabsxl-2">eng</a></li>
+                                        <li><a href="#tabsxl-3">rus</a></li>
+                                   </ul>
+                                   <div class="row">
+
+                                        <div class="col-8">
+                                             <ul class="row yangiliklarItems">
+                                                  <?php foreach (GetAllRow('admin_maktab_yangiliklar', "status", 'Yangiliklar') as $key => $val) : ?>
+                                                       <?php
+                                                       $imgarray = [];
+                                                       $imgarray = explode(' ', $val['img']);
+                                                       $newImg = $imgarray[0];
+                                                       ?>
+                                                       <li class="col-3">
+                                                            <form action="" method="post" enctype="multipart/form-data">
                                                                  <input type="hidden" name="id" value="<?= $val['id'] ?>">
                                                                  <input type="hidden" name="img" value="<?= $val['img'] ?>">
                                                                  <div class="items">
@@ -47,11 +47,14 @@ $today = date("Y-m-d");
                                                                       </div>
                                                                       <button type="submit" name="deleteNews" class="deleteRasim"><i class="fa-solid fa-trash fa-shake" style="color: #ff0000;"></i></button>
                                                                  </div>
-                                                            </li>
-                                                       <?php endforeach; ?>
-                                                  </ul>
-                                             </div>
-                                             <div class="col-4">
+                                                            </form>
+                                                       </li>
+                                                  <?php endforeach; ?>
+                                             </ul>
+                                        </div>
+                                        <div class="col-4">
+                                             <form action="" method="post" enctype="multipart/form-data">
+                                                  <input type="hidden" name="status" value="Yangiliklar">
                                                   <div id="tabsxl-1" class="tab_item">
                                                        <ul class="angi_list">
                                                             <li>
@@ -91,12 +94,11 @@ $today = date("Y-m-d");
                                                             </li>
                                                        </ul>
                                                   </div>
-                                             </div>
+                                                  <button type="submit" value="ok" name="yangilikqoishish" class="btn btn-outline-warning btn-fw img-saqlash">Saqlash</button>
+                                             </form>
                                         </div>
-
                                    </div>
-                                   <button type="submit" value="ok" name="yangilikqoishish" class="btn btn-outline-warning btn-fw img-saqlash">Saqlash</button>
-                              </form>
+                              </div>
                          </div>
                          <div id="tabsx-2" class="tab_item">
                               <form action="" method="post" enctype="multipart/form-data">
@@ -442,7 +444,7 @@ if (isset($_POST['yangilikqoishish'])) {
           if ($_FILES['files']['name'] != '') {
                $imgArray = [];
                for ($i = 0; $i < count($_FILES['files']['name']); $i++) {
-                    $fileNmae = time().$_FILES['files']['name'][$i];
+                    $fileNmae = $_FILES['files']['size'][$i].time().'img';
                     $bool = move_uploaded_file($_FILES['files']['tmp_name'][$i], '../web/img/news/' . $fileNmae);
                     if ($bool) {
                          array_push($imgArray, $fileNmae);
@@ -466,7 +468,7 @@ if (isset($_POST['yangilikqoishish'])) {
                ]);
                if (getInsert(
                     'admin_maktab_yangiliklar',
-                    ['title_uz', 'text_uz', 'title_en', 'text_en', 'title_ru', 'text_ru', 'img', 'date', 'status','link'],
+                    ['title_uz', 'text_uz', 'title_en', 'text_en', 'title_ru', 'text_ru', 'img', 'date', 'status', 'link'],
                     $aloqaInputGet
                )) {
                     reflesh(url_admin, 'matbuot');

@@ -76,5 +76,7 @@
           'kod' =>'kodni kiriting:',
           'btn4' => 'yuborish',
 
+          'songi_yan' => "So'nggi yangiliklar",
+
      );
 ?>

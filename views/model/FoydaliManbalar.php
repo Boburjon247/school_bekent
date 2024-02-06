@@ -12,12 +12,11 @@ include $config['base']['path'] . 'views/model/header-banner.php';
                         <div class="col">
                             <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/img/qollanmalar/img/' . $val['img'] ?>"></div>
                             <div class="card_title">
-                                <p><?= $val['title_' . $_SESSION['lang']] ?></p>
-                                <span><?= textFilter($val['text_' . $_SESSION['lang']], 25) ?></span>
+                                <p><?= textFilter($val['title_' . $_SESSION['lang']], 120) ?></p>
                             </div>
                             <div class="card_control">
                                 <button>
-                                    <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>">batavsil</a>
+                                    <a href="<?= $config['base']['url'] ?>newss/<?= $val['id'] ?>">batavsil</a>
                                 </button>
                                 <span><?= $val['date'] ?></span>
                             </div>
@@ -35,16 +34,15 @@ include $config['base']['path'] . 'views/model/header-banner.php';
         <section class="container-fluid">
             <div class="container xolqaro-tanlovlar">
                 <div class="row">
-                    <?php foreach (GetAllRow('admin_maktab_foydalimanbalar', "status", "To\'garaklar") as $key => $val) : ?>
+                    <?php foreach (GetAllRow('admin_maktab_foydalimanbalar', "status", "Togaraklar") as $key => $val) : ?>
                         <div class="col">
                             <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/img/qollanmalar/img/' . $val['img'] ?>"></div>
                             <div class="card_title">
                                 <p><?= $val['title_' . $_SESSION['lang']] ?></p>
-                                <span><?= textFilter($val['text_' . $_SESSION['lang']], 50) ?></span>
                             </div>
                             <div class="card_control">
                                 <button>
-                                    <a href="<?= $config['base']['url'] ?>news/<?= $val['id'] ?>">batavsil</a>
+                                    <a href="<?= $config['base']['url'] ?>newss/<?= $val['id'] ?>">batavsil</a>
                                 </button>
                                 <span><?= $val['date'] ?></span>
                             </div>
@@ -63,7 +61,7 @@ include $config['base']['path'] . 'views/model/header-banner.php';
                     <?php foreach (GetAllRow('admin_maktab_foydalimanbalar', "status", "Qo\'llanmalar") as $key => $val) : ?>
                         <div class="col">
                             <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/img/qollanmalar/img/' . $val['img'] ?>"></div>
-                            <div class="card_title">
+                            <div class="card_title card_fan">
                                 <p><?= $val['title_' . $_SESSION['lang']] ?></p>
                             </div>
                             <div class="card_control">

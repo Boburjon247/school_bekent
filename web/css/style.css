@@ -262,7 +262,8 @@ li {
   border: 1px solid #DCDCDC;
   z-index: 1500;
 }
-.headerTop .container .tizimAdd .itemMenu .itemMenuContent button{
+
+.headerTop .container .tizimAdd .itemMenu .itemMenuContent button {
   width: 100%;
   background-color: transparent;
   color: #fff;
@@ -270,8 +271,9 @@ li {
   border-bottom: 1px solid #fff;
   text-align: start;
   transition: .2s;
-} 
-.headerTop .container .tizimAdd .itemMenu .itemMenuContent button:hover{
+}
+
+.headerTop .container .tizimAdd .itemMenu .itemMenuContent button:hover {
   padding-left: 8px;
 }
 
@@ -1151,11 +1153,12 @@ button.btn span::after {
   padding: 10px;
 }
 
-.owl-carousel .item .card_wrap a{
+.owl-carousel .item .card_wrap a {
   display: block;
-  max-height:70px;
+  max-height: 70px;
   height: 70px;
 }
+
 .owl-carousel .item .card_wrap p:nth-child(1) {
   font-size: 18px;
   color: #444;
@@ -1592,7 +1595,7 @@ button.btn span::after {
 
 }
 
-.section6_content_wrap .owl-carousel .item .img{
+.section6_content_wrap .owl-carousel .item .img {
   width: 220px !important;
   height: 150px;
   display: flex;
@@ -2416,7 +2419,7 @@ button.btn span::after {
   display: grid;
   grid-template-columns: 1fr 3fr;
   gap: 10px;
-  background-color: #F1F1F1;
+  background-color: #fff;
   border-radius: 5px;
   box-shadow: 5px 5px 0 #051B57;
   padding: 0 !important;
@@ -2424,23 +2427,26 @@ button.btn span::after {
   padding: 8px !important;
 }
 
-.leadershipContainer .row:nth-child(1) .leaderCard .img {
+.leadershipContainer .row .leaderCard #leaderCardimg {
   width: 380px;
   height: 380px;
   border-radius: 10px;
+  background-position: center !important;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.leadershipContainer .row:nth-child(1) .leaderCard .text {
+.leadershipContainer .row .leaderCard .text {
   padding: 25px 15px;
 }
 
-.leadershipContainer .row:nth-child(1) .leaderCard .text h3 {
+.leadershipContainer .row .leaderCard .text h3 {
   color: #051B57;
   font-size: 25px;
   line-height: 20px;
 }
 
-.leadershipContainer .row:nth-child(1) .leaderCard .text .lavozimText {
+.leadershipContainer .row .leaderCard .text .lavozimText {
   font-size: 18px;
   color: #051b57c4;
   line-height: 15px;
@@ -2455,10 +2461,14 @@ button.btn span::after {
   column-gap: 10px;
 }
 
-.leadershipContainer .text p span:nth-child(2) {
+.leadershipContainer .text p span:nth-child(1) {
   font-size: 19px;
   color: #22374ed8;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .leadershipContainer .text p span:nth-child(3) {
@@ -3109,10 +3119,10 @@ button.btn span::after {
 }
 
 .xolqaro-tanlovlar .col .card_img_togarak {
-  height: 250px;
+  height: 300px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover !important;
   border-radius: 5px;
 }
 
@@ -3121,10 +3131,13 @@ button.btn span::after {
 }
 
 .xolqaro-tanlovlar .col .card_title p {
-  font-size: 22px;
+  font-size: 18px;
   text-transform: capitalize;
   margin: 0 !important;
   color: #051B57;
+  line-height: 20px;
+  max-height: 120px;
+  height: 120px;
 }
 
 .xolqaro-tanlovlar .col .card_title span {
@@ -3140,17 +3153,20 @@ button.btn span::after {
   align-items: center;
   justify-content: space-between;
 }
-.xolqaro-tanlovlar .col .card_control .card_linklar{
+
+.xolqaro-tanlovlar .col .card_control .card_linklar {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.xolqaro-tanlovlar .col .card_control .card_linklar a{
+
+.xolqaro-tanlovlar .col .card_control .card_linklar a {
   width: 35px;
   height: 35px;
 }
-.xolqaro-tanlovlar .col .card_control .card_linklar a i{
+
+.xolqaro-tanlovlar .col .card_control .card_linklar a i {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3160,26 +3176,29 @@ button.btn span::after {
   color: #46688C;
   border-radius: 5px;
   background-color: #FFFFFF;
-  box-shadow: inset 4px 4px 3px  #f8faff,inset -4px -4px 3px  #a1a4aa;
+  box-shadow: inset 4px 4px 3px #f8faff, inset -4px -4px 3px #a1a4aa;
 }
-.xolqaro-tanlovlar .col .card_control .card_linklar a i:hover{
-  box-shadow: inset -4px -4px 3px  #f8faff,inset 4px 4px 3px  #a1a4aa;
+
+.xolqaro-tanlovlar .col .card_control .card_linklar a i:hover {
+  box-shadow: inset -4px -4px 3px #f8faff, inset 4px 4px 3px #a1a4aa;
   transition: .3s;
   font-size: 18px;
 }
 
-.xolqaro-tanlovlar .col .card_control button{
-  
+.xolqaro-tanlovlar .col .card_control button {
+
   border: 2px solid #051B57;
   background-color: transparent;
   border-radius: 5px;
 }
-.xolqaro-tanlovlar .col .card_control button a:hover{
+
+.xolqaro-tanlovlar .col .card_control button a:hover {
   background-color: #051B57;
   color: #fff !important;
   transition: .2s;
 }
-.xolqaro-tanlovlar .col .card_control button a{
+
+.xolqaro-tanlovlar .col .card_control button a {
   text-transform: capitalize;
   color: #051B57;
   display: block;
@@ -3187,6 +3206,7 @@ button.btn span::after {
   transition: .2s;
 
 }
+
 .xolqaro-tanlovlar .col .card_control span {
   font-size: 14px;
   opacity: .6;
@@ -3390,6 +3410,7 @@ button.btn span::after {
 .news-img {
   display: block;
   position: relative;
+  height: auto !important;
 
 }
 
@@ -3411,7 +3432,8 @@ button.btn span::after {
   transition: .2s;
   padding: 3px;
 }
-.naw_news li a{
+
+.naw_news li a {
   width: 100%;
   height: 100%;
   display: flex;
@@ -3455,27 +3477,37 @@ button.btn span::after {
   color: #999;
   font-size: 13px;
 }
-.news-img{
+
+.news-img {
   height: 450px;
 }
-.news-img .carousel{
+
+.news-img .carousel {
   height: 100%;
   position: relative;
   overflow: hidden !important;
 }
-.news-text{
+
+.news-text {
   padding: 15px 10px;
   font-size: 18px;
   line-height: 30px;
   letter-spacing: 1px;
 }
-.carousel-item{
+
+.carousel-item {
   height: 100%;
 }
-.carousel-item img{
+
+.carousel-item img {
   height: 100%;
 }
-.news-img iframe{
+
+.news-img iframe {
   width: 100%;
   height: 100%;
+}
+
+.card_fan {
+  max-height: 100px !important;
 }

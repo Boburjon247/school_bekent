@@ -44,33 +44,29 @@ include $config['base']['path'] . 'views/model/header-banner.php'
     <main>
         <section class="container-fluid leadership">
             <div class="container leadershipContainer">
-                <div class="row">
+                <div class="row leadershipContainer_row">
                     <!-- item -->
                     <?php foreach (GetAll('admin_maktabhaqida_hodimlar', 'false', 'asc') as $key => $text) : ?>
                         <div class="leaderCard">
-                            <div class="img" style="background-image: url('<?= $config['base']['url'] . 'web/img/rahbarlarimg/' . $text['img'] ?>');"></div>
+                            <div class="img" id="leaderCardimg" style="background-image: url('<?= $config['base']['url'] . 'web/img/rahbarlarimg/' . $text['img'] ?>');"></div>
                             <div class="text">
                                 <h3 class="userName1"><?= $text['ism'] . ' ' . $text['fam'] ?></h3>
                                 <p class="lavozimText"><?= $text['lavozim'] ?></p>
                                 <hr>
-                                <p>
-                                    <span><i class="fa-solid fa-envelope"></i></span>
-                                    <span><?= $lang['e_p'] ?></span>
+                                <p class="p_text">
+                                    <span><i class="fa-solid fa-envelope"></i><?= $lang['e_p'] ?></span>
                                     <span class="ps-2"><?= $text['email'] ?></span>
                                 </p>
-                                <p>
-                                    <span><i class="fa-solid fa-phone"></i></span>
-                                    <span><?= $lang['tel'] ?></span>
+                                <p class="p_text">
+                                    <span><i class="fa-solid fa-phone"></i><?= $lang['tel'] ?></span>
                                     <span class="ps-2"><?= $text['tel'] ?></span>
                                 </p>
-                                <p>
-                                    <span><i class="fa-solid fa-clock"></i></span>
-                                    <span><?= $lang['q_k'] ?></span>
+                                <p class="p_text">
+                                    <span><i class="fa-solid fa-clock"></i><?= $lang['q_k'] ?></span>
                                     <span class="ps-2"><?= $text['qabul_kunlar'] ?></span>
                                 </p>
-                                <p>
-                                    <span><i class="fa-solid fa-location-dot"></i></span>
-                                    <span><?= $lang['m_l'] ?></span>
+                                <p class="p_text">
+                                    <span><i class="fa-solid fa-location-dot"></i><?= $lang['m_l'] ?></span>
                                     <span class="ps-2"><?= $text['manzil'] ?></span>
                                 </p>
                                 <p class="userName1 hidetitle"><?= $text['text_' . $_SESSION['lang']] ?></p>
@@ -100,7 +96,7 @@ include $config['base']['path'] . 'views/model/header-banner.php'
                 <div class="row card-content">
                     <?php foreach (GetAll('admin_maktabhaqida_hodmlr', 'false', 'asc') as $key => $text) : ?>
                         <div class="col card">
-                            <div class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/img/hodimlar/' . $text['img'] ?>)"></div>
+                            <img class="card_img_togarak" style="background-image: url(<?= $config['base']['url'] . 'web/img/hodimlar/' . $text['img'] ?>)"></img>
                             <div class="card_title">
                                 <p style="text-align: center;"><?= $text['ism'] . ' ' . $text['fam'] ?></p>
                                 <span style="text-align: center; display: block;"><?= $text['fani'] ?></span>

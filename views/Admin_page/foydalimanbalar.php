@@ -52,10 +52,13 @@ $today = date("Y-m-d");
                                              <textarea name="text_ru" placeholder="o"></textarea>
                                         </div>
                                         <button type="submit" name="qollanmaAdd" class="btn btn-outline-warning btn-fw img-saqlash">Saqlash</button>
-                                        <div class="col-12">
-                                             <ul class="itemsUl-li row">
-                                                  <?php foreach (GetAllRow('admin_maktab_foydalimanbalar', "status", 'Tanlovlar') as $key => $val) : ?>
-                                                       <li class="col-3">
+                                   </form>
+
+                                   <div class="col-12">
+                                        <ul class="itemsUl-li row">
+                                             <?php foreach (GetAllRow('admin_maktab_foydalimanbalar', "status", 'Tanlovlar') as $key => $val) : ?>
+                                                  <li class="col-3">
+                                                       <form action="" method="post">
                                                             <input type="hidden" name="id" value="<?= $val['id'] ?>">
                                                             <input type="hidden" name="img" value="<?= $val['img'] ?>">
                                                             <div class="item-content">
@@ -67,16 +70,15 @@ $today = date("Y-m-d");
                                                                  </div>
                                                                  <button type="submit" name="deleteItem" class="deleteRasim"><i class="fa-solid fa-trash fa-shake" style="color: #ff0000;"></i></button>
                                                             </div>
-                                                       </li>
-                                                  <?php endforeach; ?>
-                                             </ul>
-                                        </div>
-                                   </form>
-
+                                                       </form>
+                                                  </li>
+                                             <?php endforeach; ?>
+                                        </ul>
+                                   </div>
                               </div>
                               <div id="tabs-2" class="tab_item">
                                    <form action="" method="post" enctype="multipart/form-data">
-                                        <input type="hidden" name="status" value="To'garaklar">
+                                        <input type="hidden" name="status" value="Togaraklar">
                                         <div class="inputFile">
                                              <label for="file20">
                                                   <div class="deleteRasim" style="border: 1px solid #767676;">
@@ -111,10 +113,13 @@ $today = date("Y-m-d");
                                              <textarea name="text_ru" placeholder="o"></textarea>
                                         </div>
                                         <button type="submit" name="qollanmaAdd" class="btn btn-outline-warning btn-fw img-saqlash">Saqlash</button>
-                                        <div class="col-12">
-                                             <ul class="itemsUl-li row">
-                                                  <?php foreach (GetAllRow('admin_maktab_foydalimanbalar', "status", "To\'garaklar") as $key => $val) : ?>
-                                                       <li class="col-3">
+                                   </form>
+
+                                   <div class="col-12">
+                                        <ul class="itemsUl-li row">
+                                             <?php foreach (GetAllRow('admin_maktab_foydalimanbalar', "status", "Togaraklar") as $key => $val) : ?>
+                                                  <li class="col-3">
+                                                       <form action="" method="post">
                                                             <input type="hidden" name="id" value="<?= $val['id'] ?>">
                                                             <input type="hidden" name="img" value="<?= $val['img'] ?>">
                                                             <div class="item-content">
@@ -126,12 +131,11 @@ $today = date("Y-m-d");
                                                                  </div>
                                                                  <button type="submit" name="deleteItem" class="deleteRasim"><i class="fa-solid fa-trash fa-shake" style="color: #ff0000;"></i></button>
                                                             </div>
-                                                       </li>
-                                                  <?php endforeach; ?>
-                                             </ul>
-                                        </div>
-                                   </form>
-
+                                                       </form>
+                                                  </li>
+                                             <?php endforeach; ?>
+                                        </ul>
+                                   </div>
                               </div>
                               <div id="tabs-3" class="tab_item">
                                    <form action="" method="post" enctype="multipart/form-data">
@@ -205,28 +209,28 @@ $today = date("Y-m-d");
 <?php
 if (isset($_POST['qollanmaAdd'])) {
      if (
-          (isset($_POST['title_uz']) && !empty($_POST['title_uz'])) &&
-          (isset($_POST['title_en']) && !empty($_POST['title_en'])) &&
-          (isset($_POST['title_ru']) && !empty($_POST['title_ru']))
+          (isset($_POST["title_uz"]) && !empty($_POST["title_uz"])) &&
+          (isset($_POST["title_en"]) && !empty($_POST["title_en"])) &&
+          (isset($_POST["title_ru"]) && !empty($_POST["title_ru"]))
      ) {
 
           if ($_FILES['file']['name'] != '') {
-               $name = time() . $_FILES['file']['name'];
-               $book = time() . $_FILES['file2']['name'];
+               $name = time();
+               $book = time();
 
                $bool = move_uploaded_file($_FILES['file']['tmp_name'], '../web/img/qollanmalar/img/' . $name);
                move_uploaded_file($_FILES['file2']['tmp_name'], '../web/img/qollanmalar/file/' . $book);
 
                if ($bool) {
                     $aloqaInputGet = test_input([
-                         $_POST['title_uz'],
-                         $_POST['title_en'],
-                         $_POST['title_ru'],
-                         $_POST['text_uz'],
-                         $_POST['text_en'],
-                         $_POST['text_ru'],
+                         $_POST["title_uz"],
+                         $_POST["title_en"],
+                         $_POST["title_ru"],
+                         $_POST["text_uz"],
+                         $_POST["text_en"],
+                         $_POST["text_ru"],
                          $name,
-                         $_POST['status'],
+                         $_POST["status"],
                          $today,
                          $book
                     ]);

@@ -62,13 +62,34 @@
         }
 
         .xolqaro-tanlovlar .row {
-                grid-template-columns:  1fr 1fr;
+                grid-template-columns: 1fr 1fr;
+        }
+
+        /* biz haqimizda prizdent maktablari */
+        .containerSchools .schoolsCard {
+                grid-template-columns: 1fr 2fr;
+
+        }
+
+        .containerSchools .schoolsCard .icon {
+                width: 150px;
+                height: 150px;
         }
 
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+        .leadershipContainer .text .p_text {
+                width: 100%;
+                flex-direction: column;
+                align-items: self-start;
+        }
+
+        .leadershipContainer .text .p_text span:nth-child(2) {
+                padding-left: 30px !important;
+        }
+
         .hamburget_btn {
                 display: block !important;
         }
@@ -253,279 +274,344 @@
                 margin-left: 5px;
                 margin-top: 10px;
         }
+}
 
 
 
-        /* Small Devices, Tablets */
-        @media only screen and (max-width : 768px) {
-                .owl-carousel .item {
-                        margin-left: 0 !important;
-                }
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+        .owl-carousel .item {
+                margin-left: 0 !important;
+        }
 
-                .owl-nav {
-                        left: 15px !important;
-                }
+        .owl-nav {
+                left: 15px !important;
+        }
 
-                .section3_content_wrap ol {
-                        grid-template-columns: 1fr;
-                }
+        .section3_content_wrap ol {
+                grid-template-columns: 1fr;
+        }
 
-                .section3_text p,
-                .section4_text p,
-                .section5_text p,
-                .section6_text p {
-                        font-size: 25px !important;
-                }
+        .section3_text p,
+        .section4_text p,
+        .section5_text p,
+        .section6_text p {
+                font-size: 25px !important;
+        }
 
-                .section4_maktab_f {
-                        grid-template-columns: 1fr;
-                }
+        .section4_maktab_f {
+                grid-template-columns: 1fr;
+        }
 
-                .waves {
-                        height: 40px;
-                        min-height: 40px;
-                }
+        .waves {
+                height: 40px;
+                min-height: 40px;
+        }
 
-                .content {
-                        height: 30vh;
-                }
+        .content {
+                height: 30vh;
+        }
 
-                h1 {
-                        font-size: 24px;
-                }
+        h1 {
+                font-size: 24px;
+        }
 
-                .section7 .section7_content .section7_text_wrap .li4 .img_a .img {
-                        display: none;
-                }
+        .section7 .section7_content .section7_text_wrap .li4 .img_a .img {
+                display: none;
+        }
 
-                .section7 .section7_content .section7_text_wrap .li4 {
-                        grid-template-columns: 1fr;
-                }
+        .section7 .section7_content .section7_text_wrap .li4 {
+                grid-template-columns: 1fr;
+        }
 
-                .new_section1 .new_section1_content ul {
-                        grid-template-columns: 1fr;
-                }
+        .new_section1 .new_section1_content ul {
+                grid-template-columns: 1fr;
+        }
 
-                .new_section1 .new_section1_content ul li .img {
-                        height: 160px !important;
-                }
+        .new_section1 .new_section1_content ul li .img {
+                height: 160px !important;
+        }
 
-                .new_section1 .new_section1_content ul li {
-                        grid-template-columns: 2fr 3fr !important;
-                }
+        .new_section1 .new_section1_content ul li {
+                grid-template-columns: 2fr 3fr !important;
+        }
 
-                .new_section1 .new_section1_content ul li .text {
-                        padding: 0 10px;
-                }
+        .new_section1 .new_section1_content ul li .text {
+                padding: 0 10px;
+        }
 
-                .tich_kiritish .blok1 {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr !important;
-                }
+        .tich_kiritish .blok1 {
+                display: grid;
+                grid-template-columns: 1fr 1fr !important;
+        }
 
-                .tich_kiritish .blok1 .text1 {
-                        grid-column: 1 / 3;
-                }
+        .tich_kiritish .blok1 .text1 {
+                grid-column: 1 / 3;
+        }
 
-                .tich_kiritish .blok2 {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr !important;
-                }
+        .tich_kiritish .blok2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr !important;
+        }
 
-                .tich_kiritish .blok2 p {
-                        grid-column: 1 / 3;
-                }
+        .tich_kiritish .blok2 p {
+                grid-column: 1 / 3;
+        }
 
-                /* leadershipContainer */
+        /* leadershipContainer */
 
-                .leadershipContainer .row .leaderCard {
-                        grid-template-columns: 1fr;
-                }
+        .leadershipContainer .row .leaderCard {
+                grid-template-columns: 1fr;
+        }
 
-                .leadershipContainer .row:nth-child(1) .leaderCard .img {
-                        width: 100%;
-                        height: 380px;
-                }
+        .leadershipContainer .row:nth-child(1) .leaderCard .img {
+                width: 100%;
+                height: 380px;
+        }
 
-
+        /* biz haqimizda brizdent maktablari */
+        .containerSchools {
+                gap: 30px;
 
         }
 
-        @media only screen and (max-width : 580px) {
-                .leadershipContainer .row .leaderCard {
-                        grid-template-columns: 1fr;
-                }
-
-                .owl-carousel .item {
-                        padding: 15px;
-                }
-
-                .section7 .section7_content .section7_text_wrap {
-                        grid-template-columns: 1fr !important;
-                }
-
-                .section7 .section7_content .section7_text_wrap li:nth-child(2) {
-                        grid-column: 1 / 2;
-                }
-
-                .img_tabs .tab1_img {
-                        height: 40vh;
-                }
-
-                .section5_content_wrap {
-                        display: grid;
-                        grid-template-columns: 1fr !important;
-                }
-
-                .aloqa_content .content_wrap {
-                        width: 100% !important;
-                }
-
-                .aloqa_content .content_wrap .left {
-                        width: 100% !important;
-                }
-
-                .section3_cart_img_show .img_X {
-                        width: 97%;
-                }
-
-                .section3_cart_img_show .img_X video {
-                        height: auto !important;
-                }
-
-                .card-content {
-                        grid-template-columns: 1fr !important;
-                }
-                .xolqaro-tanlovlar .row {
-                        padding: 10px !important;
-                }     
-
-
-
-
+        .containerSchools .schoolsCard {
+                grid-template-columns: 1fr;
         }
 
-        /* Extra Small Devices, Phones */
-        @media only screen and (max-width : 480px) {
-
-                .titleHover {
-                        top: 10px;
-                }
-
-
-
-                .registration_title {
-                        margin: 0 !important;
-                        width: 100%;
-                        height: 100%;
-                }
-
-                .new_section1 .new_section1_content ul li .img {
-                        height: 240px !important;
-                }
-
-                .new_section1 .new_section1_content ul li {
-                        grid-template-columns: 1fr !important;
-                }
-
-                .section_jurnal .jurnal_content .content_wrap .input_wrap .left_title {
-                        width: 100%;
-                        justify-content: flex-end;
-                }
-
-                .jurnal_content .content_wrap .input_wrap {
-                        flex-direction: column;
-                }
-
-                .section_jurnal .jurnal_content .content_wrap .input_wrap .right_title {
-                        width: 100%;
-                        display: grid;
-                        grid-template-columns: 1fr;
-                        gap: 15px;
-                }
-
-                .section_jurnal .jurnal_content .content_wrap .input_wrap .right_title select {
-                        width: 100%;
-                }
-
-                .section_jurnal .jurnal_content .content_wrap .natija_wrap tr .o_name {
-                        font-size: 14px;
-                }
-
-                .section_jurnal .jurnal_content .content_wrap .natija_wrap tr th input {
-                        font-size: 14px;
-                        margin: 0;
-                        height: 50px;
-                }
-
-                .section3_content .section3_content_wrap #tabs ul li {
-                        font-size: 15px;
-                }
-                .xolqaro-tanlovlar .row {
-                        grid-template-columns:  1fr;
-                        padding: 10px !important;
-                }       
-
-
-
+        .containerSchools .schoolsCard .icon {
+                width: 170px;
+                height: 170px;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #FFFFFF;
+                border-radius: 50%;
+                padding: 10px;
+                box-shadow: 2px 2px 5px #999;
         }
 
-        @media only screen and (max-width : 400px) {
-                .hamburger_title {
-                        width: 100%;
-                }
-
-                .section2_content .section2_text p {
-                        font-size: 25px !important;
-                }
-
-                .tich_kiritish .blok1 {
-                        display: grid;
-                        grid-template-columns: 1fr !important;
-                }
-
-                .tich_kiritish .blok1 .text1 {
-                        grid-column: 1 / 2;
-                }
-
-                .tich_kiritish .blok2 {
-                        display: grid;
-                        grid-template-columns: 1fr !important;
-                }
-
-                .tich_kiritish .blok2 p {
-                        grid-column: 1 / 2;
-                }
-
-                .hamburger_title {
-                        width: 100% !important;
-                }
-
-                .hamburger_exit {
-                        left: 90% !important;
-                        border: 2px solid #fff;
-                        border-radius: 50%;
-                        cursor: pointer;
-                }
-
-                .aloqa_container .left form {
-                        grid-template-columns: 1fr !important;
-                }
-
-                .aloqa_container .left form input {
-                        grid-column: 1/2 !important;
-                }
-
-                .aloqa_container .left form .canvas .canvas_chake {
-                        align-items: start;
-                        flex-direction: column;
-                        row-gap: 10px;
-                }
+        .schoolsCard .title p {
+                text-align: center;
+                font-size: 20px;
+                line-height: 20px;
         }
 
-        /* Custom, iPhone Retina */
-        @media only screen and (max-width : 320px) {
-                .section3_content .section3_content_wrap #tabs ul {
-                        flex-direction: column;
-                }
+        .leadershipContainer .row .leaderCard #leaderCardimg {
+                width: 100%;
         }
+}
+
+@media only screen and (max-width : 580px) {
+        .leadershipContainer .row .leaderCard {
+                grid-template-columns: 1fr;
+        }
+
+        .owl-carousel .item {
+                padding: 15px;
+        }
+
+        .section7 .section7_content .section7_text_wrap {
+                grid-template-columns: 1fr !important;
+        }
+
+        .section7 .section7_content .section7_text_wrap li:nth-child(2) {
+                grid-column: 1 / 2;
+        }
+
+        .img_tabs .tab1_img {
+                height: 40vh;
+        }
+
+        .section5_content_wrap {
+                display: grid;
+                grid-template-columns: 1fr !important;
+        }
+
+        .aloqa_content .content_wrap {
+                width: 100% !important;
+        }
+
+        .aloqa_content .content_wrap .left {
+                width: 100% !important;
+        }
+
+        .section3_cart_img_show .img_X {
+                width: 97%;
+        }
+
+        .section3_cart_img_show .img_X video {
+                height: auto !important;
+        }
+
+        .card-content {
+                grid-template-columns: 1fr !important;
+        }
+
+        .xolqaro-tanlovlar .row {
+                padding: 10px !important;
+        }
+
+        .section3_content_wrap {
+                padding: 0 10px;
+        }
+
+        /* biz haqimizda brizdent maktablari */
+        .containerSchools {
+                padding: 15px;
+                gap: 30px;
+        }
+
+        .leadershipContainer .leadershipContainer_row {
+                padding: 15px;
+                margin: 0 !important;
+        }
+
+        .leadershipContainer .text .p_text {
+                width: 100%;
+                flex-direction: column;
+                align-items: self-start;
+        }
+
+        .leadershipContainer .text .p_text span:nth-child(2) {
+                padding-left: 30px !important;
+        }
+
+
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+        .titleHover {
+                top: 10px;
+        }
+
+        .registration_title {
+                margin: 0 !important;
+                width: 100%;
+                height: 100%;
+        }
+
+        .new_section1 .new_section1_content ul li .img {
+                height: 240px !important;
+        }
+
+        .new_section1 .new_section1_content ul li {
+                grid-template-columns: 1fr !important;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .input_wrap .left_title {
+                width: 100%;
+                justify-content: flex-end;
+        }
+
+        .jurnal_content .content_wrap .input_wrap {
+                flex-direction: column;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .input_wrap .right_title {
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 15px;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .input_wrap .right_title select {
+                width: 100%;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .natija_wrap tr .o_name {
+                font-size: 14px;
+        }
+
+        .section_jurnal .jurnal_content .content_wrap .natija_wrap tr th input {
+                font-size: 14px;
+                margin: 0;
+                height: 50px;
+        }
+
+        .section3_content .section3_content_wrap #tabs ul li {
+                font-size: 15px;
+        }
+
+        .xolqaro-tanlovlar .row {
+                grid-template-columns: 1fr;
+                padding: 10px !important;
+        }
+
+        /* biz haqimizda brizdent maktablari */
+        .containerSchools {
+                padding: 15px;
+                gap: 30px;
+                grid-template-columns: 1fr;
+        }
+
+
+}
+
+@media only screen and (max-width : 400px) {
+        .hamburger_title {
+                width: 100%;
+        }
+
+        .section2_content .section2_text p {
+                font-size: 25px !important;
+        }
+
+        .tich_kiritish .blok1 {
+                display: grid;
+                grid-template-columns: 1fr !important;
+        }
+
+        .tich_kiritish .blok1 .text1 {
+                grid-column: 1 / 2;
+        }
+
+        .tich_kiritish .blok2 {
+                display: grid;
+                grid-template-columns: 1fr !important;
+        }
+
+        .tich_kiritish .blok2 p {
+                grid-column: 1 / 2;
+        }
+
+        .hamburger_title {
+                width: 100% !important;
+        }
+
+        .hamburger_exit {
+                left: 90% !important;
+                border: 2px solid #fff;
+                border-radius: 50%;
+                cursor: pointer;
+        }
+
+        .aloqa_container .left form {
+                grid-template-columns: 1fr !important;
+        }
+
+        .aloqa_container .left form input {
+                grid-column: 1/2 !important;
+        }
+
+        .aloqa_container .left form .canvas .canvas_chake {
+                align-items: start;
+                flex-direction: column;
+                row-gap: 10px;
+        }
+
+        .leadershipContainer .row .leaderCard .img {
+                width: 100% !important;
+        }
+
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+        .section3_content .section3_content_wrap #tabs ul {
+                flex-direction: column;
+        }
+}
