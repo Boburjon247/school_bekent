@@ -32,10 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     })(jQuery);
 
-    // $('#opener').on('click', () => {
-    //     jQuery.madalOpen('.dialog_c_m');    
-    // });
-
     $('.exit_btn').on('click', () => {
         jQuery.madalExit('.dialog_c_m');
         // Jquery.madal_animation_exit('.dialog_c_m');

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
    // btn bosilganda massiv elementlarini oqib console ga prin qil
    const dialogModalBtn = document.querySelectorAll('#dialogModalBtn'),
       dialogModal = document.querySelector('.modalDialog-container');
-
+      
    dialogModalBtn.forEach((element, i) => {
       element.addEventListener('click', () => {
          dialogModal.innerHTML = ' ';
@@ -39,12 +39,12 @@ document.addEventListener('DOMContentLoaded', function () {
    }
    onClickBtnMadals_F(madalDialogBth);
 
-   madalWindow.addEventListener('click',(e)=>{
-      if(e.target == madalWindow)
+   madalWindow.addEventListener('click', (e) => {
+      if (e.target == madalWindow)
          toggleClass_F(madalWindow);
    })
    document.addEventListener('keydown', (e) => {
-      if(e.code === 'Escape') 
+      if (e.code === 'Escape')
          toggleClass_F(madalWindow);
    })
 

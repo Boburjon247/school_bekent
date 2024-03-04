@@ -7,36 +7,34 @@
       <span>O’quv yillari</span>
       <button class="btn_main" id="opener">Qo'shish</button>
    </div>
-   <div class="body_year_show">
-      <div class="year_items">
-         <p> 2023-2024 o’quv yili</p>
-         <div class="controlBox">
-            <button><i class="fa-solid fa-pencil" style="color: #00e1ff;"></i></button>
-            <button><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
-         </div>
-      </div>
-      <div class="year_items">
-         <p>2023-2024 o’quv yili</p>
-         <div class="controlBox">
-            <button><i class="fa-solid fa-pencil" style="color: #00e1ff;"></i></button>
-            <button><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
-         </div>
-      </div>
-      <div class="year_items">
-         <p>2023-2024 o’quv yili</p>
-         <div class="controlBox">
-            <button><i class="fa-solid fa-pencil" style="color: #00e1ff;"></i></button>
-            <button><i class="fa-solid fa-trash" style="color: #ff0000;"></i></button>
-         </div>
-      </div>
-   </div>
+   <div class="body_year_show"></div>
    <div class="dialog_c_m">
       <div class="dialog_center">
-         <span class="dialog_center_exit exit_btn"><i class="fa-solid fa-xmark "></i></span>
-         <p>Yangi o’quv yili yaratish</p>
-         <input type="text" class="input_y" placeholder="O’quv yili...">
-         <span class="error_text"></span>
-         <button class="btn_main add_yil">Add</button>
+         <form action="" method="post">
+            <span class="dialog_center_exit exit_btn"><i class="fa-solid fa-xmark "></i></span>
+            <p>Yangi o’quv yili yaratish</p>
+            <input type="text" name="yearName" class="input_y editInput1" id="yearNmae" placeholder="O’quv yili...">
+            <span class="error_text"></span>
+            <button name="yearNameBtn" type="submit" class="btn_main add_yil" id="yearAdd">Saqlash</button>
+            <button class="btn_main add_yil" id="editBtnAddSubject">Yangilash</button>
+         </form>
       </div>
    </div>
 </div>
+<!-- madalka -->
+<div class="NToastJSAJAX">
+   <!-- successToast -->
+   <div class="NToastJS_contentAJAX active errorTrue successToast">
+      <i class="fa fa-xmark exit errorTrue"></i>
+      <div class="icon">
+         <i class="fa fa-check"></i>
+      </div>
+      <div class="text">
+         <p id='successMsg'></p>
+      </div>
+      <div class="time">
+         <p></p>
+      </div>
+   </div>
+</div>
+<script src="<?= $config['base']['url'] . 'web/' ?>js/system/yilyaratish.js"></script>

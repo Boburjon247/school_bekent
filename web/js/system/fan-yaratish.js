@@ -124,6 +124,9 @@ $(document).ready(function() {
          }
       })
    });
+
+
+   
    $('#editBtnAddSubject').on('click', (e) => {
       e.preventDefault();
       $.ajax({
